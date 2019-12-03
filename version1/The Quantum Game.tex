@@ -1,0 +1,192 @@
+% ================================
+% Landon Buell
+% Draft 1
+% Quantum Physics
+% 2 December 2019
+% ================================
+
+\documentclass[12pt,letterpaper]{book}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm]{geometry}
+\usepackage{array}
+\usepackage{float}
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+
+% ================================
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Landon Buell}
+\lhead{Quantum Physics 101}
+\cfoot{\thepage}
+
+
+\begin{document}
+
+% ================================
+
+\title{
+\begin{Huge}
+The Quantum Game\\
+\end{Huge}
+\vspace*{5mm}
+\Large Applied Elementary Quantum Theory for Non-Physicists}
+\author{Landon Buell}
+\date{December 2019}
+\maketitle
+
+
+% ================================================================
+
+\begin{center}
+--------
+\end{center}
+
+
+\tableofcontents
+\pagebreak
+
+% ================================================================
+
+\section*{Introduction}
+
+% ================================================================
+
+\section*{Preliminary Considerations}
+
+% ================================================================
+
+\section*{Conventions for this Text}
+
+% ================================================================
+
+\chapter{The Name of the Game}
+
+% ================================
+
+\section{The Schrodinger Equation}
+
+\paragraph*{}In classical physics, the description of all motion as we know it, can be in some way attributed to Issac Newton's second law of motion, which tell us that the force acting on an object is equal to the objects mass, multiplied by the acceleration of the object. More conveniently written: $F = ma$. Or rather:
+\begin{equation}
+\label{Newtons 2nd Law}
+F = m\frac{d^2x}{dt^2}
+\end{equation} 
+in more physics-like language. Where $x$, or rather $x(t)$ is a time dependent function that describes the motion of the object in a single spatial component.
+\paragraph*{}The forces acting on any arbitrary object in question can be equated to $m\frac{d^2x}{dt^2}$ and the resulting differential equation can be solved to find the function $x(t)$, that tracks the position of the object with time. Admittedly, this proves to be quite difficult in some cases and literally impossible in other cases. Luckily for us, in the 21st century, we have the ability to use computers and have the benefit of numerical problem solving which will come in heady later on.
+\paragraph*{}In quantum physics, we don't have such a nice, clean equation as Sir Newton has laid out for us, but a much, much messier one that behaves in a similar way. It was created around 1925 by the Austrian Physicist, \textit{Erwin Schrodinger}. It looks something like:
+\begin{equation}
+\label{1D Schrodinger}
+-\frac{\hbar^2}{2m}\frac{\partial^2\Psi}{\partial x^2} +
+V\Psi = i\hbar\frac{\partial \Psi}{\partial t}
+\end{equation}
+\paragraph*{}Everything about modern quantum physics in some way, either comes from, or comes back to this equation. Just like in classical physics, all motion is attributed to Newton's second law of motion, equation (\ref{Newtons 2nd Law}), in quantum physics, all properties of the quantum system are attributed to Schrodinger's equation, (\ref{1D Schrodinger}).
+
+% ================================
+
+\paragraph*{}Consider a point particle, of some mass, $m$, constrained to move along a one-dimensional, line, which we will conveniently choose to be the $x$-axis. If we know the mass, and the particles position as a function of time, $x(t)$ we can deduce several other properties of the system. By taking the derivative of $x(t)$ with respect to time, we can detemine the particles velocity all time, $v(t)$. Here, we can compute the kinetic energy $\frac{1}{2}mv^2$ and momentum $mv$ at all points in time. Taking another time derivative gives us the acceleration of the particle at all time, $a(t)$. From there, we can find the force $ma$ and the even the potential energy function at all times. 
+\paragraph*{}Just by simply knowing the mass and position function for an object grants a great deal of information to you. We can find position, velocity, acceleration, force, energy, momentum and so many of these important dynamical variables by doing some simple bits of calculus or algebra. In all cases, we can evaluate these little formulas at any point in space or time to find \textit{exactly} the value we want. Classical physics operates under this assumption, that we can accurately describe the world around us and it behaves according to these mathematical descriptions.
+\paragraph*{}Quantum physics requires a different sent of requirements from us however. Things tend to not be so well defined. Rather than being able to calculate or measure the \textit{exact} value of the quantity that we want, we are forced to only be able to determine a \textit{probabilistic} value of what we want. In other words, things are not entering values and parameters to find for \textit{certain} what we want, but instead quantum physics becomes a game of \textit{probability}.
+\paragraph*{}Probability is \textit{the name of the game} of quantum physics. The mechanics of a quantum system are not defined by a mass $m$ and a position function, $x(t)$, but rather are defined by a probability amplitude function, \textit{the wave function}, $\Psi(x,t)$ which is represented by the Greek letter Psi, and appears three times in the Schrodinger equation above.
+\paragraph*{}This function, $\Psi(x,t)$, or often just $\Psi$, contains with it all possible information about a quantum mechanical system. With the wave function $\Psi$ known, we can determine the relative probabilities of position, momenta and other system parameters. For example, the expression:
+\begin{equation}
+\label{prob_ab}
+\int_a^b \big | \Psi(x,t) \big|^2 dx
+\end{equation}
+gives the probability of finding some particle on the $x$-axis between the values of $a$ and $b$ at some fixed time $t$. This business of probability is called \textit{The Statistical Interpretation} of Quantum Mechanics and is out guiding light in the field.
+\paragraph*{}But how exactly do we \textit{get} $\Psi(x,t)$? In Classical physics, we get $x(t)$ often by solving a second-order ordinary differential equation from Newton's laws. In Quantum physics, we get $\Psi(x,t)$ by solving the second-order, partial differential equation - Schrodinger's equation. As with classical physics, this tends to be a bit messy and often not really reasonable to do by hand- at least not without understanding some other concepts first. So, before we go off trying to \textit{solve} equation (\ref{1D Schrodinger}) for the wave function, $\Psi$ we must understand a little bit more about it first - what does it mean?
+
+
+% ================================
+
+\section{Understanding the Schrodinger Equation}
+\paragraph*{}If the name of the game in quantum physics is understanding probability densities and statistical behavior of systems, then the game is played by finding that probability function. This means to solve the Schrodinger equation for $\Psi(x,t)$, which gives the \textit{probability amplitude} and multiplying it by it's own \textit{complex conjugate}. This takes the form of $\Psi^*\Psi$ or the integrand of equation (\ref{prob_ab}).
+\paragraph*{}At first glance, the equation:
+\begin{equation}
+\label{1D Schrodinger expanded}
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\Big[ \Psi(x,t) \Big] +
+V(x)\Psi(x,t) = i\hbar\frac{\partial}{\partial t}\Big[ \Psi(x,t) \Big]
+\end{equation}
+whichs is just equation (\ref{1D Schrodinger}) expanded out a little bit, has a lot of information to unpack, even for a seasoned user of mathematics. For this section, we're going to try to determine what this equation is actually trying to tell us, and what each peice of it means. First off, lets take it apart, one tedious variable at a time. 
+\paragraph*{}The value $\hbar$ is defined as $\frac{h}{2\pi}$ where $h$ is \textit{Planck's constant}. $\hbar$ itself happens to be a more useful quantity in quantum mechanics, it has a value of $1.054573\times 10^{-34}$ Joule-seconds. The parameter $m$ is the mass of the particle in questions. When put together, the term $-\frac{\hbar^2}{2m}$ is simply a scalar value -i.e. it's just a number, a constant coefficient.
+\paragraph*{}The term $V(x)$ represents the \textit{potential function} of the quantum mechanical system. In almost all case, it will \textit{just} be a function of space, \textit{not} time- although this is not always the case. This describes the potential energy distribution as a function of space along our one-dimensional system. When it comes to solving equation (\ref{1D Schrodinger expanded}), this is really the limiting factor in what determines the shape of the solution, as we'll see in chapter 2.
+\paragraph*{}The partial derivatives of $\Psi(x,t)$ are a little bit tougher to reason out, but they are very akin to the mechanics of the heat equation where a second spatial derivative is proportional to a first time derivative. In a little while we'll see how this relationship allows for some nice simplifications to be made.
+\paragraph*{}Now that We've broken down each part of the equation, we can begin to formulate an analytical solution. This in practice need only be done once because, where we will end up is a convenient starting place for the rest of all calculations to be done. As stated before, the goal of solving this partial differential equation (or PDE for short) is to find $\Psi(x,t)$, a function of both space, $x$ and time, $t$. To do this, we will assume that $\Psi(x,t)$ is a composition, or the product of two 'smaller' functions, one of just space, and another of just time. This means that $\Psi$ can be broken down into a spatial function, which we'll call $\psi(x)$ and a temporal function, which we'll call $\phi(t)$. This then allows for the very import relation that will come back to haunt us over and over again:
+\begin{equation}
+\label{separable}
+\Psi(x,t) = \psi(x)\phi(t)
+\end{equation}
+\paragraph*{}The exact reasoning for this is quite unclear at first, and that's okay for now- it's use will become apparent later on. This new form for our equation allows us to write equation (\ref{1D Schrodinger expanded}) as:
+\begin{equation}
+\label{separated TDSE 0}
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\Big[ \psi(x)\phi(t) \Big] +
+V(x)\Big[ \psi(x)\phi(t) \Big] = i\hbar\frac{\partial}{\partial t}\Big[ \psi(x)\phi(t) \Big]
+\end{equation}
+\paragraph*{}We can use the linear properties of the derivative operator to further help us out. Functions of time are not affected under a spatial derivative, and functions of space are not affected under a temporal derivative. This lets us conveniently remove those untouched functions as such, and use some short hand. 
+\begin{equation}
+\label{separated TDSE 1}
+-\frac{\hbar^2}{2m}\phi(t)\frac{\partial^2\psi}{\partial x^2} +
+V(x)\Big[ \psi(x)\phi(t) \Big] = 
+i\hbar\psi(x)\frac{\partial \phi}{\partial t}
+\end{equation}
+\paragraph*{}Lastly, we can divide both sides of the equation by $\psi(x)\phi(t)$. Now, equation (\ref{separated TDSE 1}) becomes:
+\begin{equation}
+\label{separated TDSE 2}
+-\frac{\hbar^2}{2m}\frac{1}{\psi(x)}\frac{\partial^2\psi}{\partial x^2} + V(x) = 
+i\hbar \frac{1}{\phi(t)}\frac{\partial \phi}{\partial t}
+\end{equation}
+\paragraph*{}Now, we can all functions of \textit{space} on the left side, and all functions of \textit{time} on the right side. In order for both sides of this equation to be equal for \textit{all of 1D space} and \textit{all of time}, they must be identically constant. This fact is tough to grasp and it's true comprehension may have to be saved for another text, but in reality it is this mathematical rule that motivates us to choose the separable solution form in equation (\ref{separable}).
+\paragraph*{}If we examine just the right side, the time functions side, we can set it to an 'arbitrary' constant $E$ - for reasons we'll discover later. Now, just looking at the right side, we can say:
+\begin{equation}
+\label{energy ODE}
+E = i\hbar \frac{1}{\phi}\frac{d\phi}{dt}
+\end{equation}
+\paragraph*{}Note that the partial derivatives are now full derivatives, which is again a product of this separation technique. We can put this new constant back into the right side of equation (\ref{separated TDSE 2}) and then multiply again bu $\psi(x)$. The result is something new, but familiar:
+\begin{equation}
+\label{TISE}
+-\frac{\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2} + V(x)\psi(x) =
+E\psi(x)
+\end{equation}
+\paragraph*{}This is called the \textbf{Time Independent Schrodinger Equation} (TISE). This equation, (\ref{TISE}) is the convenient starting place for rest of the procedures in this text - and works consistently provided that the potential function, $V$ does not change with time. By using this separation of variables technique, we have turned the full Schrodinger Equation, (\ref{1D Schrodinger expanded}), a\textit{partial} differential equation, into two separate, \textit{ordinary} differential equations, 
+(\ref{energy ODE}) and  (\ref{TISE}). 
+\paragraph*{}The time ODE, (\ref{energy ODE}) can be conveniently solved with it's own separation technique to see that the function, $\phi(t)$ is really:
+\begin{equation}
+\label{phi}
+\phi(t) = C e^{-i\frac{E}{\hbar}t}
+\end{equation}
+Where $C$ is a constant found by applying some initial condition later on.
+\paragraph*{}The bulk of chapter 2 will be dedicated to solving equation (\ref{TISE}) for very specific potential functions, $V(x)$ and why they are so important. 
+\paragraph*{}In short, we now have a more digestible way of handling quantum physics. What we've done here, is a means to an ends - or rather a means to a beginning of \textit{playing} the game and quantum mechanics. While our treatment of the subject so far is \textit{purely} mathematical, it's important to understand that it's very important to playing out the ground work for the rest of the subject. 
+
+% ================================
+
+\section{Understanding the Wave Function}
+
+\paragraph*{}We've now constructed a means to finding this mysterious function, $\Psi(x,t)$ and treating it mathematically, but this is physics, not just math, so we need to produce a more concrete understanding of what this function is trying to \textit{tell} us. 
+
+% ================================
+
+\section{Takeaways from this Chapter}
+
+% ================================================================
+
+\chapter{Playing the Game}
+
+% ================================================================
+
+\chapter{The Rules of the Game}
+
+% ================================================================
+
+% ================================================================
+
+% ================================================================
+
+% ================================================================
+
+% ================================================================
+
+\end{document}
