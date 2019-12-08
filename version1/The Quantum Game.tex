@@ -14,6 +14,7 @@
 \usepackage{enumitem}
 \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
 \usepackage{amsmath}
+\usepackage{physics}
 \usepackage{fancyhdr}
 
 % ================================
@@ -75,7 +76,7 @@ The Quantum Game\\
 \label{Newtons 2nd Law}
 F = m\frac{d^2x}{dt^2}
 \end{equation} 
-in more physics-like language. Where $x$, or rather $x(t)$ is a time dependent function that describes the motion of the object in a single spatial component.
+in more mathematically expression. Where $x$, or rather $x(t)$ is a time dependent function that describes the motion of the object in a single spatial component.
 \paragraph*{}The forces acting on any arbitrary object in question can be equated to $m\frac{d^2x}{dt^2}$ and the resulting differential equation can be solved to find the function $x(t)$, that tracks the position of the object with time. Admittedly, this proves to be quite difficult in some cases and literally impossible in other cases. Luckily for us, in the 21st century, we have the ability to use computers and have the benefit of numerical problem solving which will come in heady later on.
 \paragraph*{}In quantum physics, we don't have such a nice, clean equation as Sir Newton has laid out for us, but a much, much messier one that behaves in a similar way. It was created around 1925 by the Austrian Physicist, \textit{Erwin Schrodinger}. It looks something like:
 \begin{equation}
@@ -89,7 +90,8 @@ V\Psi = i\hbar\frac{\partial \Psi}{\partial t}
 
 \paragraph*{}Consider a point particle, of some mass, $m$, constrained to move along a one-dimensional, line, which we will conveniently choose to be the $x$-axis. If we know the mass, and the particles position as a function of time, $x(t)$ we can deduce several other properties of the system. By taking the derivative of $x(t)$ with respect to time, we can detemine the particles velocity all time, $v(t)$. Here, we can compute the kinetic energy $\frac{1}{2}mv^2$ and momentum $mv$ at all points in time. Taking another time derivative gives us the acceleration of the particle at all time, $a(t)$. From there, we can find the force $ma$ and the even the potential energy function at all times. 
 \paragraph*{}Just by simply knowing the mass and position function for an object grants a great deal of information to you. We can find position, velocity, acceleration, force, energy, momentum and so many of these important dynamical variables by doing some simple bits of calculus or algebra. In all cases, we can evaluate these little formulas at any point in space or time to find \textit{exactly} the value we want. Classical physics operates under this assumption, that we can accurately describe the world around us and it behaves according to these mathematical descriptions.
-\paragraph*{}Quantum physics requires a different sent of requirements from us however. Things tend to not be so well defined. Rather than being able to calculate or measure the \textit{exact} value of the quantity that we want, we are forced to only be able to determine a \textit{probabilistic} value of what we want. In other words, things are not entering values and parameters to find for \textit{certain} what we want, but instead quantum physics becomes a game of \textit{probability}.
+\paragraph*{}Quantum physics holds a different sent of requirements from us however. Things tend to not be so well defined. Rather than being able to calculate or measure the \textit{exact} value of the quantity that we want, we are forced to only be able to determine a \textit{probabilistic} value of what we want. In other words, things are not entering values and parameters to find for \textit{certain} what we want, but instead quantum physics becomes a game of \textit{probability}.
+\paragraph*{}This business of probability, called the \textbf{statistical interpretation} comes with it the idea of \textit{uncertainty} and \textit{ambiguity}. Our entire understanding of the macro universe relies on the idea that things are exactly measurable and perfectly determinant, but the universe on a quantum level cannot be described with anything more than statistics. And, as we'll see very shortly, it is this statistical information which shapes our understanding of the subject entirely - the fact that we can only talk about the \textit{possible} results that happen with a certain \textit{probability}. This lack of certainty is what is so strikingly dreadful about this field and has been source for countless restless nights over the decades. This poses the currently unanswerable question that arises: is this nature is a product of the universe or a product of our mathematical treatment? 
 \paragraph*{}Probability is \textit{the name of the game} of quantum physics. The mechanics of a quantum system are not defined by a mass $m$ and a position function, $x(t)$, but rather are defined by a probability amplitude function, \textit{the wave function}, $\Psi(x,t)$ which is represented by the Greek letter Psi, and appears three times in the Schrodinger equation above.
 \paragraph*{}This function, $\Psi(x,t)$, or often just $\Psi$, contains with it all possible information about a quantum mechanical system. With the wave function $\Psi$ known, we can determine the relative probabilities of position, momenta and other system parameters. For example, the expression:
 \begin{equation}
@@ -102,7 +104,51 @@ gives the probability of finding some particle on the $x$-axis between the value
 
 % ================================
 
-\section{Understanding the Schrodinger Equation}
+\section{The Wave Function}
+
+\paragraph*{}Before we construct a means to finding this mysterious function, $\Psi(x,t)$ and treating it mathematically, we need to produce a more concrete understanding of what this function is trying to \textit{tell} us. Outside of pure mathematics, we need a motivation to play this part of the game and It's such an important characteristic of quantum physics that we cannot afford to not set aside some time to understand how it works.
+\paragraph*{}In one sentence: The wave function is a probability \textit{amplitude} for finding a particle in some space, at some time. A common misconception is that the wave function itself is the probability \textit{density} is in correct. It is the quantity of: $\Psi^*(x,t) \Psi(x,t)$ that gives the actually probability density of finding a particle at a space and a time. With this, we can equate this to a probability function:
+\begin{equation}
+\Psi^*(x,t) \Psi(x,t) = \big | \Psi(x,t) \big|^2 = P(x,t)
+\end{equation}
+\paragraph*{}Then, as shown in equation (\ref{prob_ab}), integrating this function over some spatial region, from $a$ to $b$, gives the probability of finding a quantum particle, with the wave function, $\Psi(x,t)$, between the region $a$ and $b$. Naturally, integrating this function over all of space, (i.e., $-\infty$ to $+\infty$) would identically produce the result $1$. Physically, this is a result of the fact that the particle must exists \textit{somewhere} in all of space, so the chances of finidng it with the region of infinity must be $1$.
+\paragraph*{}This is raises the problem  that most functions, when integrated over all of space, do \textit{not} produce a value of $1$. So, whenever we fins the wave function for a particle, we must first \textit{normalize} it's area to $1$. This means, that we must find a normalization constant $A$ that satisfies the equation:
+\begin{equation}
+\label{normalize wave function}
+1 = A\int_{-\infty}^{+\infty} \big | \Psi(x,t) \big|^2 dx
+\end{equation}
+\paragraph*{}Once we've found this normalization constant, $A$, we can evaluate the integral at various bounds to find the probability (out of 1) of find the particle in that regions. For Example if you found the result:
+\begin{equation}
+A\int_{c}^{d} \big | \Psi(x,t) \big|^2 dx = 0.35
+\end{equation}
+and assuming the interval $[c,d]$ is not all of space, then there is a 35\% chance of find the particle between the region $c$ and $d$ at some time $t$.This statistical interpretation comes with some other rules that may be worth writing out. Many of which some from simple calculus rules of integration.
+
+\begin{enumerate}
+\item[•]\textbf{Probability:}\\
+A normalized wave function has the property
+\begin{equation}
+A\int_{a}^{b} \big | \Psi(x,t) \big|^2 dx \leq 1
+\end{equation}
+There is never more than a 100\% chance of finding a particle over any interval, and that a particle must exist somewhere in a region. If the system demands that the particle can only be in the reggion $a$ and $b$, then the integral must be equal to $1$. Additionally, once a particle is normalized at a time $t$, it is also normalized for all time as well.
+\item[•]\textbf{Addition of Probability:}\\
+If a region of space divided into $N$ segments, the sum of the probabilities of finding the particles in each regions must be equal to finding the total probability of the while region.
+\begin{equation}
+\int_{a_0}^{a_N} \big | \Psi(x,t) \big|^2 dx =
+\int_{a_0}^{a_1} \big | \Psi(x,t) \big|^2 dx + ... +
+\int_{a_{N-1}}^{a_N} \big | \Psi(x,t) \big|^2 dx
+\end{equation}
+\item[•]\textbf{Zero Probability}\\
+The particle odds of a particle being \textit{exactly} at are point $b$ are identically \textit{zero}. From calculus, when integrating a function over a region $b$ to $b$ the result is always zero independent of a the function, time or normalization. 
+\begin{equation}
+\int_{b}^{b} \big | \Psi(x,t) \big|^2 dx = 0
+\end{equation}
+\item[•]\textbf{•}
+\end{enumerate}
+
+\paragraph*{}Believe it or now, we now have a very solid basis for what the wave function actaully is and how it works. 
+% ================================
+
+\section{Breaking Down the Schrodinger Equation}
 \paragraph*{}If the name of the game in quantum physics is understanding probability densities and statistical behavior of systems, then the game is played by finding that probability function. This means to solve the Schrodinger equation for $\Psi(x,t)$, which gives the \textit{probability amplitude} and multiplying it by it's own \textit{complex conjugate}. This takes the form of $\Psi^*\Psi$ or the integrand of equation (\ref{prob_ab}).
 \paragraph*{}At first glance, the equation:
 \begin{equation}
@@ -125,21 +171,21 @@ whichs is just equation (\ref{1D Schrodinger}) expanded out a little bit, has a 
 -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\Big[ \psi(x)\phi(t) \Big] +
 V(x)\Big[ \psi(x)\phi(t) \Big] = i\hbar\frac{\partial}{\partial t}\Big[ \psi(x)\phi(t) \Big]
 \end{equation}
-\paragraph*{}We can use the linear properties of the derivative operator to further help us out. Functions of time are not affected under a spatial derivative, and functions of space are not affected under a temporal derivative. This lets us conveniently remove those untouched functions as such, and use some short hand. 
+\paragraph*{}We can use the linear properties of the derivative operator to further help us out. Functions of time are not affected under a spatial derivative, and functions of space are not affected under a temporal derivative. This lets us conveniently remove those untouched functions as such, and use some short hand. $\psi(x)$ becomes $\psi$ and $\phi(t)$ becomes $\phi$.
 \begin{equation}
 \label{separated TDSE 1}
--\frac{\hbar^2}{2m}\phi(t)\frac{\partial^2\psi}{\partial x^2} +
-V(x)\Big[ \psi(x)\phi(t) \Big] = 
-i\hbar\psi(x)\frac{\partial \phi}{\partial t}
+-\frac{\hbar^2}{2m}\phi\frac{\partial^2\psi}{\partial x^2} +
+V\big[ \psi\phi \big] = 
+i\hbar\psi\frac{\partial \phi}{\partial t}
 \end{equation}
 \paragraph*{}Lastly, we can divide both sides of the equation by $\psi(x)\phi(t)$. Now, equation (\ref{separated TDSE 1}) becomes:
 \begin{equation}
 \label{separated TDSE 2}
--\frac{\hbar^2}{2m}\frac{1}{\psi(x)}\frac{\partial^2\psi}{\partial x^2} + V(x) = 
-i\hbar \frac{1}{\phi(t)}\frac{\partial \phi}{\partial t}
+-\frac{\hbar^2}{2m}\frac{1}{\psi}\frac{\partial^2\psi}{\partial x^2} + V = 
+i\hbar \frac{1}{\phi}\frac{\partial \phi}{\partial t}
 \end{equation}
 \paragraph*{}Now, we can all functions of \textit{space} on the left side, and all functions of \textit{time} on the right side. In order for both sides of this equation to be equal for \textit{all of 1D space} and \textit{all of time}, they must be identically constant. This fact is tough to grasp and it's true comprehension may have to be saved for another text, but in reality it is this mathematical rule that motivates us to choose the separable solution form in equation (\ref{separable}).
-\paragraph*{}If we examine just the right side, the time functions side, we can set it to an 'arbitrary' constant $E$ - for reasons we'll discover later. Now, just looking at the right side, we can say:
+\paragraph*{}If we examine just the right side, the time function's side, we can set it to an 'arbitrary' constant $E$ - for reasons we'll discover later. Now we can write:
 \begin{equation}
 \label{energy ODE}
 E = i\hbar \frac{1}{\phi}\frac{d\phi}{dt}
@@ -163,10 +209,40 @@ Where $C$ is a constant found by applying some initial condition later on.
 
 % ================================
 
-\section{Understanding the Wave Function}
+\section{The Language of the Game}
+\paragraph*{}As you can see from the previous sections of this chapter, quantum physics is very much a mathematically heavy topic. In classical physics, we can make qualitative observations of the universe and then build mathematical models around those observations. Early on, we established that Newton's 2nd Law, equation (\ref{Newtons 2nd Law}) becomes a dominant figure in the field and such second order, ordinary differential equations become the language of classical physics.
+\paragraph*{}In quantum physics, the Schrodinger Equation, (\ref{1D Schrodinger}) is the dominant figure,a and it would make such that second order partial differential equations become the language of quantum physics. As strange as it may sound, the dominant set of tools used for the mathematics of quantum mechanics is mostly based in \textit{linear algebra}.
+\paragraph*{}Linear algebra is a type of mathematics that deals largely with vectors, matrices and the idea of spaces and dimensions. However, English physicist Paul Dirac used principles from linear algebra to build in part, his own system of notations designed especially for handling the mathematics of quantum physics. In reality, this system of notation is not essential for quantum physics, but instead allows us to simplify a great deal of concepts, and convey information in a new way.
+\paragraph*{}I shall assume that you are familiar with linear algebra, if not on a fully function level, at least in concept. As dense as a next few sections of read may be, it's important to remember that functionally, all of the math in quantum is just as you've been taught in the past, only expressed differently. In order to introduce each piece and rule of notation, I'll describes it's relation and origin from linear algebra as well.
 
-\paragraph*{}We've now constructed a means to finding this mysterious function, $\Psi(x,t)$ and treating it mathematically, but this is physics, not just math, so we need to produce a more concrete understanding of what this function is trying to \textit{tell} us. It's such an important characteristic of quantum physics that we cannot afford to not set aside some time to understand how it works.
-\paragraph*{}In one sentence: The wave function is a probability \textit{amplitude} for finding a particle in some space, at some time. A common misconception is that the wave function itself is the probability \textit{density} is in correct. It is the quantity of: $\Psi^*(x,t) \Psi(x,t)$ that gives the actually probability density of finding a particle at a space and a time. With that understanding, we can set up some rules for our quantum game.
+% ================================
+
+\subsection*{Vectors, and Bras and Kets}
+\paragraph*{}A vector is a mathematical object that allows very simply to communicate the dimension, components, magnitude and orientation of a measurement all very conveniently. Typically, a vector is notated as a variable with a little arrow on top such as $\vec{\psi}$. The vector is then made up of $N$ discrete components. They can be written out in columns or rows, for example:
+\begin{equation}
+\label{vector}
+\vec{\psi} = \big[ a_0 , a_1 , \hdots , a_N ] =
+\begin{bmatrix}
+a_0 \\ a_1  \\ \vdots \\ a_N
+\end{bmatrix}
+\end{equation}
+\paragraph*{}The number of components, $N$ indicates the dimension of the vector, i.e., it is $N$-dimensional. The entry in each index represents the length or \textit{measure} of the vector in that particular component. Note that each entry, $a_n$ can be a real, imaginary or complex value. In quantum mathematics, we replace the linear algebra object of a vector with the \textit{new} mathematical object called a \textit{ket}.
+\begin{center}
+A ket is notated with the symbol $\ket{\psi}$ 
+\end{center} 
+and has many of the same properties as a vector.
+\paragraph*{}Just like a vector, a ket exists in a space, has components and can interact with other mathematical objects. It shares almost all of the same properties as vectors. A ket can be modified by a (real, imaginary or complex) scalar value. A ket can also be multiplied by a matrix (which we'll call an \textit{operator} later) to produce another ket. They can compared to other kets with dot product and cross produces and can be arranged into linear combinations as well.
+\paragraph*{}There are some important distinctions between vectors and kets that need to be outlined as they are not the same thing. Vectors typically have a finite number of components in them, and thus are limited to finite dimensional vector spaces. A ket on the other hand, can potentially have an infinite amount of components in it. Where a vector is a set of discrete indexes, a ket can thought of as a set on continuous set of values. Furthermore, a ket can be used to express a function, or rather the output of a function. For example, a ket with infinite entries can be used to convey the output of a single, smooth, and continuous function.
+\paragraph*{}Computationally, vectors and kets are handled in the exact same way because a computer cannot convey an infinite number of points to produce a line or function. Rather, they are limited to holding a discrete number of values. Because of this, vectors, kets and bras are all 
+
+
+
+
+% ================================
+
+\section{The Characters in the Game}
+
+% ================================
  
 % ================================
 
