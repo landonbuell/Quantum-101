@@ -22,9 +22,8 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Landon Buell}
-\lhead{Quantum Physics 101}
+\lhead{The Quantum Game}
 \cfoot{\thepage}
-
 
 \begin{document}
 
@@ -109,6 +108,7 @@ gives the probability of finding some particle on the $x$-axis between the value
 \paragraph*{}Before we construct a means to finding this mysterious function, $\Psi(x,t)$ and treating it mathematically, we need to produce a more concrete understanding of what this function is trying to \textit{tell} us. Outside of pure mathematics, we need a motivation to play this part of the game and It's such an important characteristic of quantum physics that we cannot afford to not set aside some time to understand how it works.
 \paragraph*{}In one sentence: The wave function is a probability \textit{amplitude} for finding a particle in some space, at some time. A common misconception is that the wave function itself is the probability \textit{density} is in correct. It is the quantity of: $\Psi^*(x,t) \Psi(x,t)$ that gives the actually probability density of finding a particle at a space and a time. With this, we can equate this to a probability function:
 \begin{equation}
+\label{prob density func}
 \Psi^*(x,t) \Psi(x,t) = \big | \Psi(x,t) \big|^2 = P(x,t)
 \end{equation}
 \paragraph*{}Then, as shown in equation (\ref{prob_ab}), integrating this function over some spatial region, from $a$ to $b$, gives the probability of finding a quantum particle, with the wave function, $\Psi(x,t)$, between the region $a$ and $b$. Naturally, integrating this function over all of space, (i.e., $-\infty$ to $+\infty$) would identically produce the result $1$. Physically, this is a result of the fact that the particle must exists \textit{somewhere} in all of space, so the chances of finidng it with the region of infinity must be $1$.
@@ -129,7 +129,7 @@ A normalized wave function has the property
 \begin{equation}
 A\int_{a}^{b} \big | \Psi(x,t) \big|^2 dx \leq 1
 \end{equation}
-There is never more than a 100\% chance of finding a particle over any interval, and that a particle must exist somewhere in a region. If the system demands that the particle can only be in the reggion $a$ and $b$, then the integral must be equal to $1$. Additionally, once a particle is normalized at a time $t$, it is also normalized for all time as well.
+There is never more than a 100\% chance of finding a particle over any interval, and that a particle must exist somewhere in a region. If the system demands that the particle can only be in the region $a$ and $b$, then the integral over that region must be equal to $1$. Additionally, once a particle is normalized at a time $t$, it is also normalized for all time as well.
 \item[•]\textbf{Addition of Probability:}\\
 If a region of space divided into $N$ segments, the sum of the probabilities of finding the particles in each regions must be equal to finding the total probability of the while region.
 \begin{equation}
@@ -142,7 +142,14 @@ The particle odds of a particle being \textit{exactly} at are point $b$ are iden
 \begin{equation}
 \int_{b}^{b} \big | \Psi(x,t) \big|^2 dx = 0
 \end{equation}
-\item[•]\textbf{•}
+\end{enumerate}
+\paragraph*{}Aside from purely mathematical objects, $\Psi(x,t)$ must also have some physical properties - otherwise Quantum Physics would be purely Quantum Mathematics. This forces us to consider some other parameters that are not explicitly expressed from the mathematics.
+
+\begin{enumerate}
+\item[•]\textbf{Normalizeable}\\
+Wave function must be normalizeable. When we actually solve the Schrodinger equation, it must be a function that can be normalized. Otherwise, our statistical interpretation breaks down, and we find ourselves in trouble. For example, the function $\Psi(x,t) = 0$ is a valid solution to the partial differential equation, but it cannot the normalized over all of space. 
+\item[•]\textbf{Continuity}\\
+Wave functions must be continuous and continuously differentiable when subject to potentials that are also continuous are continuously differentiated. This means that if a potential function, $V(x)$ is perfectly continuous, so must the resulting wave function. Only in cases where potentials are discontinuous (i.e. peice-wise defined) can the function and it's first derivative be discontinuous.
 \end{enumerate}
 
 \paragraph*{}Believe it or now, we now have a very solid basis for what the wave function actaully is and how it works. 
@@ -190,20 +197,38 @@ i\hbar \frac{1}{\phi}\frac{\partial \phi}{\partial t}
 \label{energy ODE}
 E = i\hbar \frac{1}{\phi}\frac{d\phi}{dt}
 \end{equation}
-\paragraph*{}Note that the partial derivatives are now full derivatives, which is again a product of this separation technique. We can put this new constant back into the right side of equation (\ref{separated TDSE 2}) and then multiply again bu $\psi(x)$. The result is something new, but familiar:
-\begin{equation}
-\label{TISE}
--\frac{\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2} + V(x)\psi(x) =
-E\psi(x)
-\end{equation}
-\paragraph*{}This is called the \textbf{Time Independent Schrodinger Equation} (TISE). This equation, (\ref{TISE}) is the convenient starting place for rest of the procedures in this text - and works consistently provided that the potential function, $V$ does not change with time. By using this separation of variables technique, we have turned the full Schrodinger Equation, (\ref{1D Schrodinger expanded}), a\textit{partial} differential equation, into two separate, \textit{ordinary} differential equations, 
-(\ref{energy ODE}) and  (\ref{TISE}). 
-\paragraph*{}The time ODE, (\ref{energy ODE}) can be conveniently solved with it's own separation technique to see that the function, $\phi(t)$ is really:
+\paragraph*{}This time dependent ODE, (\ref{energy ODE}) can be conveniently solved with it's own separation technique to see that the function, $\phi(t)$ is really:
 \begin{equation}
 \label{phi}
-\phi(t) = C e^{-i\frac{E}{\hbar}t}
+\phi(t) =  e^{-i\frac{E}{\hbar}t}
 \end{equation}
-Where $C$ is a constant found by applying some initial condition later on.
+\paragraph*{}Note that the partial derivatives are now full derivatives, which is again a product of this separation technique. We can put this new constant, $E$, back into the right side of equation (\ref{separated TDSE 2}) and then multiply again by $\psi(x)$. The result is something new, but familiar:
+\begin{equation}
+\label{TISE}
+-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} + V(x)\psi(x) = E\psi(x)
+\end{equation}
+\paragraph*{}This is called the \textbf{Time Independent Schrodinger Equation} (TISE). This equation, (\ref{TISE}) is the convenient starting place for rest of the procedures in this text - and works consistently provided that the potential function, $V$ does \textit{not} change with time. By using this separation of variables technique, we have turned the full Schrodinger Equation, (\ref{1D Schrodinger expanded}), a\textit{partial} differential equation, into two separate, \textit{ordinary} differential equations, 
+(\ref{energy ODE}) and  (\ref{TISE}). 
+\paragraph*{}It is important to know as well that using separation of variables provides an infinite set of solutions to the PDE. There are infinitely functions $\psi(x)$ that satisfy the equation given the way we have chosen to solve it. Furthermore, the separation technique, where $\Psi(x,t) = \psi(x)\phi(t)$ is only a part of the picture - for example one could choose to look at solutions of the form $\Psi(x,t) = \psi(x) + \phi(t)$ which would in turn provide another set of infinite solutions. 
+\paragraph*{}The separation technique does however allow for some convenient properties:
+\begin{enumerate}
+\item[•]\textbf{General Time Dependence}\\
+Despite not having this function exactly, at the moment, we can still do a lot with the information that we currently have. We have established that the time portion is \textit{not} dependent on the potential, so that whenever we do fine $\psi(x)$, we can simply multiply the same function, (\ref{phi}) time any spatial solution. Thus any full solution as a form:
+\begin{equation}
+\Psi(x,t) = \psi(x)e^{-i\frac{E}{\hbar}t}
+\end{equation}
+\item[•]\textbf{Linear Combination}\\
+The Schrodinger equation is a \textit{linear} partial differential equation. This means that a linear combination of known solutions is \textit{also} a valid solution as well. So, if we have a collection of solutions scaled by some constant,
+$c_1\psi_1(x)$ , $c_2\psi_2(x)$ , ... , $c_N\psi_N(x)$, etc., adding them all together is yet \textit{another} possible wave function. Thus now, any $\Psi(x,t)$ actually can be expressed as:
+\begin{equation}
+\label{linear combo}
+\Psi(x,t) = \sum_n^{\infty} c_n \psi_n(x) \phi_n(t)
+\end{equation}
+Notice how $\phi(t)$ also changes with $n$, we will explore this in a little while. 
+\item[•]\textbf{Probability Density}\\
+The complex exponential in the time function eliminates itself when multiplied by it's own complex conjugate. When we compute $\big | \Psi(x,t) \big|^2$, the quantity $e^{-i\frac{E}{\hbar}t}e^{+i\frac{E}{\hbar}t}$ becomes just $e^0 = 1$. Thus the time component does not affect our normalization constant from before. 
+\end{enumerate}
+
 \paragraph*{}The bulk of chapter 2 will be dedicated to solving equation (\ref{TISE}) for very specific potential functions, $V(x)$ and why they are so important. 
 \paragraph*{}In short, we now have a more digestible way of handling quantum physics. What we've done here, is a means to an ends - or rather a means to a beginning of \textit{playing} the game and quantum mechanics. While our treatment of the subject so far is \textit{purely} mathematical, it's important to understand that it's very important to playing out the ground work for the rest of the subject. 
 
@@ -232,17 +257,109 @@ A ket is notated with the symbol $\ket{\psi}$
 \end{center} 
 and has many of the same properties as a vector.
 \paragraph*{}Just like a vector, a ket exists in a space, has components and can interact with other mathematical objects. It shares almost all of the same properties as vectors. A ket can be modified by a (real, imaginary or complex) scalar value. A ket can also be multiplied by a matrix (which we'll call an \textit{operator} later) to produce another ket. They can compared to other kets with dot product and cross produces and can be arranged into linear combinations as well.
-\paragraph*{}There are some important distinctions between vectors and kets that need to be outlined as they are not the same thing. Vectors typically have a finite number of components in them, and thus are limited to finite dimensional vector spaces. A ket on the other hand, can potentially have an infinite amount of components in it. Where a vector is a set of discrete indexes, a ket can thought of as a set on continuous set of values. Furthermore, a ket can be used to express a function, or rather the output of a function. For example, a ket with infinite entries can be used to convey the output of a single, smooth, and continuous function.
-\paragraph*{}Computationally, vectors and kets are handled in the exact same way because a computer cannot convey an infinite number of points to produce a line or function. Rather, they are limited to holding a discrete number of values. Because of this, vectors, kets and bras are all 
+\paragraph*{}In addition to the ket, there is a related mathematical object called a \textit{bra} which has all of the same properties as a ket.
+\begin{center}
+A bra is notated with the symbol $\bra{\psi}$
+\end{center}
+The relationship between bras and kets is simply that they are eachother's \textit{complex conjugates}. More mathematically, a bra is this \textit{dual space} counterpart to the ket vector space, and vice-versa. This means that:
+\begin{equation}
+\bra{\psi} = \ket{\psi}^* 
+\text{\hspace*{8mm} and \hspace*{8mm}} 
+\ket{\psi} = \bra{\psi}^*
+\end{equation}
+Every ket has a corresponding bra, and every bra has a corresponding ket.
+\begin{equation}
+\ket{\psi} \longleftrightarrow \bra{\psi}
+\end{equation}
+
+\paragraph*{}Suppose for example is the ket $\ket{\alpha}$ is defined by $N$ real, imaginary or complex discrete components:
+\begin{equation}
+\label{discrete ket}
+\ket{\alpha} \equiv
+\begin{bmatrix}
+(a + ib)_0 \\ (a + ib)_1 \\ \vdots \\ (a + ib)_N
+\end{bmatrix}
+\end{equation}
+Then it's dual space, or bra equivalent, $\bra{\alpha}$ is then defined as it's  complex conjugate:
+\begin{equation}
+\label{discrete bra}
+\bra{\alpha} = 
+\ket{\alpha}^* \equiv
+\begin{bmatrix}
+(a - ib)_0 \\ (a - ib)_1 \\ \vdots \\ (a - ib)_N
+\end{bmatrix}
+\end{equation}
+
+\paragraph*{}There are some important distinctions between vectors, kets and bras that need to be outlined as they are not the same thing. Vectors typically have a finite number of components in them, and thus are limited to finite dimensional vector spaces. A ket or bra on the other hand, can potentially have an infinite amount of components in it. Where a vector is a set of discrete indexes, a ket or bra can thought of as a set on continuous set of values. Furthermore, a ket or bra can be used to express a function, or rather the output of a function. For example, a ket with infinite entries can be used to convey the output of a single, smooth, and continuous function.
+\paragraph*{}For example, the ket, $\ket{\beta}$ could be used to represent the continuous output for the complex defined function:
+\begin{equation}
+\label{smooth ket}
+\ket{\beta} \equiv (a + ib) e^{-i\omega t}
+\end{equation}
+Then it's dual space, or bra equivalent, $\bra{\beta}$ is again defined as it's  complex conjugate: 
+\begin{equation}
+\label{smooth bra}
+\bra{\beta} \equiv (a - ib) e^{+i\omega t}
+\end{equation}
+
+\paragraph*{}Computationally, vectors and kets are handled in the exact same way because a computer cannot convey an infinite number of points to produce a line or function. Rather, they are limited to holding a discrete number of values. Because of this, vectors, kets and bras are all handled mostly as list or array - like mathematical objects. After all, they hold many of the same properties are can \textit{often} be used interchangeably. If the notation $\bra{\psi}$ or $\ket{\psi}$ ever confuses you, just remember that are \textit{functionally vectors} with certain additional properties.
+
+% ================================
+
+\subsection*{Inner Products and Bra-Kets}
+
+\paragraph*{}It may come as no surprise that Paul Dirac just the names "bra" and "ket" together. Very cleverly, and perhaps humorously, when they combine, they create a mathematical operation of the \textit{dot product} (often also called scalar product or inner product). Image two discrete vectors, 
+$\vec{eta}$ and $\vec{\xi}$, both of length $N$. The dot product between them is defined as:
+\begin{equation}
+\label{dot product}
+(\vec{\eta} \cdot \vec{\xi}) \equiv \sum_{i=0}^N \vec{\eta}_i\vec{\xi}_i
+\end{equation}
+In words, each index of one vector is multiplied by that same index in the other vector, and then each product is summed to output a single scalar number, real or complex.
+\paragraph*{}The Dirac equivalent is the \textit{inner product} and is notatied by the combination of a bra and ket, conveniently called a \textit{bra-ket}.
+\begin{center}
+A bra-ket is notated with the symbol $\braket{\psi}{\psi}$
+\end{center}
+Just like before, if the bra and ket are both discretely defined, $\bra{\eta}$ and $\ket{\xi}$, then then inner product of them is similar to equation (\ref{dot product}), except with the added complex conjugate:
+\begin{equation}
+\label{comp-conj dot product}
+\braket{\eta}{\xi} \equiv \sum_{i=0}^N \eta^*_i \xi_i
+\end{equation}
+\paragraph*{}Conversely, if a ket and bra are both continuously defined functions of $x$, $\bra{f(x)}$ and $\ket{g(x)}$ as in (\ref{smooth ket}) and (\ref{smooth bra}), then the inner product takes as lightly modified form. The discrete sums from equation (\ref{comp-conj dot product}) now becomes a continuous, infinite sum, \textit{an integral}! So, the inner product of $f(x)$ and $g(x)$ (on the basis of $x$) now becomes:
+\begin{equation}
+\label{bra-ket}
+\braket{f(x)}{g(x)} = \int f^*(x) g(x) dx
+\end{equation}
+\paragraph*{}Furthermore, harking back to the wave function directly, we can use this new concept and notation to help. With the wave function, $\Psi(x,t)$, found, then we can write the probability density for the system, given in equation (\ref{prob density func}), as an inner product.
+\begin{equation}
+\label{inner prod integral}
+\braket{\Psi}{\Psi} = \int \Psi^*(x,t) \Psi(x,t) dx
+\end{equation}
+
+\paragraph*{}In the conventional notation for quantum physics, this is usually the standard way of expressing the probability density for a particle, given a wave function. This also usually comes with the implication that the function is already normalized, i.e. the constant $A$ has been absorbed into the inner product such that it alone is equal to 1:
+\begin{equation}
+\braket{\Psi}{\Psi} = 1
+\end{equation}
 
 
+% ================================
 
+\subsection*{Matrices and Operators}
+
+% ================================
+
+\subsection*{Spaces and Basis}
 
 % ================================
 
 \section{The Characters in the Game}
 
 % ================================
+
+\subsection*{Position Space}
+
+% ================================
+
+\subsection*{Momentum Space}
  
 % ================================
 
@@ -250,7 +367,39 @@ and has many of the same properties as a vector.
 
 % ================================================================
 
-\chapter{Playing the Game}
+\chapter{Playing the Game - \\ Quantum Physics in 1 Dimension}
+
+% ================================
+
+\section{The Infinite Square Well}
+
+
+% ================================
+
+\section{The Finite Square Well}
+
+% ================================
+
+\section{Multiple Square Wells}
+
+
+% ================================
+
+\section{The Harmonic Oscillator}
+
+
+% ================================
+
+\section{The Free Particle}
+
+
+% ================================
+
+\section{The Delta Function}
+
+
+% ================================
+
 
 % ================================================================
 
