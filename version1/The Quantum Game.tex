@@ -63,10 +63,11 @@ The Quantum Game\\
 \section*{Conventions for this Text}
 
 % ================================================================
+% ================================================================
 
 \chapter{The Name of the Game}
 
-% ================================
+% ================================================================
 
 \section{The Schrodinger Equation}
 
@@ -101,7 +102,7 @@ gives the probability of finding some particle on the $x$-axis between the value
 \paragraph*{}But how exactly do we \textit{get} $\Psi(x,t)$? In Classical physics, we get $x(t)$ often by solving a second-order ordinary differential equation from Newton's laws. In Quantum physics, we get $\Psi(x,t)$ by solving the second-order, partial differential equation - Schrodinger's equation. As with classical physics, this tends to be a bit messy and often not really reasonable to do by hand- at least not without understanding some other concepts first. So, before we go off trying to \textit{solve} equation (\ref{1D Schrodinger}) for the wave function, $\Psi$ we must understand a little bit more about it first - what does it mean?
 
 
-% ================================
+% ================================================================
 
 \section{The Wave Function}
 
@@ -152,8 +153,9 @@ Wave function must be normalizeable. When we actually solve the Schrodinger equa
 Wave functions must be continuous and continuously differentiable when subject to potentials that are also continuous are continuously differentiated. This means that if a potential function, $V(x)$ is perfectly continuous, so must the resulting wave function. Only in cases where potentials are discontinuous (i.e. peice-wise defined) can the function and it's first derivative be discontinuous.
 \end{enumerate}
 
-\paragraph*{}Believe it or now, we now have a very solid basis for what the wave function actaully is and how it works. 
-% ================================
+\paragraph*{}Believe it or now, we now have a very solid basis for what the wave function actually is and how it works. 
+
+% ================================================================
 
 \section{Breaking Down the Schrodinger Equation}
 \paragraph*{}If the name of the game in quantum physics is understanding probability densities and statistical behavior of systems, then the game is played by finding that probability function. This means to solve the Schrodinger equation for $\Psi(x,t)$, which gives the \textit{probability amplitude} and multiplying it by it's own \textit{complex conjugate}. This takes the form of $\Psi^*\Psi$ or the integrand of equation (\ref{prob_ab}).
@@ -232,7 +234,7 @@ The complex exponential in the time function eliminates itself when multiplied b
 \paragraph*{}The bulk of chapter 2 will be dedicated to solving equation (\ref{TISE}) for very specific potential functions, $V(x)$ and why they are so important. 
 \paragraph*{}In short, we now have a more digestible way of handling quantum physics. What we've done here, is a means to an ends - or rather a means to a beginning of \textit{playing} the game and quantum mechanics. While our treatment of the subject so far is \textit{purely} mathematical, it's important to understand that it's very important to playing out the ground work for the rest of the subject. 
 
-% ================================
+% ================================================================
 
 \section{The Language of the Game}
 \paragraph*{}As you can see from the previous sections of this chapter, quantum physics is very much a mathematically heavy topic. In classical physics, we can make qualitative observations of the universe and then build mathematical models around those observations. Early on, we established that Newton's 2nd Law, equation (\ref{Newtons 2nd Law}) becomes a dominant figure in the field and such second order, ordinary differential equations become the language of classical physics.
@@ -312,7 +314,7 @@ Then it's dual space, or bra equivalent, $\bra{\beta}$ is again defined as it's 
 $\vec{eta}$ and $\vec{\xi}$, both of length $N$. The dot product between them is defined as:
 \begin{equation}
 \label{dot product}
-(\vec{\eta} \cdot \vec{\xi}) \equiv \sum_{i=0}^N \vec{\eta}_i\vec{\xi}_i
+(\vec{\eta} \cdot \vec{\xi}) \equiv \sum_{i=0}^N (\vec{\eta}_i)(\vec{\xi}_i)
 \end{equation}
 In words, each index of one vector is multiplied by that same index in the other vector, and then each product is summed to output a single scalar number, real or complex.
 \paragraph*{}The Dirac equivalent is the \textit{inner product} and is notatied by the combination of a bra and ket, conveniently called a \textit{bra-ket}.
@@ -322,7 +324,7 @@ A bra-ket is notated with the symbol $\braket{\psi}{\psi}$
 Just like before, if the bra and ket are both discretely defined, $\bra{\eta}$ and $\ket{\xi}$, then then inner product of them is similar to equation (\ref{dot product}), except with the added complex conjugate:
 \begin{equation}
 \label{comp-conj dot product}
-\braket{\eta}{\xi} \equiv \sum_{i=0}^N \eta^*_i \xi_i
+\braket{\eta}{\xi} \equiv \sum_{i=0}^N (\eta^*_i) (\xi_i)
 \end{equation}
 \paragraph*{}Conversely, if a ket and bra are both continuously defined functions of $x$, $\bra{f(x)}$ and $\ket{g(x)}$ as in (\ref{smooth ket}) and (\ref{smooth bra}), then the inner product takes as lightly modified form. The discrete sums from equation (\ref{comp-conj dot product}) now becomes a continuous, infinite sum, \textit{an integral}! So, the inner product of $f(x)$ and $g(x)$ (on the basis of $x$) now becomes:
 \begin{equation}
@@ -339,6 +341,11 @@ Just like before, if the bra and ket are both discretely defined, $\bra{\eta}$ a
 \begin{equation}
 \braket{\Psi}{\Psi} = 1
 \end{equation}
+\paragraph*{}It is also important to note that the properties of bras and kets are preserved in the inner product operation as well. For example, the complex conjugates of an inner product has the property:
+\begin{equation}
+\braket{\psi}{\phi}^* = \braket{\phi}{\psi} 
+\end{equation}
+Where the complex conjugate operation is applied to $\bra{\psi}$ and to $\ket{\phi}$ to becomes $\ket{\psi}$ and $\bra{\phi}$ respectively.
 
 
 % ================================
@@ -351,20 +358,35 @@ Just like before, if the bra and ket are both discretely defined, $\bra{\eta}$ a
 
 % ================================
 
+\subsection*{Probability}
+
+% ================================================================
+
 \section{The Characters in the Game}
 
 % ================================
 
 \subsection*{Position Space}
 
+
 % ================================
 
 \subsection*{Momentum Space}
- 
+
 % ================================
+
+\subsection*{Hilbert Space}
+ 
+% ================================================================
+
+\section{The Eigenvalue Problem}
+
+
+% ================================================================
 
 \section{Takeaways from this Chapter}
 
+% ================================================================
 % ================================================================
 
 \chapter{Playing the Game - \\ Quantum Physics in 1 Dimension}
