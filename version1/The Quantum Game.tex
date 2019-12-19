@@ -255,13 +255,13 @@ a_0 \\ a_1  \\ \vdots \\ a_N
 \end{equation}
 \paragraph*{}The number of components, $N$ indicates the dimension of the vector, i.e., it is $N$-dimensional. The entry in each index represents the length or \textit{measure} of the vector in that particular component. Note that each entry, $a_n$ can be a real, imaginary or complex value. In quantum mathematics, we replace the linear algebra object of a vector with the \textit{new} mathematical object called a \textit{ket}.
 \begin{center}
-A ket is notated with the symbol $\ket{\psi}$ 
+A ket is notated as $\ket{\psi}$ 
 \end{center} 
 and has many of the same properties as a vector.
 \paragraph*{}Just like a vector, a ket exists in a space, has components and can interact with other mathematical objects. It shares almost all of the same properties as vectors. A ket can be modified by a (real, imaginary or complex) scalar value. A ket can also be multiplied by a matrix (which we'll call an \textit{operator} later) to produce another ket. They can compared to other kets with dot product and cross produces and can be arranged into linear combinations as well.
 \paragraph*{}In addition to the ket, there is a related mathematical object called a \textit{bra} which has all of the same properties as a ket.
 \begin{center}
-A bra is notated with the symbol $\bra{\psi}$
+A bra is notated as $\bra{\psi}$
 \end{center}
 The relationship between bras and kets is simply that they are eachother's \textit{complex conjugates}. More mathematically, a bra is this \textit{dual space} counterpart to the ket vector space, and vice-versa. This means that:
 \begin{equation}
@@ -319,7 +319,7 @@ $\vec{eta}$ and $\vec{\xi}$, both of length $N$. The dot product between them is
 In words, each index of one vector is multiplied by that same index in the other vector, and then each product is summed to output a single scalar number, real or complex.
 \paragraph*{}The Dirac equivalent is the \textit{inner product} and is notatied by the combination of a bra and ket, conveniently called a \textit{bra-ket}.
 \begin{center}
-A bra-ket is notated with the symbol $\braket{\psi}{\psi}$
+A bra-ket is notated as $\braket{\psi}{\psi}$
 \end{center}
 Just like before, if the bra and ket are both discretely defined, $\bra{\eta}$ and $\ket{\xi}$, then then inner product of them is similar to equation (\ref{dot product}), except with the added complex conjugate:
 \begin{equation}
@@ -346,15 +346,32 @@ Just like before, if the bra and ket are both discretely defined, $\bra{\eta}$ a
 \braket{\psi}{\phi}^* = \braket{\phi}{\psi} 
 \end{equation}
 Where the complex conjugate operation is applied to $\bra{\psi}$ and to $\ket{\phi}$ to becomes $\ket{\psi}$ and $\bra{\phi}$ respectively.
-
+\paragraph*{}And all of these relations for bras and kets hold true with the analog to vectors. For example, a set of three orthogonal basis vectors in 3D Cartesian space may define a coordinate system, just as three orthogonal kets or bras may be used to define the space or coordinate system. A linear combination of kets is also a valid concept, such as equation (\ref{linear combo}) would take the form:
+\begin{equation}
+\label{linear combo kets}
+\Psi(x,t) = \sum_n^{\infty} c_n \ket{\psi_n(x)}\phi_n(t)
+\end{equation}
 
 % ================================
 
 \subsection*{Matrices and Operators}
-
-% ================================
-
-\subsection*{Spaces and Basis}
+\paragraph*{}Another important tool from linear algebra is the \textit{matrix} object. In some ways, a matrix is a concatenation of various column or row vectors that together produce a square or rectangular grid of entries. This matrix can object thought of as a \textit{linear operator}- a mathematical object that takes some object - a vector (or a ket) and turns it into another object - another vector (or ket).
+\paragraph*{}In quantum physics, this matrix concept is extremely important - but instead of being a matrix with finitely many components and entries, it is called an \textit{operator} that has potentially infinity many entries. Because of this, a matrix in linear algebra becomes an operator in quantum physics.
+\begin{center}
+An operator is notated as $\hat{Q}$
+\end{center}
+\paragraph*{}Just like before, this operator now posses some neat intrinsic qualities. An $N \times M$ matrix $A$ could take a $M \times 1$ vector, $\vec{v}$ anf transform it into a $N \times 1$ vector, $\vec{w}$ - given by the matrix vector equation:
+\begin{equation}
+\label{mat-vec}
+\vec{w} =  A\vec{v}
+\end{equation}
+Would then become:
+\begin{equation}
+\label{op-ket}
+\ket{w} = \hat{A}\ket{v}
+\end{equation}
+Where all elements could be either finitely dimensional on infinitely dimensional.
+\paragraph*{}It is important to note that in Dirac notation of quantum mechanics, operators, unless notated otherwise act on the object to the \textit{right} of them.
 
 % ================================
 
@@ -363,6 +380,11 @@ Where the complex conjugate operation is applied to $\bra{\psi}$ and to $\ket{\p
 % ================================================================
 
 \section{The Characters in the Game}
+
+% ================================
+
+
+\subsection*{Spaces and Basis}
 
 % ================================
 
@@ -381,7 +403,6 @@ Where the complex conjugate operation is applied to $\bra{\psi}$ and to $\ket{\p
 
 \section{The Eigenvalue Problem}
 
-
 % ================================================================
 
 \section{Takeaways from this Chapter}
@@ -389,12 +410,82 @@ Where the complex conjugate operation is applied to $\bra{\psi}$ and to $\ket{\p
 % ================================================================
 % ================================================================
 
-\chapter{Playing the Game - \\ Quantum Physics in 1 Dimension}
+\chapter{Playing the Game: \\ Quantum Physics in 1 Dimension}
+
+% ================================
+
+\paragraph*{}This chapter of this text will be devoted to applying what we've learned about the basic and the mathematical behavior of quantum physics to specific potential cases in one spatial dimension. Over the course of this chapter, the specific potential cases examined are very similar to cases explored in other quantum texts. This similarity is due to the interesting cases, and important lessons that arise from each possible potential function. It is important to take all of this with a grain of salt, however as these are obviously over-idealized circumstances, that need to be heavily expanded upon before becoming of any real-world use or application.
+\paragraph*{}For this chapter, the 1-Dimensional Time Independent Schrodinger Equation (1D TISE) will be the starting place for each particular case, as we will assume to that all of these potentials exist on a single, infinitely long line, and remain constant with time. The 1D TISE is again:
+\begin{equation}
+\label{1D TISE}
+-\frac{\hbar^2}{2m}\frac{d^2 \psi}{dx^2} + V(x)\psi = E\psi
+\end{equation}
+Which can aslo be written in it's operator eigen value form:
+\begin{equation}
+\label{1D TISE Eigen}
+\hat{H}\ket{\psi} = E\ket{\psi}
+\end{equation}
+\paragraph*{}In Each potential case, as part of the nature of this text, I will discuss the methods used in numerically solving the Schrodinger equation. As modern the complexity of modern science and engineering increases, it becomes more obvious that the ability to solve such a complicated partial differential equation is an effort in faultily.Because of this, I will present the analytical solution to the equation, as it would be solve by hand, and than compare that result to something produced numerically. This way, you have a mathematical foundation to sit upon and a more reasonable way to go about solving any arbitrary quantum system. This of course is not to discredit the hard work of pre-computation physicists and mathematicians, but rather allows us to solve for systems that are increasing complex, and even systems that \textit{cannot} simply be solved in terms of any arbitrary functions.
 
 % ================================
 
 \section{The Infinite Square Well}
 
+\paragraph*{}Arguably the simplest case for a potential function (and among the most unreasonable), the \textit{infinite square well} is a sort of \textit{rite-of-passage} for students learning about the subject. It uses a very simple potential function case and allows for some nice simplifications to be made, and it can be used as a great start to see how some of the math and physics of the subject really start to fit together.
+\paragraph*{}We start with a potential function, $V(x)$, peicewise defined:
+\begin{equation}
+\label{ISW potential}
+V(x) = \left\{
+        \begin{array}{ll}
+            +\infty &, \quad x < 0 \\
+            0 		&, \quad 0 \leq x \leq L \\
+            +\infty &, \quad x > a \\
+        \end{array}
+    \right.
+\end{equation}
+\paragraph*{}Before we even do math, we can take some time to analyze the physical nature of the system. The first thing that comes to mind is the presence of the $+\infty$ values outside the range $0$ to some arbitrary position $L$. We have essentially used the potential function values to create a well, of some width, $L$, with walls that infinitely high - hence the name of "the infinite square well". From classical physics, you may interpret this as being stuck between two infinitely tall mountains or something of the sort. Either way, the infinite potential value forces the particle to be confined in this regions of length $L$, because no matter how much energy or force is applied to that particle, it \textit{can never escape} the infinite square well.
+\begin{center}
+[IMAGE OF ISW HERE]
+\end{center}
+\paragraph*{}Right off of that bat, this allows for some great simplifications. First off, no matter what, Our particle cannot exist in the region $x < 0$ or $x > L$ because of the infinite amount of energy required to get there. Therefore, this quantum mechanical particle can \textit{only} exist in the region $0 \geq x \leq L$. With this, can can focus all of our attention to this region of space. All of the rules outline in the previous chapters still apply, but now we only have this small region of space to worry about.
+\paragraph*{}So for the region between $x = 0$ and $x = L$, the TISE reads:
+\begin{equation}
+\label{ISW TISE}
+-\frac{\hbar^2}{2m}\frac{d^2 \psi}{dx^2} = E\psi
+\end{equation}
+Notice how the $V(x)\psi(x)$ term from equation (\ref{1D TISE}) is gone because $V(x) = 0$ in these bounds. Now, we actually have much simpler equation to solve. We can use some algebraic manipulation to rearrange equation (\ref{ISW TISE}) into something very familiar from classical physics.
+\begin{equation}
+\label{HO ODE}
+\frac{d^2 \psi}{dx^2} = -\frac{2mE}{\hbar^2}\psi
+\end{equation}
+\paragraph{}This is the standard ordinary differential equation for a mass-spring or any sort of harmonic oscillator -like system. This comes up all of the time in classical physics and is usually formed by equating Newton's second law, to Hooke's Law of ideal springs.  For simplicity's sake, lets make the assertion that a new constant can be created: $k = \frac{\sqrt{2mE}}{\hbar}$. 
+This changes the differential equation to:
+\begin{equation}
+\frac{d^2 \psi}{dx^2} = -k^2\psi
+\end{equation}
+Which has the solution:
+\begin{equation}
+\psi(x) = \alpha e^{+ikx} + \beta e^{-ikx}
+\end{equation}
+Which thanks to \textit{Euler's Identity}, can be rewritten as:
+\begin{equation}
+\psi(x) = a \sin(kx) + b \cos(kx)
+\end{equation}
+\paragraph*{}Here, $a$ and $b$ are constants chose based on initial condition or boundary conditions. From chapter 1, we learned that the wave function, 
+$\psi(x)$ must be continuous over all space, and must be continuously differentiable over all of space. Since the potential function itself is not continuous differentiable (i.e. is peicewise defined), we can break this second rule. Regardless, since $\psi(x<0) = 0 $, and $\psi(x > L) = 0$, we can impose the boundary conditions on our system such that $\psi(x=0) = 0$ and $\psi(x=L) = 0$.
+\paragraph*{}Applying these boundary conditions:
+\begin{equation}
+\psi(0) = a \sin(0) + b \cos(0) 
+\text{\hspace*{8mm} and \hspace*{8mm}}
+\psi(L) = a \sin(kL) + b \\cos(kL)
+\end{equation}
+Because of the nature of the sine and cosine functions, the only way for these equations to hold true is one of two ways. If $a = b = 0$, the whole wave function becomes $\psi(x) = 0$ which is a valid solution to the PDE, but not normalizeable, thus conflicts with one of our rules. Hence, the other option, just $b = 0$ is the valid conclusion. The resulting wave function for the infinite square well of width $L$ is:
+\begin{equation}
+\psi(x) = a \sin(kx) = a \sin\big(\frac{\sqrt{2mE}}{\hbar}x\big)
+\end{equation}
+\begin{flushright}
+Where $kx$ must be an integer multiple of $\pi$: $kx = \pm \pi , \pm 2\pi , \pm 3\pm , ... , \pm n\pi , ...$
+\end{flushright}
 
 % ================================
 
@@ -424,6 +515,7 @@ Where the complex conjugate operation is applied to $\bra{\psi}$ and to $\ket{\p
 
 
 % ================================================================
+% ================================================================
 
 \chapter{The Rules of the Game}
 
@@ -435,6 +527,12 @@ Where the complex conjugate operation is applied to $\bra{\psi}$ and to $\ket{\p
 
 % ================================================================
 
+% ================================================================
+% ================================================================
+
+\chapter{Mathematical Index}
+
+% ================================================================
 % ================================================================
 
 \end{document}
