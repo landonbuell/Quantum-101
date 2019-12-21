@@ -386,10 +386,13 @@ Where all elements could be either finitely dimensional on infinitely dimensiona
 
 
 \subsection*{Spaces and Basis}
+\paragraph*{}One of the strangest concepts from quantum physics and linear algebra is the idea of \textit{spaces}. 
+
 
 % ================================
 
 \subsection*{Position Space}
+\paragraph*{}Position space, also referred to the \textit{position basis} functions as a system of measurement.
 
 
 % ================================
@@ -446,7 +449,7 @@ V(x) = \left\{
 \end{equation}
 \paragraph*{}Before we even do math, we can take some time to analyze the physical nature of the system. The first thing that comes to mind is the presence of the $+\infty$ values outside the range $0$ to some arbitrary position $L$. We have essentially used the potential function values to create a well, of some width, $L$, with walls that infinitely high - hence the name of "the infinite square well". From classical physics, you may interpret this as being stuck between two infinitely tall mountains or something of the sort. Either way, the infinite potential value forces the particle to be confined in this regions of length $L$, because no matter how much energy or force is applied to that particle, it \textit{can never escape} the infinite square well.
 \begin{center}
-[IMAGE OF ISW HERE]
+\includegraphics[scale=0.3]{ISW}
 \end{center}
 \paragraph*{}Right off of that bat, this allows for some great simplifications. First off, no matter what, Our particle cannot exist in the region $x < 0$ or $x > L$ because of the infinite amount of energy required to get there. Therefore, this quantum mechanical particle can \textit{only} exist in the region $0 \geq x \leq L$. With this, can can focus all of our attention to this region of space. All of the rules outline in the previous chapters still apply, but now we only have this small region of space to worry about.
 \paragraph*{}So for the region between $x = 0$ and $x = L$, the TISE reads:
@@ -459,8 +462,7 @@ Notice how the $V(x)\psi(x)$ term from equation (\ref{1D TISE}) is gone because 
 \label{HO ODE}
 \frac{d^2 \psi}{dx^2} = -\frac{2mE}{\hbar^2}\psi
 \end{equation}
-\paragraph{}This is the standard ordinary differential equation for a mass-spring or any sort of harmonic oscillator -like system. This comes up all of the time in classical physics and is usually formed by equating Newton's second law, to Hooke's Law of ideal springs.  For simplicity's sake, lets make the assertion that a new constant can be created: $k = \frac{\sqrt{2mE}}{\hbar}$. 
-This changes the differential equation to:
+\paragraph{}This is the standard ordinary differential equation for a mass-spring or any sort of harmonic oscillator -like system. This comes up all of the time in classical physics and is usually formed by equating Newton's second law, to Hooke's Law of ideal springs.  For simplicity's sake, lets make the assertion that a new constant can be created: $k = \frac{\sqrt{2mE}}{\hbar}$. (Note that is relies on the assumption that $E$ must be a positive value.) This changes the differential equation to:
 \begin{equation}
 \frac{d^2 \psi}{dx^2} = -k^2\psi
 \end{equation}
@@ -487,6 +489,12 @@ Because of the nature of the sine and cosine functions, the only way for these e
 \begin{flushright}
 Where $kx$ must be an integer multiple of $\pi$: $kx = \pm \pi , \pm 2\pi , \pm 3\pm , ... , \pm n\pi , ...$
 \end{flushright}
+\paragraph*{}Because of the rotational symmetry of sine, ($-\sin(\theta) = +\sin(\theta)$), the negative integers become redundant, and since the function must fit "neatly" into a region $L$, the distinct solutions to the problem become:
+\begin{equation}
+\label{ISW spatial solution}
+\psi_n(x) = A\sin \Big( \frac{n\pi}{L}x \Big)
+\end{equation}
+\paragraph*{}These $n$ functions are the \textit{energy eigenstates} to this problem and can be notated with kets: $\psi_n(x) = \ket{\psi_n}$. Just as presribebed by the equivalent eigenvalue problem, each eigenstate is appropriately orthonormal to the other eigenstates. 
 
 % ================================
 
