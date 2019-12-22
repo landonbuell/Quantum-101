@@ -61,7 +61,13 @@ The Quantum Game\\
 
 % ================================================================
 
-\section*{Conventions for this Text}
+\section*{Citations for this Text}
+\begin{enumerate}
+\item[•]Griffiths, David J., and Darrell F. Schroeter. Introduction to Quantum Mechanics. 3rd ed., Cambridge University Press, 2018.
+\item[•]Larson, Ron. Elementary Linear Algebra. 7th ed., Brooks/Cole, 2013.
+\item[•]Shankar, Ramamurti. Principles of Quantum Mechanics. 2nd ed., Springer, 2014.
+\item[•]Zettili, Nouredine. Quantum Mechanics: Concepts and Applications. 2nd ed., John Wiley \& amp; Sons, 2009.
+\end{enumerate}
 
 % ================================================================
 % ================================================================
@@ -249,9 +255,9 @@ The complex exponential in the time function eliminates itself when multiplied b
 \paragraph*{}A vector is a mathematical object that allows very simply to communicate the dimension, components, magnitude and orientation of a measurement all very conveniently. Typically, a vector is notated as a variable with a little arrow on top such as $\vec{\psi}$. The vector is then made up of $N$ discrete components. They can be written out in columns or rows, for example:
 \begin{equation}
 \label{vector}
-\vec{\psi} = \big[ a_0 , a_1 , \hdots , a_N ] =
+\vec{\psi} = \big[ \psi_0 , \psi_1 , \hdots , \psi_N ] =
 \begin{bmatrix}
-a_0 \\ a_1  \\ \vdots \\ a_N
+\psi_0 \\ \psi_1  \\ \vdots \\ \psi_N
 \end{bmatrix}
 \end{equation}
 \paragraph*{}The number of components, $N$ indicates the dimension of the vector, i.e., it is $N$-dimensional. The entry in each index represents the length or \textit{measure} of the vector in that particular component. Note that each entry, $a_n$ can be a real, imaginary or complex value. In quantum mathematics, we replace the linear algebra object of a vector with the \textit{new} mathematical object called a \textit{ket}.
@@ -311,21 +317,21 @@ Then it's dual space, or bra equivalent, $\bra{\beta}$ is again defined as it's 
 
 \subsection*{Inner Products and Bra-Kets}
 
-\paragraph*{}It may come as no surprise that Paul Dirac just the names "bra" and "ket" together. Very cleverly, and perhaps humorously, when they combine, they create a mathematical operation of the \textit{dot product} (often also called scalar product or inner product). Image two discrete vectors, 
-$\vec{eta}$ and $\vec{\xi}$, both of length $N$. The dot product between them is defined as:
+\paragraph*{}It may come as no surprise that Paul Dirac used the names "bra" and "ket" together. Very cleverly, and perhaps humorously, when they combine, they create a mathematical operation of a \textit{bra-ket} or in linear algebra, the \textit{dot product} (often also called scalar product or inner product). Image two discrete vectors, 
+$\vec{f}$ and $\vec{g}$, both of length $N$. The dot product between them is defined as:
 \begin{equation}
 \label{dot product}
-(\vec{\eta} \cdot \vec{\xi}) \equiv \sum_{i=0}^N (\vec{\eta}_i)(\vec{\xi}_i)
+(\vec{f} \cdot \vec{g}) \equiv \sum_{i=0}^N (\vec{f}_i)(\vec{g}_i)
 \end{equation}
 In words, each index of one vector is multiplied by that same index in the other vector, and then each product is summed to output a single scalar number, real or complex.
 \paragraph*{}The Dirac equivalent is the \textit{inner product} and is notatied by the combination of a bra and ket, conveniently called a \textit{bra-ket}.
 \begin{center}
-A bra-ket is notated as $\braket{\psi}{\psi}$
+A bra-ket is notated as $\braket{f}{g}$
 \end{center}
-Just like before, if the bra and ket are both discretely defined, $\bra{\eta}$ and $\ket{\xi}$, then then inner product of them is similar to equation (\ref{dot product}), except with the added complex conjugate:
+Just like before, if the bra and ket are both discretely defined, $\bra{f}$ and $\ket{g}$, then then inner product of them is similar to equation (\ref{dot product}), except with the added complex conjugate:
 \begin{equation}
 \label{comp-conj dot product}
-\braket{\eta}{\xi} \equiv \sum_{i=0}^N (\eta^*_i) (\xi_i)
+\braket{f}{g} \equiv \sum_{i=0}^N (f^*_i) (g_i)
 \end{equation}
 \paragraph*{}Conversely, if a ket and bra are both continuously defined functions of $x$, $\bra{f(x)}$ and $\ket{g(x)}$ as in (\ref{smooth ket}) and (\ref{smooth bra}), then the inner product takes as lightly modified form. The discrete sums from equation (\ref{comp-conj dot product}) now becomes a continuous, infinite sum, \textit{an integral}! So, the inner product of $f(x)$ and $g(x)$ (on the basis of $x$) now becomes:
 \begin{equation}
@@ -377,6 +383,9 @@ Where all elements could be either finitely dimensional on infinitely dimensiona
 % ================================
 
 \subsection*{Probability}
+\paragraph*{}As expressed before, vast parts of understanding quantum physics relies on probability and statistical interpretations of mathematics. In order to better grasp these concepts, I want to establish common system of language and notation for dealing with this. 
+
+
 
 % ================================================================
 
@@ -386,8 +395,32 @@ Where all elements could be either finitely dimensional on infinitely dimensiona
 
 
 \subsection*{Spaces and Basis}
-\paragraph*{}One of the strangest concepts from quantum physics and linear algebra is the idea of \textit{spaces}. 
+\paragraph*{}One of the strangest concepts from quantum physics and linear algebra is the idea of \textit{spaces}. It's very abstract idea, because in most of the mathematics done in our everyday careers we can treat space as the dimension that we're working in, and almost never have to go beyond three spatial dimensions. However, with the introduction of ideas like \textit{kets} and \textit{infinite dimensional} spaces, the math seems to become a bit more complicated - expect that \textit{it doesn't}.
+\paragraph*{}Part of the trouble comes from trying to geometrically justify everything, and trying to expand our brains to picture something beyond 3D. Unfortunately, this is rather difficult, which serves as an immediate turn-off to most people when first working with linear algebra. One of the pitfalls of our mathematical description of the quantum universe is the necessity of working in these higher dimensional spaces - in which we cannot simply draw a picture of or imagine in our minds. Instead, we have to rely on the math, which fortunately, does \textit{not} change. Meaning, that if we are comfortable working with $3 \times 3$ matrices, and 3 -vectors, all of the axioms and rules that apply to those objects also apply to our new quantum objects.
+\paragraph*{}For a quick few examples, let $\ket{a}$, $\ket{b}$ and $\ket{c}$ all be kets in some $N$ (possibly infinite) dimensional space- commonly notated as $R^N$ for a real space. Let $\alpha$, $\beta$ and $\gamma$ be scalars. 
 
+\begin{enumerate}
+\item[•]\textbf{Consistency of Dimensions}\\
+All mathematical operations below produce resulting kets or bras that remain in the $R^N$ space.
+\item[•]\textbf{Community of Addition}\\
+When adding $\ket{a}$ and $\ket{b}$, changing the order of the elements does not matter: 
+$\ket{a} + \ket{b} = \ket{b} + \ket{a}$. 
+\item[•]\textbf{Associativity of Addition}\\
+When adding combinations of $\ket{a}$, $\ket{b}$ and $\ket{c}$, changing the order of the elements does not matter:
+$(\ket{a} + \ket{b}) + \ket{c} = \ket{a} + (\ket{b} + \ket{c})$.
+\item[•]\textbf{Identity of Addition}\\
+Under the addition operation, there is some ket, $\ket{0}$ such that when added to a ket $\ket{c}$, it retains all properties as before the operations: $\ket{c} + \ket{0} = \ket{c}$. In linear algebra, this is referred to at the \textit{zero- vector} or \textit{null-space}. In Dirac notation, this is called the \textit{zero- ket} or \textit{null- ket}.
+\item[•]\textbf{Inverse of Addition}\\
+There exists an operation, such 
+\item[•]\textbf{Distributivity of Multiplication }\\
+
+\item[•]\textbf{Associativity of Multiplication}\\
+
+\item[•]\textbf{Identity of Multiplication}\\
+
+
+\end{enumerate}
+\paragraph*{}Any mathematical object that adheres to these rules - bras, kets, vectores, matricies, operators, polynomials, etc - is an $R^N$ dimension space.
 
 % ================================
 
@@ -398,6 +431,16 @@ Where all elements could be either finitely dimensional on infinitely dimensiona
 % ================================
 
 \subsection*{Momentum Space}
+\paragraph*{}The momentum operator is represented in the \textit{x - basis} as:
+\begin{equation}
+\label{momentum}
+\hat{p} = -i\hbar\frac{\partial}{\partial x}
+\end{equation}
+And the momentum operator acting on the state $\ket{\psi}$ would be notated as:
+\begin{equation}
+\label{momentum on psi}
+\hat{p}\ket{\psi} = -i\hbar\frac{\partial}{\partial x}\ket{\psi}
+\end{equation}
 
 % ================================
 
@@ -406,6 +449,64 @@ Where all elements could be either finitely dimensional on infinitely dimensiona
 % ================================================================
 
 \section{The Eigenvalue Problem}
+\paragraph*{}Now that we have more solid foundation for the mathematics of quantum physics, we can really break down Schrodinger's equation, and turn it into something truly nice ans simple - and something far more reasonable to handle numerically. We have to make the starting realization that \textbf{this equation, is nothing more than measuring the total energy of the quantum system}, with something called the \textit{Hamiltonian}! 
+\paragraph*{}The Hamiltonian is a concept from classical physics, far predating quantum mechanics. The exact derivation of the Hamiltonian operator is quite details, and yet a task for another text. For now, just know that the Hamiltonian is an operation that returns the \textit{total energy} of a particle or system by summing the kinetic and potential energies. So, lets create an operator $\hat{T}$ that when acting on a particle in the state, $\ket{\psi}$ for example, it returns the total \textit{kinetic} energy of that particle in that state. Similarly, create an operator $\hat{V}$ that when acting on a particle in the state, $\ket{\psi}$ it returns the total \textit{potential} energy of that particle in that state. So summing the operators has the result of returning the \textit{total} energy:
+\begin{equation}
+\label{Hamiltonian}
+\hat{H}\ket{\psi} = \hat{T}\ket{\psi} + \hat{V}\ket{\psi} = \text{Total Energy of State}\ket{\psi}
+\end{equation}
+\paragraph*{}Breaking down the potential energy operator, $\hat{V}$, it loosely can be seen that $\hat{V}\ket{\psi}$ very closely resembles the terms from the time independent Schrodinger equation, $V(x)\psi(x)$. Now other than convenient constancy of letter choices, this may be quite tough to see at first. But all long, that's what the function $V(x)$ has been telling us. It can be very loosly thought of as:
+\begin{equation}
+\label{potential operator}
+\hat{V}\ket{\psi} \approx V(x)\psi(x)
+\end{equation}
+When multiplied by the wave function, $\psi(x)$, that term in the TISE gives us the potential energy distribution of the system. This term, $V(x)\psi(x)$, tell us know the potential energy of the system behaves in space! Note that equation (\ref{potential operator}) is not \textit{exactly} how the operator works, but is a reasonable conceptual starting point.
+\paragraph*{}Now examining the kinetic energy operator, $\hat{T}$, this may be hard to fathom as well. from classical physics, we know that the kinetic energy of a particle of mass $m$, moving at velocity $v$ is given by: $T = \frac{1}{2}mv^2$. But in quantum physics, velocity is not something that we commonly work with, its not really a valid measurement to make. Instead, we measure the \textit{momentum} of the particle. Classically, momentum is given by $p = mv$, and thus we can use this to re-express our kinetic energy function: 
+$T = \frac{p^2}{2m}$. We can express this again as operators in our quantum language:
+\begin{equation}
+\hat{T\ket{\psi}} = \frac{1}{2m}\hat{p}^2 \ket{\psi} = \frac{1}{2m}\hat{p}\hat{p}\ket{\psi}
+\end{equation}
+\paragraph*{}And knowing how the momentum operator is defined from equation (\ref{momentum}), we can apply the operator twice as noated by 
+$\hat{p}^2$, and see that the kinetic energy can be expressed as:
+\begin{equation}
+\hat{T}\ket{\psi} = \frac{1}{2m} 
+\Big( -i\hbar \frac{\partial}{\partial x}\Big) \Big( -i\hbar \frac{\partial}{\partial x} \Big)\ket{\psi}
+\end{equation}
+(Remember that the momentum operator is applied to the state $\ket{\psi}$ twice, \textit{not} multiplied by each other) Which can be simplified down into the familiar form:
+\begin{equation}
+\label{kinetic operator}
+\hat{T}\ket{\psi} = -\frac{\hbar ^2}{2m} \frac{\partial^2}{\partial x^2}\ket{\psi}
+\end{equation}
+
+\paragraph*{}Lets revisit the time dependent Schrodinger equation, (\ref{1D Schrodinger}) in the form:
+\begin{equation}
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\ket{\psi} + V(x)\ket{\psi} = i\hbar\frac{\partial}{\partial t}\ket{\psi}
+\end{equation}
+Now we can see that each term functions as an energy measurement:
+\begin{equation}
+\text{\textbf{Kinetic}\hspace{2cm}} \hat{T}\ket{\psi} = -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\ket{\psi}
+\end{equation}
+
+\begin{equation}
+\text{\textbf{Potential}\hspace{2cm}} \hat{V}\ket{\psi} = V(x)\ket{\psi}
+\end{equation}
+
+\begin{equation}
+\text{\textbf{Total}\hspace{2cm}}  E\ket{\psi} = i\hbar\frac{\partial}{\partial t}\ket{\psi}
+\end{equation} 
+
+\paragraph*{}Putting all of these pieces together, allows to \textit{rewrite} the Time Independent Schrodinger Equation, \ref{1D TISE}). We can take the \textit{whole} second - order, linear, partial differential equation and turn it into:
+\begin{equation}
+\label{Hamiltonian EVP}
+\hat{H}\ket{\psi} = E\ket{\psi}
+\end{equation}
+
+\paragraph*{}The Hamiltonian operator, that returns the total energy is equal to the total energy \textit{Yes}!, except, this one equation has something else hidden in it. This equation tells is that an operator acting on a ket, is equal to a scalar times that same ket. In linear algebra, this is equivalent to a matrix acting on a vector begin equal to a scalar times that same vector. \textbf{Equation (\ref{Hamiltonian EVP}) is an \textit{Eigenvalue Problem}!} In linear algebra, this is most commonly written in the general form:
+\begin{equation}
+A\vec{v} = \lambda \vec{v}
+\end{equation}
+\paragraph*{}This is a \textit{staggering} realization, and the entirely of the first chapter of this text has been in service to this moment! If we can encode the total energy of a quantum system into some matrix/operator, $\hat{H}$, then we can treat almost all of quantum physics as an eigenvalue problem. No need to build some complex algorithm to numerically model a partial differential equation, as long as we have an algorithm that can compute the eigenvalues and eigenvectors of an $N \times N$ matrix, we can produce a numerical solution to almost any 1D quantum system, provided that $V(x)$ does not change with time.
+\paragraph*{}Once we build this $\hat{H}$ operator/matrix in some computer program, we can have it solve the eigenvalue problem for us! The resulting $N$ eigen\textit{vectors} are the quantum states $\psi_n(x)$ or $\ket{\psi_n}$ and the resulting $N$ eigen\textit{values} are the corresponding energies for each quantum state.
 
 % ================================================================
 
