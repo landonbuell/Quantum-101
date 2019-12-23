@@ -1,18 +1,20 @@
-\contentsline {chapter}{\numberline {1}The Name of the Game}{5}% 
-\contentsline {section}{\numberline {1.1}The Schrodinger Equation}{5}% 
-\contentsline {section}{\numberline {1.2}The Wave Function}{7}% 
-\contentsline {section}{\numberline {1.3}Breaking Down the Schrodinger Equation}{9}% 
-\contentsline {section}{\numberline {1.4}The Language of the Game}{12}% 
-\contentsline {section}{\numberline {1.5}The Characters in the Game}{17}% 
-\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{18}% 
-\contentsline {section}{\numberline {1.7}Takeaways from this Chapter}{21}% 
-\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{23}% 
-\contentsline {section}{\numberline {2.1}The Infinite Square Well}{24}% 
-\contentsline {paragraph}{}{25}% 
-\contentsline {section}{\numberline {2.2}The Finite Square Well}{26}% 
-\contentsline {section}{\numberline {2.3}Multiple Square Wells}{26}% 
-\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{26}% 
-\contentsline {section}{\numberline {2.5}The Free Particle}{26}% 
-\contentsline {section}{\numberline {2.6}The Delta Function}{26}% 
-\contentsline {chapter}{\numberline {3}The Rules of the Game}{27}% 
-\contentsline {chapter}{\numberline {4}Mathematical Index}{29}% 
+\contentsline {chapter}{\numberline {1}The Name of the Game}{7}% 
+\contentsline {section}{\numberline {1.1}The Schrodinger Equation}{7}% 
+\contentsline {section}{\numberline {1.2}The Wave Function}{9}% 
+\contentsline {section}{\numberline {1.3}Breaking Down the Schrodinger Equation}{11}% 
+\contentsline {section}{\numberline {1.4}The Language of the Game}{14}% 
+\contentsline {section}{\numberline {1.5}The Characters in the Game}{19}% 
+\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{22}% 
+\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{24}% 
+\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{27}% 
+\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{29}% 
+\contentsline {section}{\numberline {2.1}The Infinite Square Well}{30}% 
+\contentsline {paragraph}{}{31}% 
+\contentsline {section}{\numberline {2.2}The Finite Square Well}{32}% 
+\contentsline {section}{\numberline {2.3}Multiple Square Wells}{32}% 
+\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{32}% 
+\contentsline {section}{\numberline {2.5}The Free Particle}{32}% 
+\contentsline {section}{\numberline {2.6}The Delta Function}{32}% 
+\contentsline {chapter}{\numberline {3}The Rules of the Game}{33}% 
+\contentsline {chapter}{\numberline {4}The Next Level: \\ Spin and Angular Momentum}{35}% 
+\contentsline {chapter}{\numberline {5}Mathematical Index}{37}% 

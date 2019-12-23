@@ -53,11 +53,37 @@ The Quantum Game\\
 % ================================================================
 
 \section*{Introduction}
-\paragraph*{}Quantum Physics
+\paragraph*{}Quantum Physics has spent near of the last hundred years being synonymous with the mysterious and inexplicable. Rightfully so, it's a topic almost never given attention to outside of formal physics degree or career. This in part lies within it's bizare nature and also counter-intuitive set of rules. 
+\paragraph*{}\textit{The Quantum Game} has been written to serve as a very broad overview of elementary quantum mechanical theory. While that statement may seem like an oxymoron, the goal of this text is to show how despite it reputation, quantum physics is in fact a very reasonable and digestible subject, even for those outside of a formal physics degree or career. As with every text, every reader seeks to get something different, and it is my intention to satisfy most basic questions  by outline much of the general functionality of this subject.
+
+\pagebreak
 
 % ================================================================
 
 \section*{Preliminary Considerations}
+
+\paragraph*{}This text is designed to provide a brief survey of quantum physics. It's ideal use would be that of a classroom \textit{supplement} or a workplace introduction. As a classroom aid, this work would be of best use when combined with a proper university course, along with a proper university book as well. Additionally if you have already finished a higher education, and are involved ina technical career that requires a small bit of understanding, this would be a great text to serve as a functional introduction.
+\paragraph*{}In reading this work, it is assumed that you are at least slightly familiar with the following ideas:
+\begin{enumerate}
+\item[•]\textbf{Basic Algebra}\\
+Arithmetic and basic algebraic manipulation are a necessary evils of quantum physics
+\item[•]\textbf{Statistics}\\
+Handling probability, statistics, distributions and functions. Finding means, deviations, variances and know how to interpret probability densities.
+\item[•]\textbf{Differential Calculus}\\
+Single and higher dimensional derivatives.
+\item[•]\textbf{Integral Calculus}\\
+Indefinite integral returns the anti-derivative of a function, and a definite integral returns the area between a function and it's respective axis over a certain bounds.
+\item[•]\textbf{Differential Equations}\\
+Equations that relate functions to one or more of that functions own higher derivatives.
+\item[•]\textbf{Linear Algebra}\\
+The study of vectors, matrices and spaces. Also allows for convenient organization of mathematics in higher dimensions.
+\item[•]\textbf{Computer Programming}\\
+Basic procedural programming. Most examples in this text will be done in \textit{Python 3}.
+\end{enumerate}
+\paragraph*{}This work does not require a thorough, 'classroom' level of comprehension, but rather a conceptual understanding will do quite fine. In areas that require a more heavy knowledge, I will elaborate on accordingly. In addition, I have included a \textit{Mathematical Index} of math terms and concepts that may warrant some extra reading that may interfere with the pacing of this text. In most cases, any questions as far as math can be found within a few minutes of an internet search. In reality, most topics here will require not much more than a high school level of math for understanding. 
+
+\pagebreak
+
 
 % ================================================================
 
@@ -68,6 +94,9 @@ The Quantum Game\\
 \item[•]Shankar, Ramamurti. Principles of Quantum Mechanics. 2nd ed., Springer, 2014.
 \item[•]Zettili, Nouredine. Quantum Mechanics: Concepts and Applications. 2nd ed., John Wiley \& amp; Sons, 2009.
 \end{enumerate}
+
+\vspace{16cm}
+\pagebreak
 
 % ================================================================
 % ================================================================
@@ -272,6 +301,7 @@ A bra is notated as $\bra{\psi}$
 \end{center}
 The relationship between bras and kets is simply that they are eachother's \textit{complex conjugates}. More mathematically, a bra is this \textit{dual space} counterpart to the ket vector space, and vice-versa. This means that:
 \begin{equation}
+\label{bra-ket relation}
 \bra{\psi} = \ket{\psi}^* 
 \text{\hspace*{8mm} and \hspace*{8mm}} 
 \ket{\psi} = \bra{\psi}^*
@@ -425,21 +455,45 @@ There exists an operation, such
 % ================================
 
 \subsection*{Position Space}
-\paragraph*{}Position space, also referred to the \textit{position basis} functions as a system of measurement.
-
+\paragraph*{}Position space, also referred to the \textit{position basis} functions as a system of measurement. For systems in one dimension, we commonly call this the \textit{x - basis}, in reference to the \textit{x - axis} of a Cartesian coordinate system. Regardless of exact nomenclature, a measurement in position space, is a measurement of the particles position. So, when we write $\Psi(x,t)$, this is a probability amplitude of the particle on the \textit{x-basis}. If we were to measure $\Psi(y,t)$, this is a wave function on the \textit{y-basis} or $\Psi(r,t)$ is on the $r$ or \textit{radial - basis}.
+\paragraph*{}For most of the topics in this text, everything will be measured with respect to some for of a position basis, be it Cartesian, spherical, polar or cylindrical. This works nicely due to it's intuitive nature Just like in classical physics, we generally measure a particles position (usually as a function of time), and then build up the rest of our model from there. Much of quantum physics works in the same way, expect obviously, instead of a well-defined position function $x(t)$, we have this information encoded in our wave function,
+$\Psi(x,t)$.
 
 % ================================
 
 \subsection*{Momentum Space}
-\paragraph*{}The momentum operator is represented in the \textit{x - basis} as:
+\paragraph*{}The other common space, or basis to use in quantum physics is the \textit{momentum basis}. While less common, it is also very useful to measure the momentum of a particle. In classical physics, momentum is just defined as the product of a particles mass and velocity,  however in quantum physics, momentum comes with a different set of properties. Momentum is measured on a different \textit{basis}, which means that we cant just multiple the change of the particles position, but it's mass, we require some mathematical way to move between position space and momentum space - we require a \textit{tranform}.
+\paragraph*{}The exact derivation of this transform is a tricky one, and once again will be left a much more detailed text. However, very simply, we can recognize that the Schrodinger equation has a simple, plane wave solution:
+\begin{equation}
+\label{plane wave sol}
+\Psi(x,t) = e^{\frac{i}{\hbar}(px - Et)}
+\end{equation} 
+By taking the partial \textit{spatial} derivative, we can be that:
+\begin{equation}
+\frac{\partial}{\partial x}\Big[ \Psi(x,t) \Big] = \big( \frac{i}{\hbar}p\big) e^{\frac{i}{\hbar}(px - Et)}
+\end{equation}
+When then then algebraically solve for the operator $\hat{p}$ acting on the state $\Psi$. This then show us that the momentum operator acting on the state $\ket{\psi}$ would be notated as:
+\begin{equation}
+\label{momentum on psi}
+\hat{p}\ket{\psi} = -i\hbar\frac{\partial}{\partial x}\ket{\psi}
+\end{equation}
+And just the momentum operator on the \textit{x - basis} is given by:
 \begin{equation}
 \label{momentum}
 \hat{p} = -i\hbar\frac{\partial}{\partial x}
 \end{equation}
-And the momentum operator acting on the state $\ket{\psi}$ would be notated as:
+\paragraph*{}This is fairly complicated idea, that we need a sort of transform or operator to move between measurements of position and momentum. Classically, this makes very little sense, and seems to essentially come from nowhere. But this is just one of the many oddities that arises out of our mathematical description of quantum physics. 
+\paragraph*{}It works a lot like the \textit{Fourier Transform} in other mathematical and engineering disciplines. That transform takes some period signal function of time, $g(t)$ and transforms it into a function of frequency, $g(f)$. In doing this, the exact same information is contained in both functions, but the information is contained in different ways. In the function $g(t)$ a signal is represented in a time domain - or a \textit{time basis}, and the function $g(f)$ is represented in the frequency domain, or a \textit{frequency - basis}.
+\paragraph*{}The same idea holds true for this position - momentum relationship. They contain very similar bits of information - just encoded in a different way. There is also the added concept of \textit{uncertainty}, which actually prohibits us from knowing both position and momentum at the same time - but we will get to that later. But just as we can express momentum in position- space , we must also be able to express position in momentum space. This would be akin to an \textit{inverse Fourier transform}.
+\paragraph*{}Position on the momentum basis, acting on the state $\ket{\psi}$ would be notated as:
 \begin{equation}
-\label{momentum on psi}
-\hat{p}\ket{\psi} = -i\hbar\frac{\partial}{\partial x}\ket{\psi}
+\label{position on psi}
+\hat{x}\ket{\psi} = -i\hbar\frac{\partial}{\partial p}\ket{\psi}
+\end{equation}
+And just the ($x$) position operator on the \textit{p - basis} is given by:
+\begin{equation}
+\label{position}
+\hat{x} = -i\hbar\frac{\partial}{\partial p}
 \end{equation}
 
 % ================================
@@ -449,8 +503,8 @@ And the momentum operator acting on the state $\ket{\psi}$ would be notated as:
 % ================================================================
 
 \section{The Eigenvalue Problem}
-\paragraph*{}Now that we have more solid foundation for the mathematics of quantum physics, we can really break down Schrodinger's equation, and turn it into something truly nice ans simple - and something far more reasonable to handle numerically. We have to make the starting realization that \textbf{this equation, is nothing more than measuring the total energy of the quantum system}, with something called the \textit{Hamiltonian}! 
-\paragraph*{}The Hamiltonian is a concept from classical physics, far predating quantum mechanics. The exact derivation of the Hamiltonian operator is quite details, and yet a task for another text. For now, just know that the Hamiltonian is an operation that returns the \textit{total energy} of a particle or system by summing the kinetic and potential energies. So, lets create an operator $\hat{T}$ that when acting on a particle in the state, $\ket{\psi}$ for example, it returns the total \textit{kinetic} energy of that particle in that state. Similarly, create an operator $\hat{V}$ that when acting on a particle in the state, $\ket{\psi}$ it returns the total \textit{potential} energy of that particle in that state. So summing the operators has the result of returning the \textit{total} energy:
+\paragraph*{}Now that we have more solid foundation for the mathematics of quantum physics, we can really break down Schrodinger's equation, and turn it into something truly nice and simple - and something far more reasonable to handle numerically. We have to make the starting realization that \textbf{this equation, is nothing more than measuring the total energy of the quantum system}, with something called the \textit{Hamiltonian}! 
+\paragraph*{}The Hamiltonian is a concept from classical physics, far predating quantum mechanics. It's exact derivation, rules and proerties are quite complicated, and yet another task for a different text. For now, just know that the Hamiltonian is an operation that returns the \textit{total energy} of a particle or system by summing the kinetic and potential energies. So, lets create an operator $\hat{T}$ that when acting on a particle in the state, $\ket{\psi}$ for example, it returns the total \textit{kinetic} energy of that particle in that state. Similarly, create an operator $\hat{V}$ that when acting on a particle in the state, $\ket{\psi}$ it returns the total \textit{potential} energy of that particle in that state. So summing the operators has the result of returning the \textit{total} energy:
 \begin{equation}
 \label{Hamiltonian}
 \hat{H}\ket{\psi} = \hat{T}\ket{\psi} + \hat{V}\ket{\psi} = \text{Total Energy of State}\ket{\psi}
@@ -464,7 +518,7 @@ When multiplied by the wave function, $\psi(x)$, that term in the TISE gives us 
 \paragraph*{}Now examining the kinetic energy operator, $\hat{T}$, this may be hard to fathom as well. from classical physics, we know that the kinetic energy of a particle of mass $m$, moving at velocity $v$ is given by: $T = \frac{1}{2}mv^2$. But in quantum physics, velocity is not something that we commonly work with, its not really a valid measurement to make. Instead, we measure the \textit{momentum} of the particle. Classically, momentum is given by $p = mv$, and thus we can use this to re-express our kinetic energy function: 
 $T = \frac{p^2}{2m}$. We can express this again as operators in our quantum language:
 \begin{equation}
-\hat{T\ket{\psi}} = \frac{1}{2m}\hat{p}^2 \ket{\psi} = \frac{1}{2m}\hat{p}\hat{p}\ket{\psi}
+\hat{T}\ket{\psi} = \frac{1}{2m}\hat{p}^2 \ket{\psi} = \frac{1}{2m}\hat{p}\hat{p}\ket{\psi}
 \end{equation}
 \paragraph*{}And knowing how the momentum operator is defined from equation (\ref{momentum}), we can apply the operator twice as noated by 
 $\hat{p}^2$, and see that the kinetic energy can be expressed as:
@@ -507,10 +561,126 @@ A\vec{v} = \lambda \vec{v}
 \end{equation}
 \paragraph*{}This is a \textit{staggering} realization, and the entirely of the first chapter of this text has been in service to this moment! If we can encode the total energy of a quantum system into some matrix/operator, $\hat{H}$, then we can treat almost all of quantum physics as an eigenvalue problem. No need to build some complex algorithm to numerically model a partial differential equation, as long as we have an algorithm that can compute the eigenvalues and eigenvectors of an $N \times N$ matrix, we can produce a numerical solution to almost any 1D quantum system, provided that $V(x)$ does not change with time.
 \paragraph*{}Once we build this $\hat{H}$ operator/matrix in some computer program, we can have it solve the eigenvalue problem for us! The resulting $N$ eigen\textit{vectors} are the quantum states $\psi_n(x)$ or $\ket{\psi_n}$ and the resulting $N$ eigen\textit{values} are the corresponding energies for each quantum state.
+\paragraph*{}And with this eigenvalue interpretation of the Time Independent Schrodinger Equation, also comes some other consequences. Each energy-eigenstate, $\ket{\psi_0}$, $\ket{\psi_1}$, ...  $\ket{\psi_N}$ is \textit{orthonormal} to all of the other energy-eigenstates. This means that is each eigen ket is appropriately normalized to 1, then each ket's inner product with any other ket is identically 0. We right this as:
+\begin{equation}
+\label{orthonorm}
+\braket{\psi_n}{\psi_m} = \delta_{n,m}
+\end{equation}
+Where $\delta_{n,m}$ is a mathematical function called the \textit{Kronecker Delta Function} that is defined by the property:
+\begin{equation}
+\label{kronecker}
+\delta_{n,m} = 
+	\left\{
+        \begin{array}{ll}
+            1 	&, n = m \\
+            0 	&, n \neq m \\
+        \end{array}
+    \right.
+\end{equation}
+
+
+% ================================================================
+
+\section{Analyzing a Quantum System}
+\paragraph*{}We've spent the entirety of this chapter diving pretty far down the rabbit hole for just a few pages. In reality, much of the information here is covered over the course of a few chapters of many standard quantum mechanical texts. To put it all together, we'll use some of the concepts that we've discovered in this chapter to do a very basic (and admitted very 'scripted') quantum mechanics problem from a \textit{somewhat} of a start, to a \textit{somewhat} of a finish. 
+
+% ================================
+
+\subsection*{Putting a System Together}
+\paragraph*{}So, suppose we've solved, or set up a quantum mechanical system, and found that it is composed of three energy-eigenstates: 
+$\ket{\psi_0}$, $\ket{\psi_1}$, and $\ket{\psi_2}$, with respective energies $E_0$, $E_1$ and $E_2$.  Recall that there three kets are the eigenkets of the eigenvalue problems from equation (\ref{Hamiltonian EVP}) and their function counter parts, $\psi_0(x)$, $\psi_1(x)$, and $\psi_2(x)$ are all \textit{also} solutions to the time independent Schrodinger equation, (\ref{TISE}). Because of the linearity of the problem, we can use equation (\ref{linear combo kets}) to fully describe the system. Recall that a linear combination of solution is also a solution:
+\begin{equation}
+\ket{\Psi(x,t)} = \sum_n^{\infty} c_n \ket{\psi_n} \phi_n(t)
+\end{equation}
+\paragraph*{}Each energy - eigenstate becomes $n$-th ket in the sum. And each energy - eigenvalue becomes $E_n$ from equation (\ref{phi}), which in turn becomes the $n$-th time dependent function in the sum. Using our model, evaluated at time $t=0$ becomes:
+\begin{equation}
+\Psi(x,0) = c_0 \ket{\psi_0} + c_1 \ket{\psi_1} + c_2 \ket{\psi_2} 
+\end{equation}
+To account for the time dependent factor, we simply \textit{tack-on} the $\phi_n(t)$ function from (\ref{phi}). This makes our state become:
+\begin{equation}
+\Psi(x,0) = c_0 \ket{\psi_0}e^{-iE_0t/\hbar} + c_1 \ket{\psi_1}e^{-iE_1t/\hbar} + c_2 \ket{\psi_2} e^{-iE_2t/\hbar}
+\end{equation}
+\paragraph*{}At this point, we have constructed all that we can about our quantum state. However, now suppose that we make some measurements, adjust some dials, and run some calculations and find that $c_0 = 3$, $c_1 = 4i$, and $c_2 = 5$. Additionally, we must impose that this state itself be normalized to 1, by multiplying the while linear combination by soem constant $A$. We can then finish our mathematical model  by saying that our wave function for this particular quantum mechanical system is given by:
+\begin{equation}
+\label{ex1 sys ket dirac}
+\ket{\Psi(x,t)} = A \Big( 3 \ket{\psi_0}e^{-iE_0t/\hbar} + 4i \ket{\psi_1}e^{-iE_1t/\hbar} + 5 \ket{\psi_2} e^{-iE_2t/\hbar} \Big)
+\end{equation}
+Recall that this is also equivalent to writing:
+\begin{equation}
+\label{ex1 sys non-dirac}
+\Psi(x,t) =  A \Big( 3\psi_0(x)e^{-iE_0t/\hbar} + 4i\psi_1(x)e^{-iE_1t/\hbar} + 5\psi_2(x)e^{-iE_2t/\hbar} \Big)
+\end{equation}
+And that both of these equations stem from the idea of \textit{linear combinations of separable solutions}.
+
+% ================================
+
+\subsection*{Building the Probability Density}
+\paragraph*{}Now that we have a complete description of our state, given by the wave function $\ket{\Psi(x,t)}$, we can build our probability density and normalize it accordingly. To produce the probability density function, we need to compute the value:
+\begin{equation}
+|\Psi(x,t)|^2 \text{\hspace{1cm} which can be notated: \hspace{1cm}} \braket{\Psi(x,t)}{\Psi(x,t)}
+\end{equation}
+although $\braket{\Psi(x,t)}{\Psi(x,t)}$ implies the evaluation of the inner product over all of space.
+\paragraph*{}We have already constructed the ket $\ket{\Psi(x,t)}$, so now we must construct the bra $\bra{\Psi(x,t)}$. Recall the relationship between the two is given by equation (\ref{bra-ket relation}). So in our case: $\bra{\Psi(x,t)} = \ket{\Psi(x,t)}^*$. We compute the complex conjugate of (\ref{ex1 sys ket dirac}) by applying the operation to each term. The sign in front of every term with an $i$ gets reversed. The bra representation of our system is then:
+\begin{equation}
+\label{ex1 sys bra dirac}
+\bra{\Psi(x,t)} = A^* \Big( 3 \ket{\psi_0}e^{+iE_0t/\hbar} - 4i \ket{\psi_1}e^{+iE_1t/\hbar} + 5 \ket{\psi_2} e^{+iE_2t/\hbar} \Big)
+\end{equation}
+which is again, equivalent to:
+\begin{equation}
+\label{ex1 sys non-dirac}
+\Psi^*(x,t) = A^* \Big( 3 \psi_0(x)e^{+iE_0t/\hbar} - 4i \psi_1(x)e^{+iE_1t/\hbar} + 5 \psi_2(x) e^{+iE_2t/\hbar} \Big)
+\end{equation}
+\paragraph*{}Once again, the goal is to evaluate the inner product, or simply build the integral:
+\begin{equation}
+\label{prob}
+\braket{\Psi(x,t)}{\Psi(x,t)} = |A|^2 \int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx
+\end{equation}
+And we must find some constant $|A|^2$ to multiply the integral in (\ref{prob}) by such that it is equal to 1. because just $A$ normalizes either the bra or the ket.
+\paragraph*{}Now the tricky bit comes here, when we actually have to multiply the two values together to form the inner product. However, doing out the math fully will be exhausting, especially since each side has three terms in it, and the resulting expansion will have \textit{nine} terms left in it - Except that it wont. We need to recall two important concepts:
+
+\begin{enumerate}
+\item[•]\textbf{Multiplying exponentials of the same base}\\
+Multiplying exponentials of the name base requires that we sum the exponents together. So, $e^{\alpha} \times e^{\beta} = e^{\alpha + \beta}$. So in our case, every term will have an exponential function resembling $e^{-i(E_n + E_m)t/\hbar}$ in it. In the case where the energies are equal, i.e from the same state: $E_n = E_m$, then that whole function evaluates to $e^0$ or very simply 1! So, in the three terms where a eigen-ket is multiplied by it's corresponding eigen-bra, the time dependence exactly eliminates itself! Which is another justification why we just separable solutions to solve the TSDE. 
+\item[•]\textbf{Orthonormality of Energy- Eigenstates}\\
+The orthonomality of the eigenstates harkons back to the vital idea from equation (\ref{orthonorm}). Each of the nine terms will have some inner product in it resembling $\braket{\psi_n}{\psi_m}$ in it. If $n = m$, then the inner product evaluate to 1 since each bra and ket is appropriately normalized. This will happen in three of the nine terms: $\braket{\psi_0}{\psi_0}$, $\braket{\psi_1}{\psi_1}$, and 
+$\braket{\psi_2}{\psi_2}$ all  evaluate to 1.  In the six other terms, the othronormality forces the inner product to evaluate to zero, and thus those same size terms all evaluate to zero.
+\end{enumerate}
+
+\paragraph*{}Putting these two concepts together \textit{drastically} simplifies our endeavor here. We've gone from this inner product, to its corresponding integral who's integrand has nine separate terms in it. However, orthonormality dictates that six of those terms go to zero immediately. The remaining three terms cause their own exponential portions to evaluate to 1, and then furthermore, their inner products do the name. The result is actually just the coefficients of the three surviving terms.
+\begin{equation}
+|A|^2 \int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx = |A|^2 \Big( |3|^2 + |4i|^2 + |5|^2 \Big) \int_{-\infty}^{+\infty}dx
+\end{equation}
+And we must equate all of this to the value of $1$ because that is what we want the integral and inner product in (\ref{prob}) to evaluate to. So:
+\begin{equation}
+|A|^2 \Big( |3|^2 + |4i|^2 + |5|^2 \Big) = |A|^2 \Big(9 + 16 + 25 \Big) = 1
+\end{equation}
+and finally, it can be found that $A^2 = \frac{1}{50}$ and thus $A = A^* \frac{1}{\sqrt{50}}$.
+\paragraph*{}At this, our \textit{normalized} probability density for our wave function $\Psi(x,t)$ from equation (\ref{prob}) becomes:
+\begin{equation}
+P(x,t) = \braket{\Psi(x,t)}{\Psi(x,t)} = \frac{1}{50}\int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx
+\end{equation}
+As in accordance to our rules of the wave function earlier in this chapter, evaluating this integral over all of space will produce the value $1$. And evaluating the integrabl between some bounds $a$ to $b$ where $a \neq  b$ gives the probability of finding the particle on the x - axis between those bounds at some time $t$.
+\paragraph*{}Lastly, we cannot forget to apply the new normalization constant to the orignal bras and kets that we constructed earlier, This has the effect of absorbing the constant $A$ and $A^*$ \textit{inside} the integrand. The linear combination ket becomes:
+\begin{equation}
+\label{ex1 norm ket}
+\ket{\Psi(x,t)} =  \frac{3}{\sqrt{50}} \ket{\psi_0}e^{-iE_0t/\hbar} + 
+\frac{4i}{\sqrt{50}} \ket{\psi_1}e^{-iE_1t/\hbar} + \frac{5}{\sqrt{50}} \ket{\psi_2} e^{-iE_2t/\hbar}
+\end{equation}
+and the linear combination bra becomes:
+\begin{equation}
+\label{ex1 norm bra}
+\bra{\Psi(x,t)} =  \frac{3}{\sqrt{50}} \bra{\psi_0}e^{+iE_0t/\hbar} - 
+\frac{4i}{\sqrt{50}} \bra{\psi_1}e^{+iE_1t/\hbar} + \frac{5}{\sqrt{50}} \bra{\psi_2} e^{+iE_2t/\hbar}
+\end{equation}
+
+% ================================
+
+\subsection*{Energy Measurements}
 
 % ================================================================
 
 \section{Takeaways from this Chapter}
+\paragraph*{}Finishing up this chapter, I want to highlight the important things that we've learned. After all we've gone through, we'll finish with a short list of the more important things to remember from this chapter.
 
 % ================================================================
 % ================================================================
@@ -550,7 +720,7 @@ V(x) = \left\{
 \end{equation}
 \paragraph*{}Before we even do math, we can take some time to analyze the physical nature of the system. The first thing that comes to mind is the presence of the $+\infty$ values outside the range $0$ to some arbitrary position $L$. We have essentially used the potential function values to create a well, of some width, $L$, with walls that infinitely high - hence the name of "the infinite square well". From classical physics, you may interpret this as being stuck between two infinitely tall mountains or something of the sort. Either way, the infinite potential value forces the particle to be confined in this regions of length $L$, because no matter how much energy or force is applied to that particle, it \textit{can never escape} the infinite square well.
 \begin{center}
-\includegraphics[scale=0.3]{ISW}
+\includegraphics[scale=0.32]{ISW}
 \end{center}
 \paragraph*{}Right off of that bat, this allows for some great simplifications. First off, no matter what, Our particle cannot exist in the region $x < 0$ or $x > L$ because of the infinite amount of energy required to get there. Therefore, this quantum mechanical particle can \textit{only} exist in the region $0 \geq x \leq L$. With this, can can focus all of our attention to this region of space. All of the rules outline in the previous chapters still apply, but now we only have this small region of space to worry about.
 \paragraph*{}So for the region between $x = 0$ and $x = L$, the TISE reads:
@@ -636,6 +806,11 @@ Where $kx$ must be an integer multiple of $\pi$: $kx = \pm \pi , \pm 2\pi , \pm 
 % ================================================================
 
 % ================================================================
+
+% ================================================================
+% ================================================================
+
+\chapter{The Next Level: \\ Spin and Angular Momentum}
 
 % ================================================================
 % ================================================================
