@@ -53,8 +53,11 @@ The Quantum Game\\
 % ================================================================
 
 \section*{Introduction}
-\paragraph*{}Quantum Physics has spent near of the last hundred years being synonymous with the mysterious and inexplicable. Rightfully so, it's a topic almost never given attention to outside of formal physics degree or career. This in part lies within it's bizare nature and also counter-intuitive set of rules. 
-\paragraph*{}\textit{The Quantum Game} has been written to serve as a very broad overview of elementary quantum mechanical theory. While that statement may seem like an oxymoron, the goal of this text is to show how despite it reputation, quantum physics is in fact a very reasonable and digestible subject, even for those outside of a formal physics degree or career. As with every text, every reader seeks to get something different, and it is my intention to satisfy most basic questions  by outline much of the general functionality of this subject.
+\paragraph*{}Quantum Physics has spent near of the last hundred years being synonymous with the mysterious and inexplicable. This is perhaps rightfully so, as it's a topic almost never given attention outside of formal physics degree or career. This in part lies within it's general obscurity, bizarre nature, and also counter-intuitive set of rules. Other branches of Physics such as classical physics, or electricity and magnetism or special and general relativity are often regarded as far more well-dinfed branches of physics. There, we can predict a set of events given a circumstance, map it mathematically and then show that our theory is valid due to it's predictive reliability.
+\paragraph*{}Quantum physics on the other hand, is far less well define, in part because it is the "newest" of these branches of physics. It's original conception could almost be considered accidental. It came up as a way of explaining strange phenomena that could not be touched by the laws of Newton or Maxwell. Over the last hundred years. This theory that covers the smallest known scale of the universe, and is considerably dense material wise. Everything in this text is a hyper-condensed amalgamation of the life's work of greats like \textit{Erwin Schrodinger}, \textit{Paul Dirac}, \textit{Wolfgang Pauli}, \textit{Werner Heisenburg} and \textit{Max Born}. And no single book, paper or talk on the subject could every do the topic justice.
+\paragraph*{}\textit{The Quantum Game} has been written to serve as a very broad overview of elementary quantum mechanical theory. While that statement may seem like an oxymoron, the goal of this text is to show how despite it reputation, quantum physics is in fact a very reasonable and digestible subject, even for those outside of a formal physics degree or career. As with every text, every reader seeks to get something different, and it is my intention to satisfy most basic questions  by outline much of the general functionality of this subject. My goal as the writer of this text is to show how to \textit{do} quantum physics - from a mostly mathematical and computational prospective. By the end of this work, we will have built up a solid mathematical backbone, as well a new form a intuition to guide you through an possible future quantum - related endeavors.
+
+\vspace*{6cm}
 
 \pagebreak
 
@@ -412,17 +415,70 @@ Where all elements could be either finitely dimensional on infinitely dimensiona
 
 % ================================
 
-\subsection*{Probability}
-\paragraph*{}As expressed before, vast parts of understanding quantum physics relies on probability and statistical interpretations of mathematics. In order to better grasp these concepts, I want to establish common system of language and notation for dealing with this. 
+\subsection*{Discrete Probability}
+\paragraph*{}As expressed before, vast parts of understanding quantum physics relies on probability and statistical interpretations of mathematics. Since a large part of this text will be dedicated the \textit{numerically} handling quantum systems, I want to take some time just out outline probability for discrete distributions, as computers would understand them. In order to better grasp these concepts, I want to establish common system of language and notation for dealing with this.
+\paragraph*{}Suppose we have some discrete probability density $\rho$ with $k$ entries, and $\rho_i$ means the number of samples at some index $i$. For most standard programming languages, this distribution would be modeled as a simple 1D array of values of length $k$.
+\begin{equation}
+\label{rho}
+\rho = [ \rho_0 , \rho_1 , \rho_2 , ... , \rho_i , ... \rho_k ]
+\end{equation}
+The total number of samples would be given by summing up all of the numbers of sample at each index up to all $k$ entries, or simply summing the contents of the array. Mathematically is given by:
+\begin{equation}
+\label{total disc samples}
+N = \sum_{i=0}^{k}\rho_i
+\end{equation}
+We can also multiply this sum by some constant $A$ such that $N = 1$ and all probabilities are measured with respect to $1$. We can use this probability density function, $\rho$ to determine some other neat parameters for this functions as well:
 
+\begin{enumerate}
+\item[•]\textbf{The Probability of a simple outcome}\\
+The statistical likelihood of single outcome, $i$, occurring in the distribution $\rho$, can be though of as the number of sample at that index, divided by the total number of sample at all indexes:
+\begin{equation}
+\label{disc prob}
+P(i) = \frac{\rho_i}{N}
+\end{equation}
+If $\rho$ is a normalized , then summing up all of the $P(i)$'s will result with the value $1$.
+\item[•]\textbf{Average Value} or \textbf{Expectation Value}\\
+The average of a function or distribution, $rho$ is commonly denoted as $\bar{\rho}$ or in Dirac notation as: $\expval{\rho}$. It is given the sum all elements, divided by the number of elements, or by the sum of each index entry times the probability of each entry.
+\begin{equation}
+\label{expect val}
+\expval{\rho} = \frac{1}{N} \sum_{i=0}^{k} i\big(\rho_i\big) = \sum_{i=0}^{k} i \big(P(i)\big)
+\end{equation}
+\item[•]\textbf{Expectation of Squares}\\
+Computing the expectation of each value squared, $\expval{\rho^2}$ is another useful quantity in statistics. Take every element, square it,  multiply by the probability of that element, then sum over each index:
+\begin{equation}
+\label{expect val sq}
+\expval{\rho^2} = \sum_{i=0}^{k} i^2 \big( P(i) \big)
+\end{equation}
+\end{enumerate}
 
+\paragraph*{}We can use these concepts to measure on average, how much each sample in our distribution or array differs fro the average. This quantity is often informally referred to as the "spread" of the data. However, the average of the difference between each sample and the average will actaully by definition equate to zero!
+\begin{equation}
+\label{spread}
+\Delta \rho = \sum_{i=0}^{k} \big( \rho_i - \expval{\rho} \big) = 0
+\end{equation}
+To get around this, we can deal only in absolute values, in the form of squaring the entries, and then averaging them. This paves the way for our last two quantities of interest.
+
+\begin{enumerate}
+\item[•]\textbf{Variance}\\
+The variance of a distribution measures how much a data set differs from it's average by ignoring the direction of the deviation:
+\begin{equation}
+\label{variance}
+\sigma_{\rho}^2 \equiv \expval{(\Delta \rho)^2} = \big( \expval{\rho^2} - \expval{\rho}^2 \big)
+\end{equation}
+\item[•]\textbf{Standard Deviation}\\
+Finally, by taking the square root of both sides, we can compute the stanard deviation of the distribution:
+\begin{equation}
+\label{std dev}
+\sigma_{\rho} \equiv \sqrt{\expval{(\Delta \rho)^2}} = \sqrt{\big( \expval{\rho^2} - \expval{\rho}^2 \big)}
+\end{equation}
+\end{enumerate}
+\paragraph*{}Since we can confirm that for any data distribution, $\expval{\rho^2} \geq \expval{\rho}^2$, we can safety guarantee that both the variance and standard deviation of a data set will always be real and non-negative. Both these concepts will come in handy a great deal when we introduce \textit{Heisenberg's Uncertainty Principle} in chapter 3.
 
 % ================================================================
 
 \section{The Characters in the Game}
 
 % ================================
-
 
 \subsection*{Spaces and Basis}
 \paragraph*{}One of the strangest concepts from quantum physics and linear algebra is the idea of \textit{spaces}. It's very abstract idea, because in most of the mathematics done in our everyday careers we can treat space as the dimension that we're working in, and almost never have to go beyond three spatial dimensions. However, with the introduction of ideas like \textit{kets} and \textit{infinite dimensional} spaces, the math seems to become a bit more complicated - expect that \textit{it doesn't}.
@@ -659,8 +715,8 @@ and finally, it can be found that $A^2 = \frac{1}{50}$ and thus $A = A^* \frac{1
 \begin{equation}
 P(x,t) = \braket{\Psi(x,t)}{\Psi(x,t)} = \frac{1}{50}\int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx
 \end{equation}
-As in accordance to our rules of the wave function earlier in this chapter, evaluating this integral over all of space will produce the value $1$. And evaluating the integrabl between some bounds $a$ to $b$ where $a \neq  b$ gives the probability of finding the particle on the x - axis between those bounds at some time $t$.
-\paragraph*{}Lastly, we cannot forget to apply the new normalization constant to the orignal bras and kets that we constructed earlier, This has the effect of absorbing the constant $A$ and $A^*$ \textit{inside} the integrand. The linear combination ket becomes:
+As in accordance to our rules of the wave function earlier in this chapter, evaluating this integral over all of space will produce the value $1$. And evaluating the integral between some bounds $a$ to $b$ where $a \neq  b$ gives the probability of finding the particle on the x - axis between those bounds at some time $t$.
+\paragraph*{}Lastly, we cannot forget to apply the new normalization constant to the original bras and kets that we constructed earlier, This has the effect of absorbing the constant $A$ and $A^*$ \textit{inside} the integrand. The linear combination ket becomes:
 \begin{equation}
 \label{ex1 norm ket}
 \ket{\Psi(x,t)} =  \frac{3}{\sqrt{50}} \ket{\psi_0}e^{-iE_0t/\hbar} + 
