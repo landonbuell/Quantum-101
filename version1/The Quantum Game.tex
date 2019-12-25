@@ -549,12 +549,13 @@ $(\ket{a} + \ket{b}) + \ket{c} = \ket{a} + (\ket{b} + \ket{c})$.
 \item[•]\textbf{Identity of Addition}\\
 Under the addition operation, there is some ket, $\ket{0}$ such that when added to a ket $\ket{c}$, it retains all properties as before the operations: $\ket{c} + \ket{0} = \ket{c}$. In linear algebra, this is referred to at the \textit{zero- vector} or \textit{null-space}. In Dirac notation, this is called the \textit{zero- ket} or \textit{null- ket}.
 \item[•]\textbf{Inverse of Addition}\\
-There exists an operation, such 
+There exists an operation, much that it has the opposite effect of addition - subtraction. This works such that it 'undoes' addition: $\ket{a}+ (-\ket{a}) = \ket{0}$. It also follows such that if $\ket{a} + \ket{b} = \ket{c}$, then $\ket{c} - \ket{b} = \ket{a}$.
 \item[•]\textbf{Distributivity of Multiplication }\\
-
+Multiplication operation in a vector space has a distributive property: $\alpha(\ket{b} + \ket{c}) = \alpha\ket{b} + \alpha\ket{c}$.
 \item[•]\textbf{Associativity of Multiplication}\\
-
+Multiplication operation in a vector space has an associative property: $\beta(\gamma\ket{a}) = (\beta\gamma)\ket{a}$.
 \item[•]\textbf{Identity of Multiplication}\\
+Under the multiplication, there is some operator, $\hat{1}$, such that when multiplied by a ket, $\ket{c}$, its retains all properties as before the operation: $\ket{c} = \hat{1}\ket{c}$. In linear algebra, this takes the form of the identity matrix. It is also to note that the \text{outer product} product of a normalized kets and bra has the property such that: $\ketbra{b}{b} = \hat{1}$.
 
 
 \end{enumerate}
@@ -719,6 +720,11 @@ Where $\delta_{n,m}$ is a mathematical function called the \textit{Kronecker Del
     \right.
 \end{equation}
 
+% ================================
+
+\subsection*{Building the Hamiltonian}
+\textit{[Okay, so this part isn't quite done yet]}
+
 % ================================================================
 
 \section{Analyzing a Quantum System}
@@ -831,11 +837,92 @@ and the linear combination bra becomes:
 % ================================
 
 \subsection*{Energy Measurements}
+\paragraph*{}Finally, we can analyze the energy of this quantum system. We know that therie are two possible energy eigenstates, and two corresponding energy eigenvalues. This mean that If we choose to measure the energy of this this system, we can only get one of two values: $E_1$ or $E_2$. But since we know that quantum physics is a game of probability, what is the \textit{probability} that we measure one state with it's particular energy over the other?
+\paragraph*{}The answer lies with the coefficients of our linear combination of solutions. \textbf{The actual physical representation of the $c_n$ coefficients is that $|c_n|^2$ gives the probability of the state $\ket{\psi_n}$ of occurring.} So then the probability of measuring each energy state is given by:
+\begin{equation}
+\begin{split}
+P(E_1) = |c_1|^2 = \Big(\frac{+4i}{\sqrt{41}}\Big) \Big(\frac{-4i}{\sqrt{41}}\Big) = \frac{16}{41} \\
+P(E_2) = |c_2|^2 = \Big(\frac{5}{\sqrt{41}}\Big) \Big(\frac{5}{\sqrt{41}}\Big) = \frac{25}{41}
+\end{split}
+\end{equation}
+Thus, state $\ket{\psi_1}$ will appear $16/41$ times and state $\ket{\psi_2}$ will appear the remaining $25/41$ times. Notice also, how as a product of the normalization, the sum of the probability coefficients is $1$. Thus, you are always guaranteed to measure \textit{some} state at all times. Suppose there are $k$ states in our quantum system, then we have:
+\begin{equation}
+\sum_n^k |c_n|^2 = 1
+\end{equation}
+And similarly, we can always compute the expectation value for energy for the Hamiltonian operator:
+\begin{equation}
+\label{expect Hamiltionian}
+\expval{\hat{H}} = \sum_n^k |c_n|^2 E_n
+\end{equation}
 
 % ================================================================
 
 \section{Takeaways from this Chapter}
 \paragraph*{}Finishing up this chapter, I want to highlight the important things that we've learned. After all we've gone through, we'll finish with a short list of the more important things to remember from this chapter.
+
+% ================================
+
+\subsection*{Sections 1 - 3}
+\begin{enumerate}
+\item[•]\textbf{The Schrodinger Equation} is the governing equation for all of elementary quantum physics:
+\begin{equation}
+-\frac{\hbar^2}{2m}\frac{\partial^2 \Psi}{\partial x^2} + V(x)\Psi = i\hbar\frac{\partial \Psi}{\partial t}
+\end{equation}
+\item[•]Quantum physics relies on \textbf{statistical interpretation} to interpret past measurements and predict future measurements on a system. Exact values cannot be determined, and can only be predicted according to probability densities.
+\item[•]The \textbf{wave function} is the solution to the Schrodinger equation, and takes the separated form:
+\begin{equation}
+\Psi(x,t) = \psi(x)\phi(t)
+\end{equation}
+It contains encoded within it, all possible information that can be known about a quantum particle. mathematically, it gives a probability amplitude.
+\item[•]The exact\textbf{probability density function} is given by multiplying the wave function by it's own complex conjugate.
+\begin{equation}
+P(x,t) = \Psi^*(x,t)\Psi(x,t) = |\Psi(x,t)|^2
+\end{equation}
+By convention, we normalize this function to the value $1$, such that all evaluated probabilities are measured out of $1$.
+\item[•]Evaluating this \textbf{probability density between the bounds $a$ and $b$ gives the probability of the particle existing in the space between position $a$ and position $b$}. If the bounds are $-\infty$ and $+\infty$ respectively, the integral \textit{must} evaluate to $1$.
+\item[•]The wave function and it's first derivative \textbf{must be continuous}, expect where the potential function takes on infinite values.
+\item[•]By assuming a potential function, $V(x)$ to be constant with respect to time, we derive the \textbf{Time Independent Schrodinger Equation} with the separation of variables technique.
+\begin{equation}
+-\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2} + V(x)\psi = E\psi
+\end{equation}
+\item[•]This allows all time dependence to become a complex exponential, which cancels itself out when taking the inner product:
+\begin{equation}
+\phi_n(t) = e^{-iE_nt/\hbar}
+\end{equation}
+\item[•]The Schrodinger equation is a linear partial differential equation, so a linear combination of solutions is also a valid solution:
+\begin{equation}
+\Psi(x,t) = \sum_n^{\infty} c_n \psi_n(x) \phi_n(t)
+\end{equation}
+\end{enumerate}
+
+% ================================
+
+\subsection*{Sections 4 - 5}
+\begin{enumerate}
+\item[•]Quantum physics is a mathematically intensive branch of physics that relies on \textbf{linear algebra and Dirac notation} to express itself effectively. This involves the use of bras and kets to take the place of vectors, operators to replace matrices and other notation tricks for convenience. Operators, bras, kets and combinations of make up most of the backbone for the mathematics.
+\item[•]\textbf{Statistics also allows for some important measurements in quantum physics.} These includes, expectation values, variances, standard deviations, and general probability functions.
+\item[•]Linear ket spaces play a large role in the math of quantum physics and when combined with diraction notation allows us to express information in higher dimensions in the same way we mathematically handle lower dimensions. Typically, measurements on a quantum system are made in \textit{position space}, \textit{momentum space}, and occasionally \textit{energy space}. These spaces require mathematical transforms to move between them.
+\end{enumerate}
+
+% ================================
+
+\subsection*{Sections 6 - 7}
+\begin{enumerate}
+\item[•]Schrodinger's equation uses the hamiltional operator from classical physics to \textit{measure the total energy of a quantum mechanical particle}. Using that Hamiltonian operator, it sums the kinetic and potential energy of the system. We can then turn the entirety of the Schrodinger equation into a simple \textit{energy eigen equation}:
+\begin{equation}
+\hat{H}\ket{\psi} = E\ket{\psi}
+\end{equation}
+\item[•]Each ket, $\ket{\psi}$ that \textbf{satisfies this eigenvalue problem is also solution to the Schrodinger equation for the specific potential function}. The corresponding eigenvalue, $E$, is the energy for that particular solution. This \textit{vastly} simplifies our system when trying to solve it numerically.
+\item[•]Each energy -eigen state, $\ket{\psi_0}$, $\ket{\psi_1}$, ... , $\ket{\psi_N}$; is orthogonal to all of the other kets when it is normalized to $1$. This principle is called \textbf{orthonormality} and once again does a great distance when simplifying our mathematical description.
+\end{enumerate}
+
+
+
+% ================================
+
+% ================================
+
+
 
 % ================================================================
 % ================================================================

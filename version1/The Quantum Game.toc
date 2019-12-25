@@ -5,16 +5,16 @@
 \contentsline {section}{\numberline {1.4}The Language of the Game}{14}% 
 \contentsline {section}{\numberline {1.5}The Characters in the Game}{21}% 
 \contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{25}% 
-\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{27}% 
-\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{31}% 
-\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{33}% 
-\contentsline {section}{\numberline {2.1}The Infinite Square Well}{34}% 
-\contentsline {paragraph}{}{35}% 
-\contentsline {section}{\numberline {2.2}The Finite Square Well}{36}% 
-\contentsline {section}{\numberline {2.3}Multiple Square Wells}{36}% 
-\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{36}% 
-\contentsline {section}{\numberline {2.5}The Free Particle}{36}% 
-\contentsline {section}{\numberline {2.6}The Delta Function}{36}% 
-\contentsline {chapter}{\numberline {3}The Rules of the Game}{37}% 
-\contentsline {chapter}{\numberline {4}The Next Level: \\ Spin and Angular Momentum}{39}% 
-\contentsline {chapter}{\numberline {5}Mathematical Index}{41}% 
+\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{28}% 
+\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{32}% 
+\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{35}% 
+\contentsline {section}{\numberline {2.1}The Infinite Square Well}{36}% 
+\contentsline {paragraph}{}{37}% 
+\contentsline {section}{\numberline {2.2}The Finite Square Well}{38}% 
+\contentsline {section}{\numberline {2.3}Multiple Square Wells}{38}% 
+\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{38}% 
+\contentsline {section}{\numberline {2.5}The Free Particle}{38}% 
+\contentsline {section}{\numberline {2.6}The Delta Function}{38}% 
+\contentsline {chapter}{\numberline {3}The Rules of the Game}{39}% 
+\contentsline {chapter}{\numberline {4}The Next Level: \\ Spin and Angular Momentum}{41}% 
+\contentsline {chapter}{\numberline {5}Mathematical Index}{43}% 
