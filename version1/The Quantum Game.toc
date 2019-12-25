@@ -3,18 +3,18 @@
 \contentsline {section}{\numberline {1.2}The Wave Function}{9}% 
 \contentsline {section}{\numberline {1.3}Breaking Down the Schrodinger Equation}{11}% 
 \contentsline {section}{\numberline {1.4}The Language of the Game}{14}% 
-\contentsline {section}{\numberline {1.5}The Characters in the Game}{20}% 
-\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{23}% 
-\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{26}% 
-\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{29}% 
-\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{31}% 
-\contentsline {section}{\numberline {2.1}The Infinite Square Well}{32}% 
-\contentsline {paragraph}{}{33}% 
-\contentsline {section}{\numberline {2.2}The Finite Square Well}{34}% 
-\contentsline {section}{\numberline {2.3}Multiple Square Wells}{34}% 
-\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{34}% 
-\contentsline {section}{\numberline {2.5}The Free Particle}{34}% 
-\contentsline {section}{\numberline {2.6}The Delta Function}{34}% 
-\contentsline {chapter}{\numberline {3}The Rules of the Game}{35}% 
-\contentsline {chapter}{\numberline {4}The Next Level: \\ Spin and Angular Momentum}{37}% 
-\contentsline {chapter}{\numberline {5}Mathematical Index}{39}% 
+\contentsline {section}{\numberline {1.5}The Characters in the Game}{21}% 
+\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{25}% 
+\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{27}% 
+\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{31}% 
+\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{33}% 
+\contentsline {section}{\numberline {2.1}The Infinite Square Well}{34}% 
+\contentsline {paragraph}{}{35}% 
+\contentsline {section}{\numberline {2.2}The Finite Square Well}{36}% 
+\contentsline {section}{\numberline {2.3}Multiple Square Wells}{36}% 
+\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{36}% 
+\contentsline {section}{\numberline {2.5}The Free Particle}{36}% 
+\contentsline {section}{\numberline {2.6}The Delta Function}{36}% 
+\contentsline {chapter}{\numberline {3}The Rules of the Game}{37}% 
+\contentsline {chapter}{\numberline {4}The Next Level: \\ Spin and Angular Momentum}{39}% 
+\contentsline {chapter}{\numberline {5}Mathematical Index}{41}% 

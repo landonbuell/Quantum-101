@@ -20,8 +20,9 @@
 % ================================
 
 \pagestyle{fancy}
-\fancyhf{}
-\rhead{Landon Buell}
+\fancyhead{}
+\fancyfoot{}
+\rhead{Landon Buell }
 \lhead{The Quantum Game}
 \cfoot{\thepage}
 
@@ -411,7 +412,52 @@ Would then become:
 \ket{w} = \hat{A}\ket{v}
 \end{equation}
 Where all elements could be either finitely dimensional on infinitely dimensional.
-\paragraph*{}It is important to note that in Dirac notation of quantum mechanics, operators, unless notated otherwise act on the object to the \textit{right} of them.
+\paragraph*{}All operators also have a respective \textit{inverse} operator.
+\begin{center}
+An inverse operator is notated as $\hat{Q}^{-1}$
+\end{center}
+This has the effect of sort of "undoing" what ever it's counterpart did before. So, if operator $\hat{Q}$ takes the state $\ket{x}$ and transforms it into the state $\ket{y}$, such that:
+\begin{equation}
+\ket{y} = \hat{Q}\ket{x}
+\end{equation}
+Then the inverse operator $\hat{Q}^{-1}$ takes the state $\ket{y}$ and then transforms it into $\ket{x}$ such that:
+\begin{equation}
+\ket{x} = \hat{Q}^{-1}\ket{y}
+\end{equation}
+\paragraph*{}When operators are combined with their inverse, they have the effect for doing nothing! Any operator combined with it's inverse produces the \textit{identity operator}. In quantum physics, this is commonly called the \textit{one - operator}, and in matrix form from linear algebra, it is simply the \textit{identity matrix} - a matrix with all zeroes, and ones as the main diagonal.
+\begin{equation}
+\label{identity}
+\hat{1} = 
+\begin{bmatrix}
+1 & 0 & \hdots & 0 \\
+0 & 1 & \hdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \hdots & 1
+\end{bmatrix}
+\end{equation}
+\paragraph*{}Using this matrix of operator on any ket or vector has the effect of doing \textit{nothing}:
+\begin{equation}
+\ket{x} = \hat{1}\ket{x}
+\end{equation}
+\paragraph*{}Compared to other mathematical operations, this makes sense. When pairing an arithmetic operation with it's inverse, it returns the original value. For example. adding ans subracting the same value, multiplying and dividing and exponentiation and logarthims are are operations and inverses respectively. We can summarize this by writing out htis relationship mathematically. Any operator acting on it's inverse (or vice versa) returns the original state:
+\begin{equation}
+\ket{x} = \hat{Q}^{-1}\hat{Q}\ket{x} = \hat{Q}\hat{Q}^{-1}\ket{x} =
+ \hat{1}\ket{x} 
+\end{equation}
+\paragraph*{}It is also convention of dirac notation that operators act on the state \textit{to their right}. This means that when faces with the statement:
+\begin{equation}
+\ket{x} = \mel{a}{\hat{Q}}{b}
+\end{equation}
+The correct order of application can be donated by parenthesizes:
+\begin{equation}
+\ket{x} = \bra{a}\Big( \hat{Q}\ket{b} \Big)
+\end{equation}
+In some cases, operators \textit{do} act on the state to their left, in which case, it is notated as:
+\begin{equation}
+\ket{x} = \Big(\bra{a}\hat{Q}\Big)\ket{b} 
+\text{\hspace{2cm} or \hspace{2cm}}
+\ket{x} = \braket{\hat{Q}a}{b}
+\end{equation}
 
 % ================================
 
@@ -430,13 +476,19 @@ N = \sum_{i=0}^{k}\rho_i
 We can also multiply this sum by some constant $A$ such that $N = 1$ and all probabilities are measured with respect to $1$. We can use this probability density function, $\rho$ to determine some other neat parameters for this functions as well:
 
 \begin{enumerate}
-\item[•]\textbf{The Probability of a simple outcome}\\
+\item[•]\textbf{The Probability of a Single Outcome}\\
 The statistical likelihood of single outcome, $i$, occurring in the distribution $\rho$, can be though of as the number of sample at that index, divided by the total number of sample at all indexes:
 \begin{equation}
 \label{disc prob}
 P(i) = \frac{\rho_i}{N}
 \end{equation}
 If $\rho$ is a normalized , then summing up all of the $P(i)$'s will result with the value $1$.
+\item[•]\textbf{The Probability of Multiple Outcomes}\\
+The statistical likelihood of multiple outcomes, say $m$ of them, is the sum of the $m$ outcomes divided by the total number of outcomes.
+\begin{equation}
+\label{disc multi prob}
+P(i) = \frac{1}{N} \sum_{i=0}^{m}\rho_i
+\end{equation}
 \item[•]\textbf{Average Value} or \textbf{Expectation Value}\\
 The average of a function or distribution, $rho$ is commonly denoted as $\bar{\rho}$ or in Dirac notation as: $\expval{\rho}$. It is given the sum all elements, divided by the number of elements, or by the sum of each index entry times the probability of each entry.
 \begin{equation}
@@ -528,7 +580,7 @@ By taking the partial \textit{spatial} derivative, we can be that:
 \begin{equation}
 \frac{\partial}{\partial x}\Big[ \Psi(x,t) \Big] = \big( \frac{i}{\hbar}p\big) e^{\frac{i}{\hbar}(px - Et)}
 \end{equation}
-When then then algebraically solve for the operator $\hat{p}$ acting on the state $\Psi$. This then show us that the momentum operator acting on the state $\ket{\psi}$ would be notated as:
+When then then algebraically solve for the operator $\hat{p}$ acting on the state $\Psi$. This then show us that the momentum measurement of the state $\ket{\psi}$ would be notated as:
 \begin{equation}
 \label{momentum on psi}
 \hat{p}\ket{\psi} = -i\hbar\frac{\partial}{\partial x}\ket{\psi}
@@ -555,11 +607,40 @@ And just the ($x$) position operator on the \textit{p - basis} is given by:
 % ================================
 
 \subsection*{Hilbert Space}
+\paragraph*{}Hilbert space carries different rules and definitions in the worlds of physics and mathematics. Rather than try to define it, it would be better to simply explain it's place in quantum physics and what it's used for. Very basically, \textbf{functions can only exist in Hilbert Space if the  are square - normalizable over defined bounds}. This means that wave functions live in Hilbert space, and any function who's inner product with itselfis a real, finite number is also in Hilbert space. In practice, for this text, your knowledge of Hilbert space need not extend much beyond this, but to seal the deal, I'll just cover some quick rules and examples.
+\begin{enumerate}
+\item[•]\textbf{Finite Inner Product}\\
+A function or state, $f(x)$, exists in Hilbert space if and only if it's inner product with itself is a finite value:
+\begin{equation}
+\label{hilbert}
+\braket{f(x)}{f(x)} = \int_a^b |f(x)|^2 dx < \infty
+\end{equation}
+\item[•]\textbf{Normalization Constant}\\
+Similarly, there must be \textit{some} constant $A$ to scale $f(x)$ by such that it's inner product becomes normalized to one.
+\begin{equation}
+\braket{f(x)}{f(x)} = |A|^2\int_a^b |f(x)|^2 dx =1
+\end{equation}
+\item[•]\textbf{Domains}\\
+Functions can exist or not exist in Hilbert space depending on their domain. For example, the state 
+$\ket{f(x)} = e^{kx}$ (where $K > 0$) over all of space, $(-\infty,+\infty)$ \textit{does not} live in Hilbert space because it cannot be normalized. Similarly, the same can be said about the function over the bounds $[0,+\infty)$. However on the bounds, $(-\infty,0]$, $f(x)$ \textit{does} exist in Hilbert space because it can be normalized.
+\item[•]\textbf{Boundary Conditions}\\
+A general rule of thumb is that when dealing with infinite bounds, a function or state, $f(x)$, is only in Hilbert space if it goes to $0$ in the limit of approaching positive or negative infinity:
+\begin{equation}
+\label{inf limit}
+\lim_{x \rightarrow \pm \infty} f(x) = 0
+\end{equation}
+For example, a Gaussian function, $f_1(x) = e^{-x^2}$, or the sinc function, $f_2(x) = \sin(x)/x$ both live in Hilbert space over infinitive bounds. However, other exponentials, $f_3(x) = e^{x} - x$ or $f_4(x) = \cos^2(x)$ do not live in Hilbert space over infinite bounds because they do not abide by equation (\ref{inf limit}).
+\end{enumerate}
+
  
 % ================================================================
 
 \section{The Eigenvalue Problem}
-\paragraph*{}Now that we have more solid foundation for the mathematics of quantum physics, we can really break down Schrodinger's equation, and turn it into something truly nice and simple - and something far more reasonable to handle numerically. We have to make the starting realization that \textbf{this equation, is nothing more than measuring the total energy of the quantum system}, with something called the \textit{Hamiltonian}! 
+\paragraph*{}Now that we have more solid foundation for the mathematics of quantum physics, we can really break down Schrodinger's equation, and turn it into something truly nice and simple - and something far more reasonable to handle numerically. We have to make the starting realization that \textbf{this equation, is nothing more than measuring the total energy of the quantum system}, with something called the \textit{Hamiltonian}!
+
+% ================================
+
+\subsection*{The Hamiltonian} 
 \paragraph*{}The Hamiltonian is a concept from classical physics, far predating quantum mechanics. It's exact derivation, rules and proerties are quite complicated, and yet another task for a different text. For now, just know that the Hamiltonian is an operation that returns the \textit{total energy} of a particle or system by summing the kinetic and potential energies. So, lets create an operator $\hat{T}$ that when acting on a particle in the state, $\ket{\psi}$ for example, it returns the total \textit{kinetic} energy of that particle in that state. Similarly, create an operator $\hat{V}$ that when acting on a particle in the state, $\ket{\psi}$ it returns the total \textit{potential} energy of that particle in that state. So summing the operators has the result of returning the \textit{total} energy:
 \begin{equation}
 \label{Hamiltonian}
@@ -607,6 +688,10 @@ Now we can see that each term functions as an energy measurement:
 
 \paragraph*{}Putting all of these pieces together, allows to \textit{rewrite} the Time Independent Schrodinger Equation, \ref{1D TISE}). We can take the \textit{whole} second - order, linear, partial differential equation and turn it into:
 \begin{equation}
+\hat{T}\ket{\psi} + \hat{V}\ket{\psi} = E\ket{\psi}
+\end{equation}
+or more compactly:
+\begin{equation}
 \label{Hamiltonian EVP}
 \hat{H}\ket{\psi} = E\ket{\psi}
 \end{equation}
@@ -634,7 +719,6 @@ Where $\delta_{n,m}$ is a mathematical function called the \textit{Kronecker Del
     \right.
 \end{equation}
 
-
 % ================================================================
 
 \section{Analyzing a Quantum System}
@@ -643,28 +727,28 @@ Where $\delta_{n,m}$ is a mathematical function called the \textit{Kronecker Del
 % ================================
 
 \subsection*{Putting a System Together}
-\paragraph*{}So, suppose we've solved, or set up a quantum mechanical system, and found that it is composed of three energy-eigenstates: 
-$\ket{\psi_0}$, $\ket{\psi_1}$, and $\ket{\psi_2}$, with respective energies $E_0$, $E_1$ and $E_2$.  Recall that there three kets are the eigenkets of the eigenvalue problems from equation (\ref{Hamiltonian EVP}) and their function counter parts, $\psi_0(x)$, $\psi_1(x)$, and $\psi_2(x)$ are all \textit{also} solutions to the time independent Schrodinger equation, (\ref{TISE}). Because of the linearity of the problem, we can use equation (\ref{linear combo kets}) to fully describe the system. Recall that a linear combination of solution is also a solution:
+\paragraph*{}So, suppose we've solved, or set up a quantum mechanical system, and found that it is a \textit{two-state} system, it is composed of two energy-eigenstates: 
+$\ket{\psi_1}$ and $\ket{\psi_2}$, with respective energies $E_1$ and $E_2$.  Recall that there three kets are the eigenkets of the eigenvalue problems from equation (\ref{Hamiltonian EVP}) and their function counter parts, $\psi_1(x)$ and $\psi_2(x)$ are all \textit{also} solutions to the time independent Schrodinger equation, (\ref{TISE}). Because of the linearity of the problem, we can use equation (\ref{linear combo kets}) to fully describe the system. Recall that a linear combination of solution is also a solution:
 \begin{equation}
 \ket{\Psi(x,t)} = \sum_n^{\infty} c_n \ket{\psi_n} \phi_n(t)
 \end{equation}
 \paragraph*{}Each energy - eigenstate becomes $n$-th ket in the sum. And each energy - eigenvalue becomes $E_n$ from equation (\ref{phi}), which in turn becomes the $n$-th time dependent function in the sum. Using our model, evaluated at time $t=0$ becomes:
 \begin{equation}
-\Psi(x,0) = c_0 \ket{\psi_0} + c_1 \ket{\psi_1} + c_2 \ket{\psi_2} 
+\Psi(x,0) = c_1 \ket{\psi_1} + c_2 \ket{\psi_2} 
 \end{equation}
 To account for the time dependent factor, we simply \textit{tack-on} the $\phi_n(t)$ function from (\ref{phi}). This makes our state become:
 \begin{equation}
-\Psi(x,0) = c_0 \ket{\psi_0}e^{-iE_0t/\hbar} + c_1 \ket{\psi_1}e^{-iE_1t/\hbar} + c_2 \ket{\psi_2} e^{-iE_2t/\hbar}
+\Psi(x,0) = c_1 \ket{\psi_1}e^{-iE_1t/\hbar} + c_2 \ket{\psi_2} e^{-iE_2t/\hbar}
 \end{equation}
-\paragraph*{}At this point, we have constructed all that we can about our quantum state. However, now suppose that we make some measurements, adjust some dials, and run some calculations and find that $c_0 = 3$, $c_1 = 4i$, and $c_2 = 5$. Additionally, we must impose that this state itself be normalized to 1, by multiplying the while linear combination by soem constant $A$. We can then finish our mathematical model  by saying that our wave function for this particular quantum mechanical system is given by:
+\paragraph*{}At this point, we have constructed all that we can about our quantum state. However, now suppose that we make some measurements, adjust some dials, and run some calculations and find that $c_1 = 4i$ and $c_2 = 5$. Additionally, we must impose that this state itself be normalized to 1, by multiplying the while linear combination by some constant $A$. We can then finish our mathematical model  by saying that our wave function for this particular quantum mechanical system is given by:
 \begin{equation}
 \label{ex1 sys ket dirac}
-\ket{\Psi(x,t)} = A \Big( 3 \ket{\psi_0}e^{-iE_0t/\hbar} + 4i \ket{\psi_1}e^{-iE_1t/\hbar} + 5 \ket{\psi_2} e^{-iE_2t/\hbar} \Big)
+\ket{\Psi(x,t)} = A \Big( 4i \ket{\psi_1}e^{-iE_1t/\hbar} + 5 \ket{\psi_2} e^{-iE_2t/\hbar} \Big)
 \end{equation}
 Recall that this is also equivalent to writing:
 \begin{equation}
 \label{ex1 sys non-dirac}
-\Psi(x,t) =  A \Big( 3\psi_0(x)e^{-iE_0t/\hbar} + 4i\psi_1(x)e^{-iE_1t/\hbar} + 5\psi_2(x)e^{-iE_2t/\hbar} \Big)
+\Psi(x,t) =  A \Big( 4i\psi_1(x)e^{-iE_1t/\hbar} + 5\psi_2(x)e^{-iE_2t/\hbar} \Big)
 \end{equation}
 And that both of these equations stem from the idea of \textit{linear combinations of separable solutions}.
 
@@ -679,12 +763,12 @@ although $\braket{\Psi(x,t)}{\Psi(x,t)}$ implies the evaluation of the inner pro
 \paragraph*{}We have already constructed the ket $\ket{\Psi(x,t)}$, so now we must construct the bra $\bra{\Psi(x,t)}$. Recall the relationship between the two is given by equation (\ref{bra-ket relation}). So in our case: $\bra{\Psi(x,t)} = \ket{\Psi(x,t)}^*$. We compute the complex conjugate of (\ref{ex1 sys ket dirac}) by applying the operation to each term. The sign in front of every term with an $i$ gets reversed. The bra representation of our system is then:
 \begin{equation}
 \label{ex1 sys bra dirac}
-\bra{\Psi(x,t)} = A^* \Big( 3 \ket{\psi_0}e^{+iE_0t/\hbar} - 4i \ket{\psi_1}e^{+iE_1t/\hbar} + 5 \ket{\psi_2} e^{+iE_2t/\hbar} \Big)
+\bra{\Psi(x,t)} = A^* \Big( - 4i \bra{\psi_1}e^{+iE_1t/\hbar} + 5 \bra{\psi_2} e^{+iE_2t/\hbar} \Big)
 \end{equation}
 which is again, equivalent to:
 \begin{equation}
 \label{ex1 sys non-dirac}
-\Psi^*(x,t) = A^* \Big( 3 \psi_0(x)e^{+iE_0t/\hbar} - 4i \psi_1(x)e^{+iE_1t/\hbar} + 5 \psi_2(x) e^{+iE_2t/\hbar} \Big)
+\Psi^*(x,t) = A^* \Big( - 4i \psi_1(x)e^{+iE_1t/\hbar} + 5 \psi_2(x) e^{+iE_2t/\hbar} \Big)
 \end{equation}
 \paragraph*{}Once again, the goal is to evaluate the inner product, or simply build the integral:
 \begin{equation}
@@ -692,41 +776,56 @@ which is again, equivalent to:
 \braket{\Psi(x,t)}{\Psi(x,t)} = |A|^2 \int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx
 \end{equation}
 And we must find some constant $|A|^2$ to multiply the integral in (\ref{prob}) by such that it is equal to 1. because just $A$ normalizes either the bra or the ket.
-\paragraph*{}Now the tricky bit comes here, when we actually have to multiply the two values together to form the inner product. However, doing out the math fully will be exhausting, especially since each side has three terms in it, and the resulting expansion will have \textit{nine} terms left in it - Except that it wont. We need to recall two important concepts:
+\paragraph*{}Now the tricky bit comes here, when we actually have to multiply the two values together to form the inner product. However, doing out the math fully will be exhausting, especially since each side has three terms in it, and the resulting expansion will have \textit{four} terms left in it - Except that it wont. If were had a three or four state system, the resulting expansion would have nine or sixteen terms respectivitly. We need to recall two important concepts:
 
 \begin{enumerate}
 \item[•]\textbf{Multiplying exponentials of the same base}\\
-Multiplying exponentials of the name base requires that we sum the exponents together. So, $e^{\alpha} \times e^{\beta} = e^{\alpha + \beta}$. So in our case, every term will have an exponential function resembling $e^{-i(E_n + E_m)t/\hbar}$ in it. In the case where the energies are equal, i.e from the same state: $E_n = E_m$, then that whole function evaluates to $e^0$ or very simply 1! So, in the three terms where a eigen-ket is multiplied by it's corresponding eigen-bra, the time dependence exactly eliminates itself! Which is another justification why we just separable solutions to solve the TSDE. 
+Multiplying exponentials of the name base requires that we sum the exponents together. So, $e^{\alpha} \times e^{\beta} = e^{\alpha + \beta}$. So in our case, every term will have an exponential function resembling $e^{-i(E_n + E_m)t/\hbar}$ in it. In the case where the energies are equal, i.e from the same state: $E_n = E_m$, then that whole function evaluates to $e^0$ or very simply 1! So, in the two terms where a eigen-ket is multiplied by it's corresponding eigen-bra, the time dependence exactly eliminates itself! Which is another justification why we just separable solutions to solve the TSDE. 
 \item[•]\textbf{Orthonormality of Energy- Eigenstates}\\
-The orthonomality of the eigenstates harkons back to the vital idea from equation (\ref{orthonorm}). Each of the nine terms will have some inner product in it resembling $\braket{\psi_n}{\psi_m}$ in it. If $n = m$, then the inner product evaluate to 1 since each bra and ket is appropriately normalized. This will happen in three of the nine terms: $\braket{\psi_0}{\psi_0}$, $\braket{\psi_1}{\psi_1}$, and 
-$\braket{\psi_2}{\psi_2}$ all  evaluate to 1.  In the six other terms, the othronormality forces the inner product to evaluate to zero, and thus those same size terms all evaluate to zero.
+The orthonomality of the eigenstates harkons back to the vital idea from equation (\ref{orthonorm}). Each of the four terms will have some inner product in it resembling $\braket{\psi_n}{\psi_m}$ in it. If $n = m$, then the inner product evaluate to 1 since each bra and ket is appropriately normalized. This will happen in two of the four terms: $\braket{\psi_1}{\psi_1}$, and 
+$\braket{\psi_2}{\psi_2}$ all  evaluate to 1.  In the two other terms, the othronormality forces the inner product to evaluate to zero, and thus those same size terms all evaluate to zero.
 \end{enumerate}
 
-\paragraph*{}Putting these two concepts together \textit{drastically} simplifies our endeavor here. We've gone from this inner product, to its corresponding integral who's integrand has nine separate terms in it. However, orthonormality dictates that six of those terms go to zero immediately. The remaining three terms cause their own exponential portions to evaluate to 1, and then furthermore, their inner products do the name. The result is actually just the coefficients of the three surviving terms.
+\paragraph*{}Putting these two concepts together \textit{drastically} simplifies our endeavor here. We've gone from this inner product, to its corresponding integral who's integrand has four separate terms in it. However, orthonormality dictates that six of those terms go to zero immediately. The remaining three terms cause their own exponential portions to evaluate to 1, and then furthermore, their inner products do the same. 
+\paragraph*{}For the sake of argument, we do evaluate the inner product out completely:
 \begin{equation}
-|A|^2 \int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx = |A|^2 \Big( |3|^2 + |4i|^2 + |5|^2 \Big) \int_{-\infty}^{+\infty}dx
+|A|^2
+\Big( - 4i \bra{\psi_1}e^{+iE_1t/\hbar} + 5 \bra{\psi_2} e^{+iE_2t/\hbar} \Big)
+\Big( 4i \ket{\psi_1}e^{-iE_1t/\hbar} + 5 \ket{\psi_2} e^{-iE_2t/\hbar} \Big)
+\end{equation}
+Distributing each term, allowing certain exponential to simply to $e^0$:
+\begin{equation}
+\begin{split}
+\braket{\Psi(x,t)}{\Psi(x,t)} = & \\
+\big( -16i^2 \braket{\psi_1}{\psi_1} e^0 \big) - \big( 20i \braket{\psi_1}{\psi_2}e^{-i(E_1 - E_2)t/\hbar} \big) + & \\
+\big(20i   \braket{\psi_2}{\psi_1} e^{-i(E_2 - E_1)t/\hbar} \big) +  \big( 25\braket{\psi_2}{\psi_2} e^0 \big)
+\end{split}
+\end{equation}
+Apply the principles of orthonormality.
+
+The result is actually just the coefficients of the three surviving terms.
+\begin{equation}
+|A|^2 \int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx = |A|^2 \Big(|4i|^2 + |5|^2 \Big) \int_{-\infty}^{+\infty}dx
 \end{equation}
 And we must equate all of this to the value of $1$ because that is what we want the integral and inner product in (\ref{prob}) to evaluate to. So:
 \begin{equation}
-|A|^2 \Big( |3|^2 + |4i|^2 + |5|^2 \Big) = |A|^2 \Big(9 + 16 + 25 \Big) = 1
+|A|^2 \Big(|4i|^2 + |5|^2 \Big) = |A|^2 \Big(16 + 25 \Big) = 1
 \end{equation}
-and finally, it can be found that $A^2 = \frac{1}{50}$ and thus $A = A^* \frac{1}{\sqrt{50}}$.
+and finally, it can be found that $A^2 = \frac{1}{41}$ and thus $A = A^* \frac{1}{\sqrt{41}}$.
 \paragraph*{}At this, our \textit{normalized} probability density for our wave function $\Psi(x,t)$ from equation (\ref{prob}) becomes:
 \begin{equation}
-P(x,t) = \braket{\Psi(x,t)}{\Psi(x,t)} = \frac{1}{50}\int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx
+P(x,t) = \braket{\Psi(x,t)}{\Psi(x,t)} = \frac{1}{41}\int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx
 \end{equation}
 As in accordance to our rules of the wave function earlier in this chapter, evaluating this integral over all of space will produce the value $1$. And evaluating the integral between some bounds $a$ to $b$ where $a \neq  b$ gives the probability of finding the particle on the x - axis between those bounds at some time $t$.
 \paragraph*{}Lastly, we cannot forget to apply the new normalization constant to the original bras and kets that we constructed earlier, This has the effect of absorbing the constant $A$ and $A^*$ \textit{inside} the integrand. The linear combination ket becomes:
 \begin{equation}
 \label{ex1 norm ket}
-\ket{\Psi(x,t)} =  \frac{3}{\sqrt{50}} \ket{\psi_0}e^{-iE_0t/\hbar} + 
-\frac{4i}{\sqrt{50}} \ket{\psi_1}e^{-iE_1t/\hbar} + \frac{5}{\sqrt{50}} \ket{\psi_2} e^{-iE_2t/\hbar}
+\ket{\Psi(x,t)} =  \frac{4i}{\sqrt{41}} \ket{\psi_1}e^{-iE_1t/\hbar} + \frac{5}{\sqrt{41}} \ket{\psi_2} e^{-iE_2t/\hbar}
 \end{equation}
 and the linear combination bra becomes:
 \begin{equation}
 \label{ex1 norm bra}
-\bra{\Psi(x,t)} =  \frac{3}{\sqrt{50}} \bra{\psi_0}e^{+iE_0t/\hbar} - 
-\frac{4i}{\sqrt{50}} \bra{\psi_1}e^{+iE_1t/\hbar} + \frac{5}{\sqrt{50}} \bra{\psi_2} e^{+iE_2t/\hbar}
+\bra{\Psi(x,t)} =  -\frac{4i}{\sqrt{41}} \bra{\psi_1}e^{+iE_1t/\hbar} + \frac{5}{\sqrt{41}} \bra{\psi_2} e^{+iE_2t/\hbar}
 \end{equation}
 
 % ================================
