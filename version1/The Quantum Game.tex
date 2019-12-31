@@ -64,6 +64,36 @@ The Quantum Game\\
 
 % ================================================================
 
+\section*{Mathematical Conventions}
+\paragraph*{}Quantum physics is a mathematically heavy subject - the standardization of notation is essential for it's understanding. Here are the notation conventions that I will be using.
+
+\begin{itemize}
+
+\begin{multicols}{2}
+
+\item A vector, $v$ is $\vec{v}$
+\item The $i$-th component of $\vec{v}$ is $\vec{v}_i$
+\item A ket, $\psi$ is $\ket{\psi}$
+\item A bra, $\phi$ is $\bra{\phi}$
+\item The inner product of $\bra{\phi}$ and $\ket{\psi}$ is 
+$\braket{\phi}{\psi}$
+\item The outer product of $\bra{\phi}$ and $\ket{\psi}$ is 
+$\ketbra{\psi}{\phi}$
+\item A matrix or operator $A$ is $\hat{A}$
+
+\columnbreak
+
+\item the complex conjugate of $\alpha$ is $\alpha^*$
+\item
+\item
+\item
+
+\end{multicols}
+
+\end{itemize}
+
+% ================================================================
+
 \section*{Preliminary Considerations}
 
 \paragraph*{}This text is designed to provide a brief survey of quantum physics. It's ideal use would be that of a classroom \textit{supplement} or a workplace introduction. As a classroom aid, this work would be of best use when combined with a proper university course, along with a proper university book as well. Additionally if you have already finished a higher education, and are involved ina technical career that requires a small bit of understanding, this would be a great text to serve as a functional introduction.
@@ -1000,14 +1030,34 @@ Because of the nature of the sine and cosine functions, the only way for these e
 \psi(x) = a \sin(kx) = a \sin\big(\frac{\sqrt{2mE}}{\hbar}x\big)
 \end{equation}
 \begin{flushright}
-Where $kx$ must be an integer multiple of $\pi$: $kx = \pm \pi , \pm 2\pi , \pm 3\pm , ... , \pm n\pi , ...$
+Where $kx$ must be an integer multiple of $\pi$: $kx = \pm \pi , \pm 2\pi , \pm 3\pm , ... , \pm n\pi , ...$ 
 \end{flushright}
 \paragraph*{}Because of the rotational symmetry of sine, ($-\sin(\theta) = +\sin(\theta)$), the negative integers become redundant, and since the function must fit "neatly" into a region $L$, the distinct solutions to the problem become:
 \begin{equation}
 \label{ISW spatial solution}
 \psi_n(x) = A\sin \Big( \frac{n\pi}{L}x \Big)
 \end{equation}
-\paragraph*{}These $n$ functions are the \textit{energy eigenstates} to this problem and can be notated with kets: $\psi_n(x) = \ket{\psi_n}$. Just as presribebed by the equivalent eigenvalue problem, each eigenstate is appropriately orthonormal to the other eigenstates. 
+\paragraph*{}These $n$ functions are the \textit{energy eigenstates} to this problem and can be notated with kets: $\psi_n(x) = \ket{\psi_n}$. The constant that normalizes this ket is $ A = \sqrt{\frac{2}{L}}$. Just as presribebed by the equivalent eigenvalue problem, each eigenstate is appropriately orthonormal to the other eigenkets. Note that because we have eliminated all imaginary numbers, each ket is also it's own complex conjugate.
+\begin{equation}
+\braket{\psi_n}{\psi_m} = \frac{2}{L}\int_0^L \
+\sin\big( \frac{n\pi x}{L} \big) \sin\big( \frac{m\pi x}{L} \big) dx =
+\delta_{n,m}
+\end{equation}
+\begin{flushright}
+Recall that $\delta_{n,m}$ returns $1$ if $n = m$ and $0$ if $n \neq m$.
+\end{flushright}
+\paragraph*{}Since we know have a collection of infinitely many eigenkets, we must also find each energy - eigenvalue as well - $E_n$. Since we know that $\frac{n\pi}{L} = \frac{\sqrt{2mE}}{\hbar}$, we can algebraically solce for $E_n$ and see that:
+\begin{equation}
+\label{energy for ISW}
+E_n = \frac{n^2 \pi^2 \hbar}{2mL^2}
+\end{equation}
+\paragraph*{}Now we have a complete set of energy - eigenstates, given by $ket{\psi_n}$ and all the corresponding energy - eigenvalues, given by $E_n$. Note that there are in infinite amount of both and perfectly match one - to - one. Every unique state has a unique energy and vice-versa. Finally, complete our analytical solution, we can form a linear combination all of our states. This the full solution to the infinite square well of width L is given by:
+\begin{equation}
+\label{ISW Full Solution}
+\Psi(x,t) = \sqrt{\frac{2}{L}} \sum_n^{\infty} 
+c_n \sin \Big( \frac{n\pi x}{L} \Big)
+e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
+\end{equation} 
 
 % ================================
 
