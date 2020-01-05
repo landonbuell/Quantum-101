@@ -35,7 +35,8 @@
 The Quantum Game\\
 \end{Huge}
 \vspace*{5mm}
-\Large Applied Elementary Quantum Theory for Non-Physicists}
+\Large Applied Elementary Quantum Theory for Non-Physicists \\
+0th Edition}
 \author{Landon Buell}
 \date{December 2019}
 \maketitle
@@ -974,9 +975,13 @@ Which can aslo be written in it's operator eigen value form:
 \end{equation}
 \paragraph*{}In Each potential case, as part of the nature of this text, I will discuss the methods used in numerically solving the Schrodinger equation. As modern the complexity of modern science and engineering increases, it becomes more obvious that the ability to solve such a complicated partial differential equation is an effort in faultily.Because of this, I will present the analytical solution to the equation, as it would be solve by hand, and than compare that result to something produced numerically. This way, you have a mathematical foundation to sit upon and a more reasonable way to go about solving any arbitrary quantum system. This of course is not to discredit the hard work of pre-computation physicists and mathematicians, but rather allows us to solve for systems that are increasing complex, and even systems that \textit{cannot} simply be solved in terms of any arbitrary functions.
 
-% ================================
+% ================================================================
 
 \section{The Infinite Square Well}
+
+================================
+
+\subsection*{Analyzing the System}
 
 \paragraph*{}Arguably the simplest case for a potential function (and among the most unreasonable), the \textit{infinite square well} is a sort of \textit{rite-of-passage} for students learning about the subject. It uses a very simple potential function case and allows for some nice simplifications to be made, and it can be used as a great start to see how some of the math and physics of the subject really start to fit together.
 \paragraph*{}We start with a potential function, $V(x)$, peicewise defined:
@@ -986,7 +991,7 @@ V(x) = \left\{
         \begin{array}{ll}
             +\infty &, \quad x < 0 \\
             0 		&, \quad 0 \leq x \leq L \\
-            +\infty &, \quad x > a \\
+            +\infty &, \quad x > L \\
         \end{array}
     \right.
 \end{equation}
@@ -995,7 +1000,12 @@ V(x) = \left\{
 \includegraphics[scale=0.32]{ISW}
 \end{center}
 \paragraph*{}Right off of that bat, this allows for some great simplifications. First off, no matter what, Our particle cannot exist in the region $x < 0$ or $x > L$ because of the infinite amount of energy required to get there. Therefore, this quantum mechanical particle can \textit{only} exist in the region $0 \geq x \leq L$. With this, can can focus all of our attention to this region of space. All of the rules outline in the previous chapters still apply, but now we only have this small region of space to worry about.
-\paragraph*{}So for the region between $x = 0$ and $x = L$, the TISE reads:
+
+% ================================
+
+\subsection*{Solving the System 'By Hand'}
+
+\paragraph*{}For the region between $x = 0$ and $x = L$, the TISE reads:
 \begin{equation}
 \label{ISW TISE}
 -\frac{\hbar^2}{2m}\frac{d^2 \psi}{dx^2} = E\psi
@@ -1060,6 +1070,12 @@ e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 \end{equation} 
 
 % ================================
+
+\subsection*{Solving the System Numerically}
+
+% ================================================================
+
+
 
 \section{The Finite Square Well}
 
