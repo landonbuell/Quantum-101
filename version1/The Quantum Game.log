@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  2 JAN 2020 14:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.29)  5 JAN 2020 23:27
 entering extended mode
 **"./The Quantum Game.tex"
 ("The Quantum Game.tex"
-LaTeX2e <2018-12-01>
+LaTeX2e <2019-10-01> patch level 3
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\book.cls"
-Document Class: book 2018/09/03 v1.4i Standard LaTeX document class
+Document Class: book 2019/10/25 v1.4k Standard LaTeX document class
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\bk12.clo"
-File: bk12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+File: bk12.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@chapter=\count81
@@ -32,7 +32,7 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 )
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics
 .sty"
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2019/11/01 v1.3d Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty
 "
@@ -42,7 +42,7 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 hics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 105.
 
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdft
 ex.def"
@@ -53,7 +53,7 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\multicol.st
 y"
-Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
+Package: multicol 2019/03/01 v1.8w multicolumn formatting (FMi)
 \c@tracingmulticols=\count89
 \mult@box=\box27
 \multicol@leftmargin=\dimen105
@@ -92,35 +92,39 @@ Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \@tempa=\box48
 \@tempa=\box49
 \@tempa=\box50
-\c@columnbadness=\count95
-\c@finalcolumnbadness=\count96
+\c@minrows=\count95
+\c@columnbadness=\count96
+\c@finalcolumnbadness=\count97
 \last@try=\dimen111
 \multicolovershoot=\dimen112
 \multicolundershoot=\dimen113
 \mult@nat@firstbox=\box51
 \colbreak@box=\box52
-\mc@col@check@num=\count97
+\mc@col@check@num=\count98
 )
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry
-.sty"
-Package: geometry 2018/04/16 v5.8 Page Geometry
+("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry-de\geome
+try.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.
-sty"
-Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifpdf.sty
+"
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+
+("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty
+"
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.st
+y"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifvtex
-.sty"
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
+("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifxetex.s
+ty"
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 )
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ifxetex\ifxetex
-.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-\Gm@cnth=\count98
-\Gm@cntv=\count99
-\c@Gm@tempcnt=\count100
+\Gm@cnth=\count99
+\Gm@cntv=\count100
+\c@Gm@tempcnt=\count101
 \Gm@bindingoffset=\dimen114
 \Gm@wd@mp=\dimen115
 \Gm@odd@mp=\dimen116
@@ -134,7 +138,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry
 .cfg"))
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty"
-Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen122
 \ar@mcellbox=\box53
 \extrarowheight=\dimen123
@@ -150,12 +154,12 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@outerparindent=\dimen124
 \enit@toks=\toks17
 \enit@inbox=\box55
-\enit@count@id=\count101
-\enitdp@description=\count102
+\enit@count@id=\count102
+\enitdp@description=\count103
 )
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.s
 ty"
-Package: amsmath 2018/12/01 v2.17b AMS math features
+Package: amsmath 2019/11/16 v2.17d AMS math features
 \@mathmargin=\skip48
 
 For additional information on amsmath, use the `?' option.
@@ -179,30 +183,30 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 y"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count103
-LaTeX Info: Redefining \frac on input line 223.
-\uproot@=\count104
-\leftroot@=\count105
-LaTeX Info: Redefining \overline on input line 385.
-\classnum@=\count106
-\DOTSCASE@=\count107
-LaTeX Info: Redefining \ldots on input line 482.
-LaTeX Info: Redefining \dots on input line 485.
-LaTeX Info: Redefining \cdots on input line 606.
+\inf@bad=\count104
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count105
+\leftroot@=\count106
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count107
+\DOTSCASE@=\count108
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
 \Mathstrutbox@=\box56
 \strutbox@=\box57
 \big@size=\dimen127
-LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
-\macc@depth=\count108
-\c@MaxMatrixCols=\count109
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count109
+\c@MaxMatrixCols=\count110
 \dotsspace@=\muskip10
-\c@parentequation=\count110
-\dspbrk@lvl=\count111
+\c@parentequation=\count111
+\dspbrk@lvl=\count112
 \tag@help=\toks19
-\row@=\count112
-\column@=\count113
-\maxfields@=\count114
+\row@=\count113
+\column@=\count114
+\maxfields@=\count115
 \andhelp@=\toks20
 \eqnshift@=\dimen128
 \alignsep@=\dimen129
@@ -214,8 +218,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 \multlinegap=\skip49
 \multlinetaggap=\skip50
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2844.
-LaTeX Info: Redefining \] on input line 2845.
+LaTeX Info: Redefining \[ on input line 2858.
+LaTeX Info: Redefining \] on input line 2859.
 )
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/physics\physics.s
 ty"
@@ -230,20 +234,20 @@ Package: expl3 2019-11-07 L3 programming layer (loader)
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3-co
 de.tex"
 Package: expl3 2019-11-07 L3 programming layer (code)
-\c_max_int=\count115
-\l_tmpa_int=\count116
-\l_tmpb_int=\count117
-\g_tmpa_int=\count118
-\g_tmpb_int=\count119
-\l__seq_internal_a_int=\count120
-\l__seq_internal_b_int=\count121
-\g__kernel_prg_map_int=\count122
-\c__ior_term_noprompt_ior=\count123
-\c_log_iow=\count124
-\l_iow_line_count_int=\count125
-\l__iow_line_target_int=\count126
-\l__iow_one_indent_int=\count127
-\l__iow_indent_int=\count128
+\c_max_int=\count116
+\l_tmpa_int=\count117
+\l_tmpb_int=\count118
+\g_tmpa_int=\count119
+\g_tmpb_int=\count120
+\l__seq_internal_a_int=\count121
+\l__seq_internal_b_int=\count122
+\g__kernel_prg_map_int=\count123
+\c__ior_term_noprompt_ior=\count124
+\c_log_iow=\count125
+\l_iow_line_count_int=\count126
+\l__iow_line_target_int=\count127
+\l__iow_one_indent_int=\count128
+\l__iow_indent_int=\count129
 \c_zero_dim=\dimen134
 \c_max_dim=\dimen135
 \l_tmpa_dim=\dimen136
@@ -262,80 +266,80 @@ Package: expl3 2019-11-07 L3 programming layer (code)
 \l_tmpb_muskip=\muskip14
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
-\l_keys_choice_int=\count129
-\l__intarray_loop_int=\count130
+\l_keys_choice_int=\count130
+\l__intarray_loop_int=\count131
 \c__intarray_sp_dim=\dimen140
-\g__intarray_font_int=\count131
-\c__fp_leading_shift_int=\count132
-\c__fp_middle_shift_int=\count133
-\c__fp_trailing_shift_int=\count134
-\c__fp_big_leading_shift_int=\count135
-\c__fp_big_middle_shift_int=\count136
-\c__fp_big_trailing_shift_int=\count137
-\c__fp_Bigg_leading_shift_int=\count138
-\c__fp_Bigg_middle_shift_int=\count139
-\c__fp_Bigg_trailing_shift_int=\count140
-\c__kernel_randint_max_int=\count141
-\g__fp_array_int=\count142
-\l__fp_array_loop_int=\count143
-\l__sort_length_int=\count144
-\l__sort_min_int=\count145
-\l__sort_top_int=\count146
-\l__sort_max_int=\count147
-\l__sort_true_max_int=\count148
-\l__sort_block_int=\count149
-\l__sort_begin_int=\count150
-\l__sort_end_int=\count151
-\l__sort_A_int=\count152
-\l__sort_B_int=\count153
-\l__sort_C_int=\count154
-\l__str_internal_int=\count155
-\c__str_replacement_char_int=\count156
-\l__tl_analysis_normal_int=\count157
-\l__tl_analysis_index_int=\count158
-\l__tl_analysis_nesting_int=\count159
-\l__tl_analysis_type_int=\count160
-\l__regex_internal_a_int=\count161
-\l__regex_internal_b_int=\count162
-\l__regex_internal_c_int=\count163
-\l__regex_balance_int=\count164
-\l__regex_group_level_int=\count165
-\l__regex_mode_int=\count166
-\c__regex_cs_in_class_mode_int=\count167
-\c__regex_cs_mode_int=\count168
-\l__regex_catcodes_int=\count169
-\l__regex_default_catcodes_int=\count170
-\c__regex_catcode_D_int=\count171
-\c__regex_catcode_S_int=\count172
-\c__regex_catcode_L_int=\count173
-\c__regex_catcode_O_int=\count174
-\c__regex_catcode_A_int=\count175
-\c__regex_all_catcodes_int=\count176
-\l__regex_show_lines_int=\count177
-\l__regex_min_state_int=\count178
-\l__regex_max_state_int=\count179
-\l__regex_left_state_int=\count180
-\l__regex_right_state_int=\count181
-\l__regex_capturing_group_int=\count182
-\l__regex_min_pos_int=\count183
-\l__regex_max_pos_int=\count184
-\l__regex_curr_pos_int=\count185
-\l__regex_start_pos_int=\count186
-\l__regex_success_pos_int=\count187
-\l__regex_curr_char_int=\count188
-\l__regex_curr_catcode_int=\count189
-\l__regex_last_char_int=\count190
-\l__regex_case_changed_char_int=\count191
-\l__regex_curr_state_int=\count192
-\l__regex_step_int=\count193
-\l__regex_min_active_int=\count194
-\l__regex_max_active_int=\count195
-\l__regex_replacement_csnames_int=\count196
-\l__regex_match_count_int=\count197
-\l__regex_min_submatch_int=\count198
-\l__regex_submatch_int=\count199
-\l__regex_zeroth_submatch_int=\count266
-\g__regex_trace_regex_int=\count267
+\g__intarray_font_int=\count132
+\c__fp_leading_shift_int=\count133
+\c__fp_middle_shift_int=\count134
+\c__fp_trailing_shift_int=\count135
+\c__fp_big_leading_shift_int=\count136
+\c__fp_big_middle_shift_int=\count137
+\c__fp_big_trailing_shift_int=\count138
+\c__fp_Bigg_leading_shift_int=\count139
+\c__fp_Bigg_middle_shift_int=\count140
+\c__fp_Bigg_trailing_shift_int=\count141
+\c__kernel_randint_max_int=\count142
+\g__fp_array_int=\count143
+\l__fp_array_loop_int=\count144
+\l__sort_length_int=\count145
+\l__sort_min_int=\count146
+\l__sort_top_int=\count147
+\l__sort_max_int=\count148
+\l__sort_true_max_int=\count149
+\l__sort_block_int=\count150
+\l__sort_begin_int=\count151
+\l__sort_end_int=\count152
+\l__sort_A_int=\count153
+\l__sort_B_int=\count154
+\l__sort_C_int=\count155
+\l__str_internal_int=\count156
+\c__str_replacement_char_int=\count157
+\l__tl_analysis_normal_int=\count158
+\l__tl_analysis_index_int=\count159
+\l__tl_analysis_nesting_int=\count160
+\l__tl_analysis_type_int=\count161
+\l__regex_internal_a_int=\count162
+\l__regex_internal_b_int=\count163
+\l__regex_internal_c_int=\count164
+\l__regex_balance_int=\count165
+\l__regex_group_level_int=\count166
+\l__regex_mode_int=\count167
+\c__regex_cs_in_class_mode_int=\count168
+\c__regex_cs_mode_int=\count169
+\l__regex_catcodes_int=\count170
+\l__regex_default_catcodes_int=\count171
+\c__regex_catcode_D_int=\count172
+\c__regex_catcode_S_int=\count173
+\c__regex_catcode_L_int=\count174
+\c__regex_catcode_O_int=\count175
+\c__regex_catcode_A_int=\count176
+\c__regex_all_catcodes_int=\count177
+\l__regex_show_lines_int=\count178
+\l__regex_min_state_int=\count179
+\l__regex_max_state_int=\count180
+\l__regex_left_state_int=\count181
+\l__regex_right_state_int=\count182
+\l__regex_capturing_group_int=\count183
+\l__regex_min_pos_int=\count184
+\l__regex_max_pos_int=\count185
+\l__regex_curr_pos_int=\count186
+\l__regex_start_pos_int=\count187
+\l__regex_success_pos_int=\count188
+\l__regex_curr_char_int=\count189
+\l__regex_curr_catcode_int=\count190
+\l__regex_last_char_int=\count191
+\l__regex_case_changed_char_int=\count192
+\l__regex_curr_state_int=\count193
+\l__regex_step_int=\count194
+\l__regex_min_active_int=\count195
+\l__regex_max_active_int=\count196
+\l__regex_replacement_csnames_int=\count197
+\l__regex_match_count_int=\count198
+\l__regex_min_submatch_int=\count199
+\l__regex_submatch_int=\count266
+\l__regex_zeroth_submatch_int=\count267
+\g__regex_trace_regex_int=\count268
 \c_empty_box=\box58
 \l_tmpa_box=\box59
 \l_tmpb_box=\box60
@@ -388,14 +392,14 @@ File: l3deprecation.def 2019-04-06 v L3 Deprecated functions
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backe
 nd-pdfmode.def"
 File: l3backend-pdfmode.def 2019-04-06 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count268
+\l__kernel_color_stack_int=\count269
 \l__pdf_internal_box=\box76
 ))
 Package: xparse 2019-10-11 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count269
-\g__xparse_grabber_int=\count270
-\l__xparse_m_args_int=\count271
-\l__xparse_v_nesting_int=\count272
+\l__xparse_current_arg_int=\count270
+\g__xparse_grabber_int=\count271
+\l__xparse_m_args_int=\count272
+\l__xparse_v_nesting_int=\count273
 ))
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr
 .sty"
@@ -433,70 +437,23 @@ LaTeX Font Info:    ... okay on input line 29.
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-
 pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count273
+\scratchcounter=\count274
 \scratchdimen=\dimen166
 \scratchbox=\box77
-\nofMPsegments=\count274
-\nofMParguments=\count275
+\nofMPsegments=\count275
+\nofMParguments=\count276
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count276
+\MPscratchCnt=\count277
 \MPscratchDim=\dimen167
-\MPnumerator=\count277
-\makeMPintoPDFobject=\count278
+\MPnumerator=\count278
+\makeMPintoPDFobject=\count279
 \everyMPtoPDFconversion=\toks24
 )
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf
--base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\infwar
-err.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.s
-ty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvdefi
-nekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ltxcmd
-s.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoption
-s.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvsetk
-eys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\etexcm
-ds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifluat
-ex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-))))
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\pdftex
-cmds.sty"
-Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
+("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epst
+opdf-base.sty"
+Package: epstopdf-base 2019-12-09 v2.10 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+85.
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -547,13 +504,14 @@ This may cause the page layout to be inconsistent, however.
 \openout3 = `"The Quantum Game.toc"'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6842) has occurred while \output is active []
 
  [3
 
 ]
 [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 75.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
+5.
  ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -583,7 +541,7 @@ Chapter 2.
 <ISW.png, id=133, 1445.4pt x 578.16pt>
 File: ISW.png Graphic file (type png)
 <use ISW.png>
-Package pdftex.def Info: ISW.png  used on input line 1000.
+Package pdftex.def Info: ISW.png  used on input line 995.
 (pdftex.def)             Requested size: 462.53746pt x 185.01497pt.
  [38 <./ISW.png>] [39] [40] [41] [42
 
@@ -597,19 +555,19 @@ Chapter 4.
 
 ]
 Chapter 5.
-[47] ("The Quantum Game.aux")
+[47] [48] [49] ("The Quantum Game.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13935 strings out of 492895
- 253561 string characters out of 3123268
- 312165 words of memory out of 3000000
- 17783 multiletter control sequences out of 15000+200000
- 540564 words of font info for 52 fonts, out of 3000000 for 9000
+ 13563 strings out of 492483
+ 246532 string characters out of 3121135
+ 305215 words of memory out of 3000000
+ 17867 multiletter control sequences out of 15000+200000
+ 540733 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,19n,63p,953b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 52i,19n,71p,953b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmbxti10.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 
@@ -626,10 +584,11 @@ ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/User
 s/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6
 .pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmti12.pfb>
-Output written on "The Quantum Game.pdf" (47 pages, 334747 bytes).
+1/public/amsfonts/cm/cmti12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "The Quantum Game.pdf" (49 pages, 349600 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
+ 224 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

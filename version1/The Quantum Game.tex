@@ -751,11 +751,6 @@ Where $\delta_{n,m}$ is a mathematical function called the \textit{Kronecker Del
     \right.
 \end{equation}
 
-% ================================
-
-\subsection*{Building the Hamiltonian}
-\textit{[Okay, so this part isn't quite done yet]}
-
 % ================================================================
 
 \section{Analyzing a Quantum System}
@@ -869,7 +864,7 @@ and the linear combination bra becomes:
 
 \subsection*{Energy Measurements}
 \paragraph*{}Finally, we can analyze the energy of this quantum system. We know that therie are two possible energy eigenstates, and two corresponding energy eigenvalues. This mean that If we choose to measure the energy of this this system, we can only get one of two values: $E_1$ or $E_2$. But since we know that quantum physics is a game of probability, what is the \textit{probability} that we measure one state with it's particular energy over the other?
-\paragraph*{}The answer lies with the coefficients of our linear combination of solutions. \textbf{The actual physical representation of the $c_n$ coefficients is that $|c_n|^2$ gives the probability of the state $\ket{\psi_n}$ of occurring.} So then the probability of measuring each energy state is given by:
+\paragraph*{}The answer lies with the coefficients of our linear combination of solutions. \textbf{The actual physical representation of the $c_n$ coefficients is that $|c_n|^2$ gives the probability of the state $\ket{\psi_n}$ occurring.} So then the probability of measuring each energy state is given by:
 \begin{equation}
 \begin{split}
 P(E_1) = |c_1|^2 = \Big(\frac{+4i}{\sqrt{41}}\Big) \Big(\frac{-4i}{\sqrt{41}}\Big) = \frac{16}{41} \\
@@ -979,7 +974,7 @@ Which can aslo be written in it's operator eigen value form:
 
 \section{The Infinite Square Well}
 
-================================
+% ================================
 
 \subsection*{Analyzing the System}
 
@@ -1056,22 +1051,24 @@ Where $kx$ must be an integer multiple of $\pi$: $kx = \pm \pi , \pm 2\pi , \pm 
 \begin{flushright}
 Recall that $\delta_{n,m}$ returns $1$ if $n = m$ and $0$ if $n \neq m$.
 \end{flushright}
-\paragraph*{}Since we know have a collection of infinitely many eigenkets, we must also find each energy - eigenvalue as well - $E_n$. Since we know that $\frac{n\pi}{L} = \frac{\sqrt{2mE}}{\hbar}$, we can algebraically solce for $E_n$ and see that:
+\paragraph*{}Since we know have a collection of infinitely many eigenkets, we must also find each energy - eigenvalue as well - $E_n$. Since we know that $\frac{n\pi}{L} = \frac{\sqrt{2mE}}{\hbar}$, we can algebraically solve for $E_n$ and see that:
 \begin{equation}
 \label{energy for ISW}
 E_n = \frac{n^2 \pi^2 \hbar}{2mL^2}
 \end{equation}
-\paragraph*{}Now we have a complete set of energy - eigenstates, given by $ket{\psi_n}$ and all the corresponding energy - eigenvalues, given by $E_n$. Note that there are in infinite amount of both and perfectly match one - to - one. Every unique state has a unique energy and vice-versa. Finally, complete our analytical solution, we can form a linear combination all of our states. This the full solution to the infinite square well of width L is given by:
+\paragraph*{}Now we have a complete set of energy - eigenstates, given by $\ket{\psi_n}$ and all the corresponding energy - eigenvalues, given by $E_n$. Note that there are in infinite amount of both and perfectly match one - to - one. Every unique state has a unique energy and vice-versa. Finally, complete our analytical solution, we can form a linear combination all of our states. This the full solution to the infinite square well of width L is given by:
 \begin{equation}
 \label{ISW Full Solution}
 \Psi(x,t) = \sqrt{\frac{2}{L}} \sum_n^{\infty} 
 c_n \sin \Big( \frac{n\pi x}{L} \Big)
 e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 \end{equation} 
+\paragraph*{}Where $L$ is the width of the square well, $n$ is the energy level of the particle, and $m$ is the mass of the particle.
 
 % ================================
 
 \subsection*{Solving the System Numerically}
+\textbf{Be sure to Check the Mathematical Appendix for note on how to build the Hamiltonian operator for some arbitrary potential!}
 
 % ================================================================
 
@@ -1124,6 +1121,56 @@ e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 % ================================================================
 
 \chapter{Mathematical Index}
+
+% ================================================================
+
+
+\section{Building the Hamiltonian Operator Numerically}
+\paragraph*{}At the end of the first chapter, we discussed how the Time-Independent Schrodinger Equation can also be interpreted an an Energy - Eigenvalue problem. Rather than building a complicated algorithm to solve a partial differential equation, we can use an algorithm to solve an eigenvalue problem of a matrix instead. Although this conflicts with our new intuition about operators being more of continuous object as oppose to discrete matrices, the logistics of numerical problem solving still remains at hand - all objects must be discrete. In this section, we're going to discuss how to numerically build the Hamiltonian matrix.
+\paragraph*{}I will use a mixture of psuedo-coding and written logic to express the steps to completing this task. Because of it current relevance in the scientific community, and readability, I will be using Python 3 and it's module \textit{numpy} for all explicit lines of code. Note than I will include a great deal of step-by-step comments so that you can repeat this procedure outside of Python 3.
+
+% ================================
+
+\subsection*{The Hamiltonian Revisited}
+
+\paragraph*{}First, recall our energy eigen-equation:
+\begin{equation}
+\label{energy-evp}
+\hat{H}\ket{\psi} = E\ket{\psi}
+\end{equation}
+And recall that the Hamiltonian operator acting on the state $\ket{\psi}$ can be written as the sum of the kinetic and potential energy operators acting on the state $\ket{\psi}$:
+\begin{equation}
+\hat{H}\ket{\psi} = \hat{T}\ket{\psi} + \hat{V}\ket{\psi}
+\end{equation}
+\paragraph*{}Using the same logic as building the Hamiltonian, we can build both the kinetic and potential energy operators independently, add them together, and then compute their eigenvalue problem.
+\paragraph*{}Lets begin the process by defining some variables and setting some parameters. The exact value of $\hbar$ and the exact mass of electrons are both \textit{very} small numbers. In lower level programming languages and even in Python, entering these values exactly may cause rounding or estimation all sorts of other errors to arise, so we do something quite common in physics - we naturalize our units to the particular problem. We're going to set the value of both $\hbar$ and $m$ to be identically $1$.
+\paragraph*{}While this may seem like cheating, we have to remember that these numbers may have values of $1$, but dimensionally, still have units of energy times time, and mass respectively. Since units are technically arbitrary, and the computer doesn't care about them anyway, this is a very value thing to do. In the end, this will save us a great deal of floating-point estimation errors and computational time. (For example $\hbar^2$ has a values somewhere around $1.11 \times 10^{-68}$ Joule-seconds in SI units) When we go back, we can always multiply our outputs by some constant to scale them back up into metric or imperial units as well.
+\paragraph*{}In addition to setting units, and importing the numpy module, we need to determine the size of our matrix, which will be square. Both the kinetic energy potential energy parameters will also use this dimension, $N$, so it's important to define it early for consistency. We also need to create the one dimesions array to represent out space, as well as set bounds for that space.  So the first few lines of our program look like:
+\begin{verbatim}
+>>> import numpy as np
+>>> hbar = 1                    # set h/2pi to be 1
+>>> m = 1                       # set mass of electron to 1
+>>> N = 2048                    # number of points in our space
+>>> bnd = 10                    # set bounds on space
+>>> x = np.arange(-bnd,+bnd,N)  # create the x-axis space
+\end{verbatim}
+Note that I have chosen $N$ to be 2048 because computers tend to like to work with integer exponents of $2$. What $N$ does is determine how many points we will divide outspace up into. This choice is somewhat arbitrary, in practice you can set it how you please. A larger number means a larger matrix- We will get $N$ eigenkets and $N$ eigenvalues. However, the computational time and complexity increases with the square of $N$.
+
+% ================================
+
+\subsection*{Kinetic Energy Operator}
+
+\paragraph*{}The quantum kinetic energy operator (not acting on any state) is defined as:
+\begin{equation}
+\label{T}
+\hat{T} = \frac{1}{2m}\hat{p}^2 = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}
+\end{equation}
+\paragraph*{}So, in order to build $\hat{T}$. We need to express (\ref{T}) as a \textit{matrix}. The constant out front, $-\frac{\hbar^2}{2m}$, is simple to handle, and since it's a matrix, we technically can treat it as that, multiplied by a matrix of all ones if left alone. So what we instead need it a matrix that can take some array, and return it's \textit{second} derivative. We'll call this matrix $\hat{D_2}$ or $D2$ is code-speak. To do this:
+
+% ================================
+
+% ================================================================
+
 
 % ================================================================
 % ================================================================
