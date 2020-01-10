@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.29)  5 JAN 2020 23:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.29)  9 JAN 2020 19:38
 entering extended mode
 **"./The Quantum Game.tex"
 ("The Quantum Game.tex"
@@ -421,18 +421,18 @@ LaTeX Warning: Label `ex1 sys non-dirac' multiply defined.
 )
 \openout1 = `"The Quantum Game.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
 
 ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-
 pdf.mkii"
@@ -511,12 +511,12 @@ Underfull \vbox (badness 6842) has occurred while \output is active []
 ]
 [4]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
-5.
+4.
  ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
  [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -525,8 +525,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 1.
+
+Overfull \hbox (1.48842pt too wide) in paragraph at lines 157--158
+ \OT1/cmr/m/n/12 This is called \OT1/cmr/m/it/12 Schrodinger's Equa-tion \OT1/c
+mr/m/n/12 and al-most ev-ery-thing about mod-ern quan-tum physics
+ []
+
 [9] [10] [11] [12] [13] [14] [15] [16]
-Overfull \hbox (6.3639pt too wide) in paragraph at lines 327--328
+Overfull \hbox (6.3639pt too wide) in paragraph at lines 331--332
  \OT1/cmr/m/n/12 The num-ber of com-po-nents, $\OML/cmm/m/it/12 N$ \OT1/cmr/m/n
 /12 in-di-cates the di-men-sion of the vec-tor, i.e., it is $\OML/cmm/m/it/12 N
 $\OT1/cmr/m/n/12 -dimensional.
@@ -538,10 +544,10 @@ Chapter 2.
 [37
 
 ]
-<ISW.png, id=133, 1445.4pt x 578.16pt>
+<ISW.png, id=132, 1445.4pt x 578.16pt>
 File: ISW.png Graphic file (type png)
 <use ISW.png>
-Package pdftex.def Info: ISW.png  used on input line 995.
+Package pdftex.def Info: ISW.png  used on input line 999.
 (pdftex.def)             Requested size: 462.53746pt x 185.01497pt.
  [38 <./ISW.png>] [39] [40] [41] [42
 
@@ -581,14 +587,13 @@ pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Landon/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Landon/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/User
-s/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6
+s/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsy8.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmti12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "The Quantum Game.pdf" (49 pages, 349600 bytes).
+onts/cm/cmti12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "The Quantum Game.pdf" (49 pages, 344711 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
+ 220 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
