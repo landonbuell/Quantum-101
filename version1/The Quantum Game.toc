@@ -1,26 +1,26 @@
-\contentsline {chapter}{\numberline {1}The Name of the Game}{9}%
-\contentsline {section}{\numberline {1.1}The Schrodinger Equation}{9}%
-\contentsline {section}{\numberline {1.2}The Wave Function}{11}%
-\contentsline {section}{\numberline {1.3}Breaking Down the Schrodinger Equation}{13}%
-\contentsline {section}{\numberline {1.4}The Language of the Game}{17}%
-\contentsline {section}{\numberline {1.5}The Characters in the Game}{24}%
-\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{28}%
-\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{30}%
-\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{35}%
-\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{37}%
-\contentsline {section}{\numberline {2.1}The Infinite Square Well}{38}%
-\contentsline {paragraph}{}{39}%
-\contentsline {section}{\numberline {2.2}The Finite Square Well}{41}%
-\contentsline {section}{\numberline {2.3}Multiple Square Wells}{41}%
-\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{41}%
-\contentsline {section}{\numberline {2.5}The Free Particle}{41}%
-\contentsline {section}{\numberline {2.6}The Delta Function}{41}%
-\contentsline {chapter}{\numberline {3}The Rules of the Game}{43}%
-\contentsline {section}{\numberline {3.1}Observables and Hermitian Operators}{43}%
-\contentsline {section}{\numberline {3.2}Commutivity}{43}%
-\contentsline {section}{\numberline {3.3}More on the Statistical Interpretation}{43}%
-\contentsline {section}{\numberline {3.4}The Uncertainty}{43}%
-\contentsline {section}{\numberline {3.5}More on Bases and Measurements}{43}%
-\contentsline {chapter}{\numberline {4}The Next Level: \\ Spin and Angular Momentum}{45}%
-\contentsline {chapter}{\numberline {5}Mathematical Index}{47}%
-\contentsline {section}{\numberline {5.1}Building the Hamiltonian Operator Numerically}{47}%
+\contentsline {chapter}{\numberline {1}The Name of the Game}{9}% 
+\contentsline {section}{\numberline {1.1}The Schrodinger Equation}{9}% 
+\contentsline {section}{\numberline {1.2}The Wave Function}{11}% 
+\contentsline {section}{\numberline {1.3}Breaking Down the Schrodinger Equation}{13}% 
+\contentsline {section}{\numberline {1.4}The Language of the Game}{17}% 
+\contentsline {section}{\numberline {1.5}The Characters in the Game}{24}% 
+\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{28}% 
+\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{30}% 
+\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{35}% 
+\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{37}% 
+\contentsline {section}{\numberline {2.1}The Infinite Square Well}{38}% 
+\contentsline {paragraph}{}{39}% 
+\contentsline {section}{\numberline {2.2}The Finite Square Well}{41}% 
+\contentsline {section}{\numberline {2.3}Multiple Square Wells}{41}% 
+\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{41}% 
+\contentsline {section}{\numberline {2.5}The Free Particle}{41}% 
+\contentsline {section}{\numberline {2.6}The Delta Function}{41}% 
+\contentsline {chapter}{\numberline {3}The Rules of the Game}{43}% 
+\contentsline {section}{\numberline {3.1}Observables and Hermitian Operators}{43}% 
+\contentsline {section}{\numberline {3.2}Commutivity}{44}% 
+\contentsline {section}{\numberline {3.3}More on the Statistical Interpretation}{44}% 
+\contentsline {section}{\numberline {3.4}The Uncertainty Principle}{44}% 
+\contentsline {section}{\numberline {3.5}More on Bases and Measurements}{44}% 
+\contentsline {chapter}{\numberline {4}The Next Level: \\ Spin and Angular Momentum}{45}% 
+\contentsline {chapter}{\numberline {5}Mathematical Index}{47}% 
+\contentsline {section}{\numberline {5.1}Building the Hamiltonian Operator Numerically}{47}% 

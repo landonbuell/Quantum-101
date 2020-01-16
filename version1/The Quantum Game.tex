@@ -1114,6 +1114,37 @@ e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 
 \section{Observables and Hermitian Operators}
 
+\paragraph*{}Operators are a huge part of quantum physics. They allow us to both conceptually and mathematically gather so much information about a quantum state. For example, if we had some quatum system described the the ket 
+$\ket{\psi_\alpha}$, and then we wanted to know the total energy of this system, we just act on it with the Hamiltonian operator $\hat{H}$. Even if we don't know \textit{exactly} how this operator works, or it's composition in a linear algebra context, we know that the quantity:
+\begin{equation}
+E_\alpha = \hat{H}\ket{\psi_\alpha}
+\end{equation}
+is the total energy of the state $\ket{\psi_\alpha}$.
+\paragraph*{}Furthermore, without anything anything else, we can find the \textit{average} total energy of the system across a linear combination of quantum states, $\ket{\Psi}$, would be given by:
+\begin{equation}
+\label{expect-val}
+\expval{E} = \int \Psi^* \hat{H} \Psi dx = \bra{\Psi}\hat{H}\ket{\Psi}	
+\end{equation}
+\paragraph*{}Any operator that returns a \textit{physical} measurement on a state such as position, momentum, or energy is called an \textit{observable}. This concept is very important because being an operator also being an observable implies some extraneous conditions. We could for instance define some arbitrary operator, $\hat{Q}$, that returns some undetermined or unimportant quantity of our state. This operator comes with no external consequences- the value or values returned can be essentially anything.
+\paragraph*{}Observables on the other hand, require that any measurements returned from them be \textit{real} values. Intutively, this makes a lot of sense, because we cant have an imaginary or complex measurement for average energy, it just doesn't make sense. Imaginary numbers are brilliant and useful mathematical tools for handling waves and oscillations and so many other topics, but in the real world, they aren't physical values. So, the outcome of a physical measurement, but be a physically realistic value, it must be real. So if $\hat{Q}$ is some arbitrary observable operator, then:
+\begin{equation}
+\label{observable}
+\expval{\hat{Q}} = \expval{\hat{Q}}^* 
+\end{equation}
+\paragraph*{}This also forces us to recall some properties about Dirac notation. We know equation (\ref{observable}) is true, and the expectation value of an operator is given by (\ref{expect-val}), furthermore, the complex-conjugate of an inner product reverses the bra and kets with in. Thus:
+\begin{equation}
+\bra{\Psi}\hat{Q}\ket{\Psi} = 
+\Big(\bra{\Psi}\hat{Q}\ket{\Psi}\Big)^* = 
+\Big(\bra{\Psi}\hat{Q}\Big)\ket{\Psi} = 
+\bra{\hat{Q}\Psi}\ket{\Psi}
+\end{equation}
+\paragraph*{}This property must hold true for all wave functions and states. An operator that is an observable has this very unique property. We can extend this property even a step further here, and define something called a \textit{Hermitian Operator}, which has an additional requirement:
+\begin{equation}
+\bra{\Psi_a}\Big(\hat{Q}\ket{\Psi_b}\Big) = 
+\Big(\bra{\Psi_a}\hat{Q}\Big)\ket{\Psi_b}
+\end{equation}
+\paragraph*{}The operator acting in either direction produces the same result. Any operator that has all of these properties, is then a Hermetian operator. \textbf{In quantum physics, all observables are given by Hermitian operators.}
+
 % ================================================================
 
 \section{Commutivity}
@@ -1124,7 +1155,7 @@ e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 
 % ================================================================
 
-\section{The Uncertainty}
+\section{The Uncertainty Principle}
 
 % ================================================================
 
