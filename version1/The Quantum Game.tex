@@ -323,9 +323,9 @@ The complex exponential in the time function eliminates itself when multiplied b
 \paragraph*{}A vector is a mathematical object that allows very simply to communicate the dimension, components, magnitude and orientation of a measurement all very conveniently. Typically, a vector is notated as a variable with a little arrow on top such as $\vec{\psi}$. The vector is then made up of $N$ discrete components. They can be written out in columns or rows, for example:
 \begin{equation}
 \label{vector}
-\vec{\psi} = \big[ \psi_0 , \psi_1 , \hdots , \psi_N ] =
+\vec{\psi} = \big[ \psi_0 , \psi_1 , \hdots , \psi_{N-1} ] =
 \begin{bmatrix}
-\psi_0 \\ \psi_1  \\ \vdots \\ \psi_N
+\psi_0 \\ \psi_1  \\ \vdots \\ \psi_{N-1}
 \end{bmatrix}
 \end{equation}
 \paragraph*{}The number of components, $N$ indicates the dimension of the vector, i.e., it is $N$-dimensional. The entry in each index represents the length or \textit{measure} of the vector in that particular component. Note that each entry, $a_n$ can be a real, imaginary or complex value. In quantum mathematics, we replace the linear algebra object of a vector with the \textit{new} mathematical object called a \textit{ket}.
@@ -333,19 +333,19 @@ The complex exponential in the time function eliminates itself when multiplied b
 A ket is notated as $\ket{\psi}$ 
 \end{center} 
 and has many of the same properties as a vector.
-\paragraph*{}Just like a vector, a ket exists in a space, has components and can interact with other mathematical objects. It shares almost all of the same properties as vectors. A ket can be modified by a (real, imaginary or complex) scalar value. A ket can also be multiplied by a matrix (which we'll call an \textit{operator} later) to produce another ket. They can compared to other kets with dot product and cross produces and can be arranged into linear combinations as well.
+\paragraph*{}Just like a vector, a ket exists in a space, has components and can interact with other mathematical objects. It shares almost all of the same properties as vectors. A ket can be modified by a (real, imaginary or complex) scalar value and can also be multiplied by a matrix (which we'll call an \textit{operator} later) to produce another ket. They can compared to other kets with dot product and cross products and can be arranged into linear combinations as well.
 \paragraph*{}In addition to the ket, there is a related mathematical object called a \textit{bra} which has all of the same properties as a ket.
 \begin{center}
 A bra is notated as $\bra{\psi}$
 \end{center}
-The relationship between bras and kets is simply that they are eachother's \textit{complex conjugates}. More mathematically, a bra is this \textit{dual space} counterpart to the ket vector space, and vice-versa. This means that:
+The relationship between bras and kets is simply that they are eachother's \textit{transpose - complex conjugates}. More mathematically, a bra is this \textit{dual space} counterpart to the ket vector space, and vice-versa. This means that:
 \begin{equation}
 \label{bra-ket relation}
 \bra{\psi} = \ket{\psi}^* 
 \text{\hspace*{8mm} and \hspace*{8mm}} 
 \ket{\psi} = \bra{\psi}^*
 \end{equation}
-Every ket has a corresponding bra, and every bra has a corresponding ket.
+Where the asterisk symbol denotes a transposition and complex conjugate operation to be applied. Every ket has a corresponding bra, and every bra has a corresponding ket.
 \begin{equation}
 \ket{\psi} \longleftrightarrow \bra{\psi}
 \end{equation}
@@ -364,7 +364,7 @@ Then it's dual space, or bra equivalent, $\bra{\alpha}$ is then defined as it's 
 \bra{\alpha} = 
 \ket{\alpha}^* \equiv
 \begin{bmatrix}
-(a - ib)_0 \\ (a - ib)_1 \\ \vdots \\ (a - ib)_{N-1}
+(a - ib)_0 & (a - ib)_1 & \hdots & (a - ib)_{N-1}
 \end{bmatrix}
 \end{equation}
 
@@ -1148,6 +1148,15 @@ is the total energy of the state $\ket{\psi_\alpha}$.
 % ================================================================
 
 \section{Commutivity}
+\paragraph*{}In mathematics, operations can have the property of commutivity: that is: they commute. This means, that the order that they are applied to each other, or to another object is irrelevant to the outcome of that procedure. For example, multiplication is the most common and intuitive example of this. If we have three scalar values, $a$ and $b$, the order that they are multiplied- that is the order that they \textit{operate} on one another does not change the outcome. the product $a(b)$ is identical to the product $b(a)$. Thus the difference between them is zero.
+\paragraph*{}In linear algebra and matrix multiplication, this is not always the case. Matrix $A$ acting on matrix $B$ may not not always be the same as matrix $B$ operating on matrix $A$: thus they do not commute. So we have the property: $AB \neq BA$. There are some very specific exceptions to thus rule, but more often than not in practice, matrices will not commute.
+\paragraph*{}If two matrices - or in quantum physics, two \textit{operators} commute, the their commutivity is said to be zero. We test this relationship with the \textit{commutivity operator} defined below for two arbitrary operators $\hat{Q}$ and $\hat{R}$:
+\begin{equation}
+\label{commutator operator}
+\comm{\hat{Q}}{\hat{R}} \equiv \hat{Q}\hat{R} - \hat{R}\hat{Q}
+\end{equation}
+All this operator does is return the difference between the order of the operators acting on some state. If the operator returns zero, then $\hat{Q}$ and $\hat{R}$ commute. If the result is non-zero, the operators do not commute.
+\paragraph*{}The implications of this operator gives rise to a whole separate topic in the field of quantum physics.
 
 % ================================================================
 
@@ -1156,6 +1165,11 @@ is the total energy of the state $\ket{\psi_\alpha}$.
 % ================================================================
 
 \section{The Uncertainty Principle}
+\paragraph*{}The concept of uncertainty has become the poster child for quantum physics. No doubt that before you knew a single bit of quantum of even classical mechanics, you had probably heard someone tell you about this radial concept of being able to know either position or momentum of a quantum system - but \textit{never} both. This idea is so counter intuitive and stands out because of that so maybe it's forgivable that so many people see this as one of defining characteristics of the field.
+\paragraph*{}In reality, uncertainty really is a large part of quantum, any one the reasons that Schrodinger's theory was met with such distaste back in the 20th century. Even Albert Einstein who developed our models of special and general relativity thought the idea to be preposterous. The topic of uncertainty however, goes much farther than just not being able to know position and momentum together, but it really does shape our understanding of quantum physics - at least at this level.
+\paragraph*{}Just like we discussed in chapter 1, all of our intuition of the macroscopic world is confirmed by our ability to take accurate and definite measurements. If we want to know position at any time, we can take a series of sample st regular time intervals to build some function to describe it as some $x(t)$. We can then compute our velocity , $v(t)$, and multiply it by our mass , $m$, and there we have it! Classical physics allows us to take a series of measurement that can give us our \textit{absolute} position and out \textit{absolute} momentum at any time. Thus we know them without any uncertainty, provided we have accurate measurements, our position and momentum values.
+\paragraph*{}As you may have guessed by now, quantum physics is far less forgiving. Even with instruments that are infinitely accurate (which itself is impossible), we still can't know position and momentum simultaneously. But why is this? Why does a quantum system refuse to allows us to know both at the same time?
+
 
 % ================================================================
 
