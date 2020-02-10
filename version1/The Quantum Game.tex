@@ -122,12 +122,12 @@ Basic procedural programming. Most examples in this text will be done in \textit
 % ================================================================
 
 \section*{Citations for this Text}
-\begin{enumerate}
+\begin{itemize}
 \item[•]Griffiths, David J., and Darrell F. Schroeter. Introduction to Quantum Mechanics. 3rd ed., Cambridge University Press, 2018.
 \item[•]Larson, Ron. Elementary Linear Algebra. 7th ed., Brooks/Cole, 2013.
 \item[•]Shankar, Ramamurti. Principles of Quantum Mechanics. 2nd ed., Springer, 2014.
 \item[•]Zettili, Nouredine. Quantum Mechanics: Concepts and Applications. 2nd ed., John Wiley \& amp; Sons, 2009.
-\end{enumerate}
+\end{itemize}
 
 \vspace{16cm}
 \pagebreak
@@ -998,7 +998,7 @@ V(x) = \left\{
 \begin{center}
 \includegraphics[scale=0.32]{ISW}
 \end{center}
-\paragraph*{}Right off of that bat, this allows for some great simplifications. First off, no matter what, Our particle cannot exist in the region $x < 0$ or $x > L$ because of the infinite amount of energy required to get there. Therefore, this quantum mechanical particle can \textit{only} exist in the region $0 \geq x \leq L$. With this, can can focus all of our attention to this region of space. All of the rules outline in the previous chapters still apply, but now we only have this small region of space to worry about.
+\paragraph*{}Right off of that bat, this allows for some great simplifications. First off, no matter what, Our particle cannot exist in the region $x < 0$ or $x > L$ because of the infinite amount of energy required to get there. Therefore, this quantum mechanical particle can \textit{only} exist in the region $0 \leq x \leq L$. With this, can can focus all of our attention to this region of space. All of the rules outline in the previous chapters still apply, but now we only have this small region of space to worry about.
 
 % ================================
 
@@ -1036,7 +1036,7 @@ $\psi(x)$ must be continuous over all space, and must be continuously differenti
 \end{equation}
 Because of the nature of the sine and cosine functions, the only way for these equations to hold true is one of two ways. If $a = b = 0$, the whole wave function becomes $\psi(x) = 0$ which is a valid solution to the PDE, but not normalizeable, thus conflicts with one of our rules. Hence, the other option, just $b = 0$ is the valid conclusion. The resulting wave function for the infinite square well of width $L$ is:
 \begin{equation}
-\psi(x) = a \sin(kx) = a \sin\big(\frac{\sqrt{2mE}}{\hbar}x\big)
+\psi(x) = a \sin(kx) = a \sin\Big(\frac{\sqrt{2mE}}{\hbar}x\Big)
 \end{equation}
 \begin{flushright}
 Where $kx$ must be an integer multiple of $\pi$: $kx = \pm \pi , \pm 2\pi , \pm 3\pm , ... , \pm n\pi , ...$ 
@@ -1075,7 +1075,6 @@ e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 \textbf{Be sure to Check the Mathematical Appendix for note on how to build the Hamiltonian operator for some arbitrary potential!}
 
 % ================================================================
-
 
 
 \section{The Finite Square Well}
@@ -1155,8 +1154,36 @@ is the total energy of the state $\ket{\psi_\alpha}$.
 \label{commutator operator}
 \comm{\hat{Q}}{\hat{R}} \equiv \hat{Q}\hat{R} - \hat{R}\hat{Q}
 \end{equation}
-All this operator does is return the difference between the order of the operators acting on some state. If the operator returns zero, then $\hat{Q}$ and $\hat{R}$ commute. If the result is non-zero, the operators do not commute.
-\paragraph*{}The implications of this operator gives rise to a whole separate topic in the field of quantum physics.
+All this operator does is return the difference between the order of the operators acting on some state. If the operator returns zero, then $\hat{Q}$ and $\hat{R}$ commute. If the result is non-zero, the operators do not commute. From this commutator, we can also establish some important rules for the operator. For any operator , $A$, $B$ and scalar $\alpha$, $\beta$:
+\begin{multicols}{2}
+\begin{itemize}
+\item[•]\textbf{Self Commutivity:}\\
+$ \comm{A}{A} = 0$
+\item[•]\textbf{Commutivity with Scalars:}\\
+$\comm{\alpha}{A} = 0$
+\item[•]\textbf{Anti-symmetry:}\\
+$ \comm{A}{B} = -\comm{B}{A} $
+\item[•]\textbf{Hermitian Conjugates:}\\
+$\comm{A}{B}^\dagger  = \comm{B^\dagger}{A^\dagger} $
+
+\columnbreak
+
+\item[•]\textbf{Factorization of Scalars:}\\
+$\comm{\alpha A}{B} = \alpha \comm{A}{B}$
+\item[•]\textbf{Distributive across addition:}\\
+$\comm{A+B}{C} = \comm{A}{C} + \comm{B}{C}$
+\item[•]\textbf{Multiplication:}\\
+$\comm{AB}{C} = A\comm{B}{C} + \comm{A}{C}B$
+\item[•]\textbf{Multiplication:}\\
+$\comm{A}{BC} = \comm{A}{B}C + B\comm{A}{C}B$
+\end{itemize}
+\end{multicols}
+Many of these rules can be extended to include nested commutation relations and various interactions with scalars and other mathematical objects.
+\paragraph*{}The role of the commutator operator is very important in quantum physics, and will especially carry us through our discussion of uncertainty. It also gives rise to some helpful relations, most notably the \textit{canonical uncertainty relation} that relates the position and momentum operators:
+\begin{equation}
+\comm{\hat{x}}{\hat{p}} = \hat{x}\hat{p} - \hat{p}\hat{x} = i\hbar
+\end{equation}
+
 
 % ================================================================
 
@@ -1167,8 +1194,8 @@ All this operator does is return the difference between the order of the operato
 \section{The Uncertainty Principle}
 \paragraph*{}The concept of uncertainty has become the poster child for quantum physics. No doubt that before you knew a single bit of quantum of even classical mechanics, you had probably heard someone tell you about this radial concept of being able to know either position or momentum of a quantum system - but \textit{never} both. This idea is so counter intuitive and stands out because of that so maybe it's forgivable that so many people see this as one of defining characteristics of the field.
 \paragraph*{}In reality, uncertainty really is a large part of quantum, any one the reasons that Schrodinger's theory was met with such distaste back in the 20th century. Even Albert Einstein who developed our models of special and general relativity thought the idea to be preposterous. The topic of uncertainty however, goes much farther than just not being able to know position and momentum together, but it really does shape our understanding of quantum physics - at least at this level.
-\paragraph*{}Just like we discussed in chapter 1, all of our intuition of the macroscopic world is confirmed by our ability to take accurate and definite measurements. If we want to know position at any time, we can take a series of sample st regular time intervals to build some function to describe it as some $x(t)$. We can then compute our velocity , $v(t)$, and multiply it by our mass , $m$, and there we have it! Classical physics allows us to take a series of measurement that can give us our \textit{absolute} position and out \textit{absolute} momentum at any time. Thus we know them without any uncertainty, provided we have accurate measurements, our position and momentum values.
-\paragraph*{}As you may have guessed by now, quantum physics is far less forgiving. Even with instruments that are infinitely accurate (which itself is impossible), we still can't know position and momentum simultaneously. But why is this? Why does a quantum system refuse to allows us to know both at the same time?
+\paragraph*{}Just like we discussed in chapter 1, all of our intuition of the macroscopic world is confirmed by our ability to take accurate and definite measurements. If we want to know position at any time, we can take a series of sample st regular time intervals to build some function to describe it as some $x(t)$. We can then compute our velocity , $v(t)$, and multiply it by our mass , $m$, and there we have it! Classical physics allows us to take a series of measurement that can give us our \textit{absolute} position and out \textit{absolute} momentum at any time. Thus we know them without any uncertainty, provided we have accurate measurements, our position and momentum values. But this is not simply a problem of instrumentation, we can't just hire a physicist or engineer to design a better machine to measure the quantities because uncertainty is a problem baked into the laws of nature.
+
 
 
 % ================================================================
@@ -1181,6 +1208,7 @@ All this operator does is return the difference between the order of the operato
 % ================================================================
 
 \chapter{The Next Level: \\ Spin and Angular Momentum}
+\paragraph*{}The discussion of angular momentum 
 
 % ================================================================
 % ================================================================
