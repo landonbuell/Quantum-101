@@ -384,7 +384,7 @@ Then it's dual space, or bra equivalent, $\bra{\beta}$ is again defined as it's 
 
 % ================================
 
-\subsection*{Inner Products and Bra-Kets}
+\subsection*{Vector Products and Bra-Kets}
 
 \paragraph*{}It may come as no surprise that Paul Dirac used the names "bra" and "ket" together. Very cleverly, and perhaps humorously, when they combine, they create a mathematical operation of a \textit{bra-ket} or in linear algebra, the \textit{dot product} (often also called scalar product or inner product). Image two discrete vectors, 
 $\vec{f}$ and $\vec{g}$, both of length $N$. The dot product between them is defined as:
@@ -395,7 +395,7 @@ $\vec{f}$ and $\vec{g}$, both of length $N$. The dot product between them is def
 In words, each index of one vector is multiplied by that same index in the other vector, and then each product is summed to output a single scalar number, real or complex.
 \paragraph*{}The Dirac equivalent is the \textit{inner product} and is notatied by the combination of a bra and ket, conveniently called a \textit{bra-ket}.
 \begin{center}
-A bra-ket is notated as $\braket{f}{g}$
+A bra-ket, or inner product, is notated as $\braket{f}{g}$
 \end{center}
 Just like before, if the bra and ket are both discretely defined, $\bra{f}$ and $\ket{g}$, then then inner product of them is similar to equation (\ref{dot product}), except with the added complex conjugate:
 \begin{equation}
@@ -412,11 +412,34 @@ Just like before, if the bra and ket are both discretely defined, $\bra{f}$ and 
 \label{inner prod integral}
 \braket{\Psi}{\Psi} = \int \Psi^*(x,t) \Psi(x,t) dx
 \end{equation}
-
 \paragraph*{}In the conventional notation for quantum physics, this is usually the standard way of expressing the probability density for a particle, given a wave function. This also usually comes with the implication that the function is already normalized, i.e. the constant $A$ has been absorbed into the inner product such that it alone is equal to 1:
 \begin{equation}
 \braket{\Psi}{\Psi} = 1
 \end{equation}
+\paragraph*{}This also introduces the idea of \textit{orthonormality}, which we will expand upon later as it comes up so frequently in quantum physics. Two states, $\ket{\psi_m}$ and $\ket{\psi_n}$ are orthonormal if they are orthogonal, (ortho-) and normalized (-normal). IF the states are orthogonal, their dot product, or inner product in our case, is $0$. We will see that states that are solutions to the Schrodinger equation almost always are orthonormal. We can conventiently express this by using the \textit{Kronecker Delta} symbol, 
+$\delta_{mn}$ which is defined:
+\begin{equation}
+\label{kronecker}
+\delta_{n,m} = 
+	\left\{
+        \begin{array}{ll}
+            1 	&, n = m \\
+            0 	&, n \neq m \\
+        \end{array}
+    \right.
+\end{equation}
+We usually indicate orthonormality by writing a statement such as $\braket{\psi_m}{\psi_n} = \delta_{mn}$.
+
+\paragraph*{}In addition to the bra-ket combination representing the dinner product of two states, the ket-bra combination is the \textit{outer product} of two states. Where the inner product returns a scalar value, the outer product returns a matrix (or operator in our case). 
+\begin{center}
+A ket-bra , or outer product, is notated as $\ketbra{f}{g}$
+\end{center}
+For any state $\psi$, it's outer product return the indentity matrix, or identity operator by definition:
+\begin{equation}
+\label{outer product}
+\ketbra{\psi}{\psi} = \hat{1}
+\end{equation}
+
 \paragraph*{}It is also important to note that the properties of bras and kets are preserved in the inner product operation as well. For example, the complex conjugates of an inner product has the property:
 \begin{equation}
 \braket{\psi}{\phi}^* = \braket{\phi}{\psi} 
@@ -743,17 +766,7 @@ A\vec{v} = \lambda \vec{v}
 \label{orthonorm}
 \braket{\psi_n}{\psi_m} = \delta_{n,m}
 \end{equation}
-Where $\delta_{n,m}$ is a mathematical function called the \textit{Kronecker Delta Function} that is defined by the property:
-\begin{equation}
-\label{kronecker}
-\delta_{n,m} = 
-	\left\{
-        \begin{array}{ll}
-            1 	&, n = m \\
-            0 	&, n \neq m \\
-        \end{array}
-    \right.
-\end{equation}
+Where $\delta_{n,m}$ is he Kronecker Delta function (\ref{kronecker}).
 
 % ================================================================
 
