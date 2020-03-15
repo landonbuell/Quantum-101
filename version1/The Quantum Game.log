@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  23 FEB 2020 23:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  14 MAR 2020 18:44
 entering extended mode
 **"./The Quantum Game.tex"
 ("The Quantum Game.tex"
@@ -552,25 +552,24 @@ This may cause the page layout to be inconsistent, however.
 
  [3
 
-] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 74.
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+ [4]
+[5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 74.
+ ("C:\Users\Landon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
-
-[5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
-[8
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+ [8]
 Chapter 1.
 
 Overfull \hbox (1.48842pt too wide) in paragraph at lines 157--158
@@ -578,8 +577,10 @@ Overfull \hbox (1.48842pt too wide) in paragraph at lines 157--158
 mr/m/n/12 and al-most ev-ery-thing about mod-ern quan-tum physics
  []
 
-[9] [10] [11] [12] [13] [14] [15] [16]
-Overfull \hbox (6.3639pt too wide) in paragraph at lines 331--332
+[9
+
+] [10] [11] [12] [13] [14] [15] [16]
+Overfull \hbox (6.3639pt too wide) in paragraph at lines 332--333
  \OT1/cmr/m/n/12 The num-ber of com-po-nents, $\OML/cmm/m/it/12 N$ \OT1/cmr/m/n
 /12 in-di-cates the di-men-sion of the vec-tor, i.e., it is $\OML/cmm/m/it/12 N
 $\OT1/cmr/m/n/12 -dimensional.
@@ -594,7 +595,7 @@ Chapter 2.
 <ISW.png, id=138, 1445.4pt x 578.16pt>
 File: ISW.png Graphic file (type png)
 <use ISW.png>
-Package pdftex.def Info: ISW.png  used on input line 1012.
+Package pdftex.def Info: ISW.png  used on input line 1013.
 (pdftex.def)             Requested size: 462.53746pt x 185.01497pt.
  [40 <./ISW.png>] [41] [42] [43] [44
 
@@ -604,20 +605,83 @@ Chapter 3.
 Chapter 4.
 [49
 
-] [50
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1278 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.1278 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1279 \end{equation}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! You can't use `\eqno' in vertical mode.
+\endmathdisplay@a ...\df@tag \@empty \else \veqno 
+                                                  \alt@tag \df@tag \fi \ifx ...
+l.1279 \end{equation}
+                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1279 \end{equation}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.1279 \end{equation}
+                     
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[50]
+Chapter 5.
+[51
+
+] [52
 
 ]
-Chapter 5.
-[51] [52] [53] ("The Quantum Game.aux")
+Chapter 6.
+[53] [54] [55] ("The Quantum Game.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13988 strings out of 492895
- 254378 string characters out of 3123268
- 313396 words of memory out of 3000000
- 17830 multiletter control sequences out of 15000+200000
+ 13992 strings out of 492895
+ 254469 string characters out of 3123268
+ 313440 words of memory out of 3000000
+ 17834 multiletter control sequences out of 15000+200000
  540733 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,19n,63p,953b,326s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -638,9 +702,9 @@ s/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "The Quantum Game.pdf" (53 pages, 359395 bytes).
+Output written on "The Quantum Game.pdf" (55 pages, 365902 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
+ 239 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

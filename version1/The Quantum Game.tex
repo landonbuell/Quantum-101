@@ -299,7 +299,8 @@ The Schrodinger equation is a \textit{linear} partial differential equation. Thi
 $c_1\psi_1(x)$ , $c_2\psi_2(x)$ , ... , $c_N\psi_N(x)$, etc., adding them all together is yet \textit{another} possible wave function. Thus now, any $\Psi(x,t)$ actually can be expressed as:
 \begin{equation}
 \label{linear combo}
-\Psi(x,t) = \sum_n^{\infty} c_n \psi_n(x) \phi_n(t)
+\Psi(x,t) = \sum_n c_n \psi_n(x) \phi_n(t) = 
+\sum_n c_n \psi(x) e^{-i\frac{E_n}{\hbar}t}
 \end{equation}
 Notice how $\phi(t)$ also changes with $n$, we will explore this in a little while. 
 \item[•]\textbf{Probability Density}\\
@@ -328,13 +329,13 @@ The complex exponential in the time function eliminates itself when multiplied b
 \psi_0 \\ \psi_1  \\ \vdots \\ \psi_{N-1}
 \end{bmatrix}
 \end{equation}
-\paragraph*{}The number of components, $N$ indicates the dimension of the vector, i.e., it is $N$-dimensional. The entry in each index represents the length or \textit{measure} of the vector in that particular component. Note that each entry, $a_n$ can be a real, imaginary or complex value. In quantum mathematics, we replace the linear algebra object of a vector with the \textit{new} mathematical object called a \textit{ket}.
+\paragraph*{}The number of components, $N$ indicates the dimension of the vector, i.e., it is $N$-dimensional. The entry in each index represents the length or \textit{measure} of the vector in that particular component. Note that each entry, $a_n$ can be a real, imaginary or complex value. In quantum mathematics, we replace the linear algebra object of a \textit{column} vector with the \textit{new} mathematical object called a \textit{ket}.
 \begin{center}
 A ket is notated as $\ket{\psi}$ 
 \end{center} 
 and has many of the same properties as a vector.
-\paragraph*{}Just like a vector, a ket exists in a space, has components and can interact with other mathematical objects. It shares almost all of the same properties as vectors. A ket can be modified by a (real, imaginary or complex) scalar value and can also be multiplied by a matrix (which we'll call an \textit{operator} later) to produce another ket. They can compared to other kets with dot product and cross products and can be arranged into linear combinations as well.
-\paragraph*{}In addition to the ket, there is a related mathematical object called a \textit{bra} which has all of the same properties as a ket.
+\paragraph*{}Just like a vector, a ket exists in a space, has components and can interact with other mathematical objects. It shares almost all of the same properties as vectors. A ket can be modified by a (real, imaginary or complex) scalar value and can also be multiplied by a matrix (which we'll call an \textit{operator} later) to produce another ket. They can compared to \textit{bras} with inner products and outer products and can be arranged into linear combinations as well.
+\paragraph*{}In addition to the ket, there is a related mathematical object called a \textit{bra} which takes the place of a \textit{row} vector, and has all of the same properties as a ket.
 \begin{center}
 A bra is notated as $\bra{\psi}$
 \end{center}
@@ -355,20 +356,20 @@ Where the asterisk symbol denotes a transposition and complex conjugate operatio
 \label{discrete ket}
 \ket{\alpha} \equiv
 \begin{bmatrix}
-(a + ib)_0 \\ (a + ib)_1 \\ \vdots \\ (a + ib)_{N-1}
+\alpha_0 \\ \alpha_1 \\ \vdots \\ \alpha_{N-2} \\ \alpha_{N-1}
 \end{bmatrix}
 \end{equation}
-Then it's dual space, or bra equivalent, $\bra{\alpha}$ is then defined as it's  complex conjugate:
+Then it's dual space, or bra equivalent, $\bra{\alpha}$ is then defined as it's  \textit{transpose, complex conjugate}:
 \begin{equation}
 \label{discrete bra}
 \bra{\alpha} = 
 \ket{\alpha}^* \equiv
 \begin{bmatrix}
-(a - ib)_0 & (a - ib)_1 & \hdots & (a - ib)_{N-1}
+\alpha^*_0 & \alpha^*_1 & \hdots &\alpha^*_{N-2} & \alpha^*_{N-1}
 \end{bmatrix}
 \end{equation}
 
-\paragraph*{}There are some important distinctions between vectors, kets and bras that need to be outlined as they \textit{are not} the same thing. Vectors typically have a finite number of discrete components in them, and thus are limited to finite dimensional vector spaces. A ket or bra on the other hand, can potentially have an infinite amount of components in it. Where a vector is a set of discrete indexes, a ket or bra can thought of as a set of continuous set of values. Furthermore, a ket or bra can be used to express a function, or rather the output of a function. A ket with infinite entries can be used to convey the output of a single, smooth, and continuous function.
+\paragraph*{}There are some important distinctions between vectors, kets and bras that need to be outlined as they \textit{are not} the same thing. Vectors typically have a finite number of discrete components in them, and thus are limited to finite dimensional spaces. A ket or bra on the other hand, can potentially have an infinite amount of components in it. Where a vector is a set of discrete indexes, a ket or bra can thought of as a set of continuous set of values. Furthermore, a ket or bra can be used to express a function, or rather the output of a function. A ket with infinite entries can be used to convey the output of a single, smooth, and continuous function.
 \paragraph*{}For example, the ket, $\ket{\beta}$ could be used to represent the continuous output for the complex defined function:
 \begin{equation}
 \label{smooth ket}
@@ -1054,12 +1055,12 @@ Because of the nature of the sine and cosine functions, the only way for these e
 \begin{flushright}
 Where $kx$ must be an integer multiple of $\pi$: $kx = \pm \pi , \pm 2\pi , \pm 3\pm , ... , \pm n\pi , ...$ 
 \end{flushright}
-\paragraph*{}Because of the rotational symmetry of sine, ($-\sin(\theta) = +\sin(\theta)$), the negative integers become redundant, and since the function must fit "neatly" into a region $L$, the distinct solutions to the problem become:
+\paragraph*{}Because of the rotational symmetry of sine, ($-\sin(\theta) = +\sin(\theta)$), the negative integers become redundant, and since the function must fit "neatly" into a region $L$, the distinct spatial solutions to the problem become:
 \begin{equation}
 \label{ISW spatial solution}
 \psi_n(x) = A\sin \Big( \frac{n\pi}{L}x \Big)
 \end{equation}
-\paragraph*{}These $n$ functions are the \textit{energy eigenstates} to this problem and can be notated with kets: $\psi_n(x) = \ket{\psi_n}$. The constant that normalizes this ket is $ A = \sqrt{\frac{2}{L}}$. Just as presribebed by the equivalent eigenvalue problem, each eigenstate is appropriately orthonormal to the other eigenkets. Note that because we have eliminated all imaginary numbers, each ket is also it's own complex conjugate.
+\paragraph*{}These $n$ functions are the stationary \textit{energy eigenstates} to this problem and can be notated with kets: $\psi_n(x) = \ket{\psi_n}$. The constant that normalizes this ket is $ A = \sqrt{\frac{2}{L}}$. Just as prescribed by the equivalent eigenvalue problem, each eigenstate is appropriately orthonormal to the other eigenkets. 
 \begin{equation}
 \braket{\psi_n}{\psi_m} = \frac{2}{L}\int_0^L \
 \sin\big( \frac{n\pi x}{L} \big) \sin\big( \frac{m\pi x}{L} \big) dx =
@@ -1068,24 +1069,24 @@ Where $kx$ must be an integer multiple of $\pi$: $kx = \pm \pi , \pm 2\pi , \pm 
 \begin{flushright}
 Recall that $\delta_{n,m}$ returns $1$ if $n = m$ and $0$ if $n \neq m$.
 \end{flushright}
+Note that because we have eliminated all imaginary numbers from the time independent solutions for this problem, each ket is also it's own complex conjugate: $\ket{\psi_n(x)} = \bra{\psi_n(x)}$
 \paragraph*{}Since we know have a collection of infinitely many eigenkets, we must also find each energy - eigenvalue as well - $E_n$. Since we know that $\frac{n\pi}{L} = \frac{\sqrt{2mE}}{\hbar}$, we can algebraically solve for $E_n$ and see that:
 \begin{equation}
 \label{energy for ISW}
 E_n = \frac{n^2 \pi^2 \hbar}{2mL^2}
 \end{equation}
-\paragraph*{}Now we have a complete set of energy - eigenstates, given by $\ket{\psi_n}$ and all the corresponding energy - eigenvalues, given by $E_n$. Note that there are in infinite amount of both and perfectly match one - to - one. Every unique state has a unique energy and vice-versa. Finally, complete our analytical solution, we can form a linear combination all of our states. This the full solution to the infinite square well of width L is given by:
+\paragraph*{}Now we have a complete set of energy - eigenstates, given by $\ket{\psi_n}$ and all the corresponding energy - eigenvalues, given by $E_n$. Note that there are in infinite amount of both and perfectly match one - to - one. Every unique state $\psi_n(x)$ has a unique energy $E_n$ and vice-versa. Finally, to complete our analytical solution, we can form a linear combination all states. This the full solution to the infinite square well of width $L$ is given by:
 \begin{equation}
 \label{ISW Full Solution}
 \Psi(x,t) = \sqrt{\frac{2}{L}} \sum_n^{\infty} 
 c_n \sin \Big( \frac{n\pi x}{L} \Big)
 e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 \end{equation} 
-\paragraph*{}Where $L$ is the width of the square well, $n$ is the energy level of the particle, and $m$ is the mass of the particle.
 
 % ================================
 
 \subsection*{Solving the System Numerically}
-\textbf{Be sure to Check the Mathematical Appendix for note on how to build the Hamiltonian operator for some arbitrary potential!}
+\textbf{Be sure to read the Mathematical Appendix for note on how to build the Hamiltonian operator for some arbitrary potential!}
 
 % ================================================================
 
@@ -1224,6 +1225,58 @@ And the standard deviation of that operator is given by:
 \section{More on Bases and Measurements}
 
 % ================================================================
+
+% ================================================================
+% ================================================================
+
+\chapter{The Next Level: \\ The Hydrogen Atom}
+\paragraph*{}It may seem strange to have an entire chapter dedicated to the hydrogen atom. After all, it's the simplest atom of all, simply one proton in the nucleus, with a single electron bound to it.  The Bohr model of the atom indicates that the electron "orbits" this nucleus constantly in discrete "shells", however a chemistry class would introduce to you the concept of the \textit{Aufbau Principle} where electrons are actual bound within orbital "clouds" instead.
+\paragraph*{}When Schrodinger originally published some of his work on the beginnings of quantum theory, it is the theory's ability to accurately describe the Hydrogen atom that affirmed it's validity. Because of the theory that Schrodinger and so many other developed matched the experimental behavior of Hydrogen, we accepted the place of quantum mechanics in our model of physics today. Naturally then, it's a great place to take all of the concepts that we've explored so far, along with our 1-Dimensional problems, and push ourselves to begin to solve a slightly more realistic problem. 
+
+% ================================================================
+
+\section{The Schrodinger Equation in 3 Dimensions}
+\paragraph{}It also follows from the hydrogen atom, that we need to expand our description of the quantum world from one spatial dimension, into three spatial dimensions. To do this, let's revisit the one dimension Schrodinger equation, aligned with the $x$-axis.
+\begin{equation}
+\label{1D Schrodinger revisited}
+-\frac{\hbar^2}{2m}\frac{\partial^2\Psi}{\partial x^2} +
+V\Psi = i\hbar\frac{\partial \Psi}{\partial t}
+\end{equation}
+We've also learned that this equation is the quantum mechanical equivalent to the Hamiltonian operator which sums the kinetic and potential energy of a system: $\hat{H} = \hat{T} + \hat{V}$. In chapter 1, we showed how the first term in equation (\ref{1D Schrodinger revisited}) was derived from the classical description of kinetic energy: $T = \frac{p^2}{2m}$.
+\paragraph*{}Since we are operating in the $x$ dimension, we can say that the momentum measurement is solely the $x$-axis component of some greater \textit{vector operator}. So, the operator $\hat{p}$ is actually the vector operator $\hat{\vec{p}}$, and the $x$-axis component is given by $\hat{p}_x^2$. This then forces us to recognize that there are also a $\hat{p}_y^2$ and a $\hat{p}_z^2$ component to the momentum vector operator.
+\paragraph*{}This operator now becomes:
+\begin{equation}
+\hat{\vec{p}} = \big[ \hat{p}_x , \hat{p}_y , \hat{p}_z \big]
+\end{equation} 
+And using the magnitude of that vector, we can also state that:
+\begin{equation}
+\hat{\vec{p}}^2 = \hat{p}_x^2 + \hat{p}_y^2 + \hat{p}_z^2 
+\end{equation}
+\paragraph*{}So our kinetic energy operator is actually:
+\begin{equation}
+\label{3D Cartesian Kinetic}
+\hat{T} = \frac{1}{2m}\hat{\vec{p}}^2 = 
+\frac{1}{2m}\big( \hat{p}_x^2 + \hat{p}_y^2 + \hat{p}_z^2 \big)
+\end{equation}
+\paragraph*{}We can also deconstruct each momentum component based on it's definition from chapter 1, equation (\ref{momentum}):
+\begin{equation}
+\label{momentum cartesian}
+\hat{p}_x = -i\hbar \frac{\partial}{\partial x} \text{\hspace*{2cm}}
+\hat{p}_y = -i\hbar \frac{\partial}{\partial y} \text{\hspace*{2cm}}
+\hat{p}_z = -i\hbar \frac{\partial}{\partial z}
+\end{equation}
+Thus the component "squared", or rather acting twice becomes:
+\begin{equation}
+\label{momentum sq cartesian}
+\hat{p}_x^2 = -\hbar^2 \frac{\partial^2}{\partial x^2} \text{\hspace*{2cm}}
+\hat{p}_y^2 = -\hbar^2 \frac{\partial^2}{\partial y^2} \text{\hspace*{2cm}}
+\hat{p}_z^2 = -\hbar^2 \frac{\partial^2}{\partial z^2}
+\end{equation}
+We can then insert this pack into the kinetic energy operator show:
+\begin{equation}
+\hat{T} = -\frac{\hbar^2}{2m}\big( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \big)
+
+\end{equation}
 
 % ================================================================
 % ================================================================
