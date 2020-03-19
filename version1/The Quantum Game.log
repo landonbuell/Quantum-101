@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  14 MAR 2020 18:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  18 MAR 2020 18:14
 entering extended mode
 **"./The Quantum Game.tex"
 ("The Quantum Game.tex"
@@ -546,13 +546,13 @@ Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[2] ("The Quantum Game.toc")
+[2] ("The Quantum Game.toc" [3
+
+])
 \tf@toc=\write3
 \openout3 = `"The Quantum Game.toc"'.
 
- [3
 
-]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
@@ -601,87 +601,41 @@ Package pdftex.def Info: ISW.png  used on input line 1013.
 
 ]
 Chapter 3.
-[45] [46] [47] [48]
-Chapter 4.
-[49
+[45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 1209--1210
+
+ []
+
+[47] [48] [49] [50
 
 ]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1278 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+Chapter 4.
+[51] [52]
 
-! Display math should end with $$.
-<to be read again> 
-                   \par 
-l.1278 
-       
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
+LaTeX Warning: Reference `3D Cartesian Schrodinger' on page 53 undefined on inp
+ut line 1330.
 
+[53] [54] [55] [56
 
-! LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1279 \end{equation}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! You can't use `\eqno' in vertical mode.
-\endmathdisplay@a ...\df@tag \@empty \else \veqno 
-                                                  \alt@tag \df@tag \fi \ifx ...
-l.1279 \end{equation}
-                     
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1279 \end{equation}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.1279 \end{equation}
-                     
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-[50]
+]
 Chapter 5.
-[51
-
-] [52
+[57] [58
 
 ]
 Chapter 6.
-[53] [54] [55] ("The Quantum Game.aux")
+[59] [60] [61] ("The Quantum Game.aux")
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13992 strings out of 492895
- 254469 string characters out of 3123268
- 313440 words of memory out of 3000000
- 17834 multiletter control sequences out of 15000+200000
+ 13997 strings out of 492895
+ 254564 string characters out of 3123268
+ 313487 words of memory out of 3000000
+ 17839 multiletter control sequences out of 15000+200000
  540733 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,19n,63p,953b,326s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -702,9 +656,9 @@ s/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "The Quantum Game.pdf" (55 pages, 365902 bytes).
+Output written on "The Quantum Game.pdf" (61 pages, 382615 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
+ 258 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

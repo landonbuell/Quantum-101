@@ -19,11 +19,12 @@
 \contentsline {section}{\numberline {3.1}Observables and Hermitian Operators}{45}% 
 \contentsline {section}{\numberline {3.2}Commutivity}{46}% 
 \contentsline {section}{\numberline {3.3}More on the Statistical Interpretation}{47}% 
-\contentsline {section}{\numberline {3.4}The Uncertainty Principle}{47}% 
-\contentsline {section}{\numberline {3.5}More on Bases and Measurements}{48}% 
-\contentsline {chapter}{\numberline {4}The Next Level: \\ The Hydrogen Atom}{49}% 
-\contentsline {section}{\numberline {4.1}The Schrodinger Equation in 3 Dimensions}{49}% 
-\contentsline {paragraph}{}{49}% 
-\contentsline {chapter}{\numberline {5}The Next Level: \\ Spin and Angular Momentum}{51}% 
-\contentsline {chapter}{\numberline {6}Mathematical Index}{53}% 
-\contentsline {section}{\numberline {6.1}Building the Hamiltonian Operator Numerically}{53}% 
+\contentsline {section}{\numberline {3.4}The Uncertainty Principle}{48}% 
+\contentsline {section}{\numberline {3.5}More on Bases and Measurements}{49}% 
+\contentsline {chapter}{\numberline {4}The Next Level: \\ The Hydrogen Atom}{51}% 
+\contentsline {section}{\numberline {4.1}The Schrodinger Equation in 3 Dimensions}{51}% 
+\contentsline {paragraph}{}{51}% 
+\contentsline {section}{\numberline {4.2}The Hydrogen Atom Structure}{54}% 
+\contentsline {chapter}{\numberline {5}The Next Level: \\ Spin and Angular Momentum}{57}% 
+\contentsline {chapter}{\numberline {6}Mathematical Index}{59}% 
+\contentsline {section}{\numberline {6.1}Building the Hamiltonian Operator Numerically}{59}% 

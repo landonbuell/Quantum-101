@@ -261,7 +261,7 @@ V(x)\Big[ \psi(x)\phi(t) \Big] = i\hbar\frac{\partial}{\partial t}\Big[ \psi(x)\
 V\big[ \psi\phi \big] = 
 i\hbar\psi\frac{\partial \phi}{\partial t}
 \end{equation}
-\paragraph*{}Lastly, we can divide both sides of the equation by $\psi(x)\phi(t)$. Now, equation (\ref{separated TDSE 1}) becomes:
+\paragraph*{}Lastly, we can divide both sides of the equation by $\psi \phi$. Now, equation (\ref{separated TDSE 1}) becomes:
 \begin{equation}
 \label{separated TDSE 2}
 -\frac{\hbar^2}{2m}\frac{1}{\psi}\frac{\partial^2\psi}{\partial x^2} + V = 
@@ -1082,6 +1082,7 @@ E_n = \frac{n^2 \pi^2 \hbar}{2mL^2}
 c_n \sin \Big( \frac{n\pi x}{L} \Big)
 e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 \end{equation} 
+\paragraph*{}The value of each $c_n$ is the square root of the probability of the particular eigen-state of occurring after an energy measurement. In most cases, this value can only be determined empirically.
 
 % ================================
 
@@ -1203,6 +1204,27 @@ Many of these rules can be extended to include nested commutation relations and 
 
 \section{More on the Statistical Interpretation}
 
+\paragraph*{}The \textit{statistical interpretation} of quantum physics is really the model that governs our understanding of the subject. It's arguably both a mathematical and philosophical logic that we use to describe this branch of physics. As we discussed early on, one of the most challenging parts of quantum is to accept the idea that unlike classical physics, almost nothing can be known with complete certainty. Always with every measurement outcome comes a deal of uncertainty and we handle this with elementary statistics.
+\paragraph*{}We we first looked at the Schrodinger equation, we also noticed how it is a \textit{linear} partial differential equation, which has the property that a linear combination of solutions is also a valid solution. This means that when we find a single solution, $\ket{\Psi_1}$, then scaling that by some constant is also a solution $c_1\ket{|\Psi_1}$. Furthermore, we found that in some cases for time independent potentials, like the infinite square well, the solution may take the form of infinite series , where each term is scaled by some coefficient $c_n$. 
+\paragraph*{}As it follows, then it turns out that that when multiplying that number by it's own complex conjugate: $|c_n|^*|c_n|$, it's winds up being the relative chance of the particular state $\ket{\Psi_n}$ of occurring. So, just like at the end of chapter 1, we can explore another example of how the statistical interpretation works: \\
+\paragraph*{}Suppose we have a quantum mechanical system composed of infinitely many energy-eigen states. We can express this as:
+\begin{equation}
+\Psi(x,t) = \sum_{n=1}^{+\infty} c_n \ket{\Psi_n}
+\end{equation}
+Recall that each state $\ket{\Psi_n}$ is composed of a spatial component $\psi_n(x)$ and a time component $\phi_n(t)$ as per our separable solutions in chapter 1, equation (\ref{separable}). Each state also has a unique energy- eigenvalue as well $E_n$.
+\paragraph*{}We then hand our mathematical model and system setup a well- qualified experimentalist. She then takes our setup, and applies what she knows about both the mathematical and practical end of quantum physics (beyond the scope of this work) to our system. She returns to us soon after with some great news! After much testing she has found the results:
+\begin{equation}
+c_1 = -2 \hspace*{1cm}
+c_2 = 3i \hspace*{1cm}
+c_3 = 1 - 6i \hspace{1cm}
+c_4 = 16 \hspace*{1cm}
+c_5 = 3 + 4i \hspace{1cm}
+c_{(n > 5)} = 0
+\end{equation}
+And given her incredible reputation, you take these results be to 100% accurate with no error at all! 
+\paragraph*{}We now are faced with the great simplification that this is a \textit{five - state syetem}. That ism there are only five possible quantum states that this particle can take. For whatever reasone the experimental results have shown that is is \textit{impossible} to have an enegry - eigen state above $n = 5$, which is mathematically represented by the fact that all states above $n = 5$ have a coefficient of zero.
+\paragraph*{}You are then asked by another physicist to analyze and determine as much about the system as you can! Right away, we can determine the \textit{relative} probability of each state to occur. As previously discussed, this is given by the particular coefficient, multiplied by it's 
+
 % ================================================================
 
 \section{The Uncertainty Principle}
@@ -1243,8 +1265,11 @@ And the standard deviation of that operator is given by:
 V\Psi = i\hbar\frac{\partial \Psi}{\partial t}
 \end{equation}
 We've also learned that this equation is the quantum mechanical equivalent to the Hamiltonian operator which sums the kinetic and potential energy of a system: $\hat{H} = \hat{T} + \hat{V}$. In chapter 1, we showed how the first term in equation (\ref{1D Schrodinger revisited}) was derived from the classical description of kinetic energy: $T = \frac{p^2}{2m}$.
-\paragraph*{}Since we are operating in the $x$ dimension, we can say that the momentum measurement is solely the $x$-axis component of some greater \textit{vector operator}. So, the operator $\hat{p}$ is actually the vector operator $\hat{\vec{p}}$, and the $x$-axis component is given by $\hat{p}_x^2$. This then forces us to recognize that there are also a $\hat{p}_y^2$ and a $\hat{p}_z^2$ component to the momentum vector operator.
-\paragraph*{}This operator now becomes:
+
+\subsection*{Cartesian Basis}
+
+\paragraph*{}Since we are operating in the $x$ dimension, we can say that the momentum measurement is solely the $x$-axis component of some greater \textit{vector operator}. So, the operator $\hat{p}$ is actually the vector operator $\hat{\vec{p}}$, and the $x$-axis component is given by $\hat{p}_x$. In the case of the kinetic energy, this operator acts twice, to give us $\hat{p}_x^2$. This then forces us to recognize that there are also a $\hat{p}_y^2$ and a $\hat{p}_z^2$ component to the Kinetic Energy Operator.
+\paragraph*{}So the momentum operator, is now a vector defined operator:
 \begin{equation}
 \hat{\vec{p}} = \big[ \hat{p}_x , \hat{p}_y , \hat{p}_z \big]
 \end{equation} 
@@ -1252,13 +1277,13 @@ And using the magnitude of that vector, we can also state that:
 \begin{equation}
 \hat{\vec{p}}^2 = \hat{p}_x^2 + \hat{p}_y^2 + \hat{p}_z^2 
 \end{equation}
-\paragraph*{}So our kinetic energy operator is actually:
+So our kinetic energy operator is actually:
 \begin{equation}
 \label{3D Cartesian Kinetic}
 \hat{T} = \frac{1}{2m}\hat{\vec{p}}^2 = 
 \frac{1}{2m}\big( \hat{p}_x^2 + \hat{p}_y^2 + \hat{p}_z^2 \big)
 \end{equation}
-\paragraph*{}We can also deconstruct each momentum component based on it's definition from chapter 1, equation (\ref{momentum}):
+We can also deconstruct each momentum component based on it's definition from chapter 1, equation (\ref{momentum}):
 \begin{equation}
 \label{momentum cartesian}
 \hat{p}_x = -i\hbar \frac{\partial}{\partial x} \text{\hspace*{2cm}}
@@ -1272,11 +1297,89 @@ Thus the component "squared", or rather acting twice becomes:
 \hat{p}_y^2 = -\hbar^2 \frac{\partial^2}{\partial y^2} \text{\hspace*{2cm}}
 \hat{p}_z^2 = -\hbar^2 \frac{\partial^2}{\partial z^2}
 \end{equation}
-We can then insert this pack into the kinetic energy operator show:
-\begin{equation}
-\hat{T} = -\frac{\hbar^2}{2m}\big( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \big)
 
+\paragraph*{}We can then insert this back into the kinetic energy operator show:
+\begin{equation}
+\hat{T} = -\frac{\hbar^2}{2m} \bigg( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \bigg)
 \end{equation}
+Which can be equivalently written using the \textit{Laplacian Operator} which is defined in a 3D cartesian basis as:
+\begin{equation}
+\label{3D Cartesian Laplacian}
+\nabla^2 = 
+\bigg( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \bigg)
+\end{equation}
+Note that although we do not use the standard \textit{hat} notoation, the Laplacian is in fact a linear operator. We can now take this and re-write the kinetic energy operator:
+\begin{equation}
+\hat{T} = -\frac{\hbar^2}{2m}\nabla^2
+\end{equation}
+Finally, we can take this kinetic energy operator, now accounting for three cartesian spatial dimension and re-insert it back into the Schrodinger equation:
+\begin{equation}
+-\frac{\hbar^2}{2m} \bigg( 
+\frac{\partial^2 \Psi}{\partial x^2} + 
+\frac{\partial^2 \Psi}{\partial y^2} + 
+\frac{\partial^2 \Psi}{\partial z^2} \bigg) +
+V\Psi = 
+-i\hbar\frac{\partial \Psi}{\partial t}
+\end{equation}
+Or with the Laplacian:
+\begin{equation}
+\label{3D Schrodinger}
+-\frac{\hbar^2}{2m}\nabla^2\Psi + V\Psi = 
+-i\hbar\frac{\partial \Psi}{\partial t}
+\end{equation}
+\paragraph*{}Equation (\ref{3D Cartesian Schrodinger}) is the most common way to represent the Schrodinger Equation in Higher Dimensions. This is because it appropriately generalized to cover any number of dimensions, in any coordinate systems. In each case, the Laplacian must be evaluated for that particular dimension and coordinate basis. In the case of our 3D Cartesian system, The wave function $\Psi$ is a function of 3D space and time, $\Psi(x,y,z,t)$. Depending on the context of the situation,the potential may also be a function of all three dimensions, or even time as well. 
+\paragraph*{}Now we have a solid foundation for expressing Schrodinger's equation in any dimensions and in any coordinate system. It also follows, that in many cases, our method of \textit{separation of variables} can be used under constant potential (with time) systems. Instead of a case like in equation (\ref{separable}), we may choose to separate out all three dimensions and time into \textit{four} separate equations.
+\begin{equation}
+\Psi(x,y,x,t) = \psi_x(x) \psi_(y) \psi_z(z) \phi(t)
+\end{equation}
+\paragraph*{}Note that this can only be done for potential functions $V$ that are independent of time, and \textit{also} separable into the same basis components. The result will be the same time independent Schrodinger Equation as one dimension, just now with the Lapacian Operator taking the place of the sole second partial derivative:
+\begin{equation}
+\label{3D TSIE}
+-\frac{\hbar^2}{2m}\nabla^2\Psi + V\Psi = E\Psi
+\end{equation}
+And the value for $\phi_n(t)$ still holds from chapter one, equation (\ref{energy ODE}).
+\paragraph*{}It's also important to note that \textit{every single} one of the rules and properties that we have established for the wave function, $\Psi$ in a single dimension, also applies here. For example, We must still be able to normalize a solution for this to be a valid wave function. In the case of 3D, the orthogonality of two energy eigen-states allows the relation:
+\begin{equation}
+\braket{\Psi_n(x,y,z,t)}{\Psi_m(x,y,z,t)} = \delta_{n,m}
+\end{equation}
+For appropriately normalized states. In this case, normalization occurs over all of space (or at least defined regions) such that:
+\begin{equation}
+|A|^*\int \Psi^*(x,y,z,t)\Psi_x,y,z,t)dxdydz = 1
+\end{equation}
+
+\subsection*{Spherical Basis}
+\paragraph*{}As it turns out in Quantum Physics, Cartesian coordinate system is not always the best tool for the job. In many practical cases, such as dealing with the electromagnetic interactions between subatomic particles, a spherical coordinate system may be far more appropriate. So now we've spent all this time expanding the Schrodinger equation into a 3D Cartesian system just to move out of it? Well yes, except not all that much changes.
+\paragraph*{}Our potential function, $V$, is now a function of $r$,$\theta$, and $\phi$ instead of $x$, $y$ and $z$ axes. Similarly, we just need to adjust our Laplacian operator accordingly as well. In 3D spherical coordinates, it's defined:
+\begin{equation}
+\label{3D Polar Laplacian}
+\nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} 
+\bigg( r^2 \frac{\partial}{\partial r} \bigg) + 
+\frac{1}{r^2 \sin\theta}\frac{\partial}{\partial \theta}
+\bigg( \sin\theta \frac{\partial}{\partial \theta} \bigg) + 
+\frac{r^2}{\sin^2\theta} 
+\bigg( \frac{\partial^2}{\partial\phi^2} \bigg)
+\end{equation}
+\paragraph*{}With this in mind, we still write the Schrodinger equation and it's time independent counterpart exactly the same! (Except, of course we know that $V = V(r,\theta, \phi)$ not $V(x,y,z)$) Furthermore, our separation of variables also can be done in the same way. Generally, potentials are mostly radial, and not angular, so we can simply our separation as assert our new separable solutions can take the form:
+\begin{equation}
+\Psi(r,\theta,\phi,t) = R(r) Y(\theta,\phi) T(t)
+\end{equation}
+Notice we use $T(t)$ instead of $\phi(t)$ in order to distinguish the coordinate basis from the function, which are almost never related.
+
+% ================================================================
+
+\section{The Hydrogen Atom Structure}
+\paragraph*{}From basic chemistry, we know that a hydrogen atom is the simplest possible atomic structure. As mentioned before, it is composed of a single electron, bound to a proton. Both have equal magnitude, and opposite polarity charges: $q_e = -q_p$. We can then take our knowledge from electrostatics to begin to build the potential function for the electron. For simplicity of this problem, we'll consider the case where the proton is fixed to a coordinate origin, that is well-defined (as in, we are all certain exactly where the proton is)
+\paragraph*{}From \textit{Coulomb's Law}, we can integrate the force between the two particles over distance to find the governing potential function. 
+We can also use the variable $e$ to denote the elementary charge magnitude ($1.973 \times 10^{-19} \text{[Coulombs]}$), thus the product of the electron and proton charges reduces to $-e^2$. We can then write $V(r)$ as:
+\begin{equation}
+V(r) = -\frac{1}{4\pi\epsilon_0}\frac{e^2}{\vec{r}}
+\end{equation}
+\paragraph*{}Since we know how the Schrodinger equation functions in a spherical basis, we can simply insert our potential into the equation:
+\begin{equation}
+-\frac{\hbar^2}{2m}\nabla^2\Psi + 
+\Big(-\frac{1}{4\pi\epsilon_0}\frac{e^2}{r}\Big)\Psi = E\Psi
+\end{equation}
+\paragraph*{}
 
 % ================================================================
 % ================================================================
