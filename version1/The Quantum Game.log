@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  18 MAR 2020 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  19 MAR 2020 11:28
 entering extended mode
 **"./The Quantum Game.tex"
 ("The Quantum Game.tex"
@@ -606,14 +606,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1209--1210
 
  []
 
-[47] [48] [49] [50
-
-]
+[47] [48] [49] [50]
 Chapter 4.
-[51] [52]
+[51
+
+] [52]
 
 LaTeX Warning: Reference `3D Cartesian Schrodinger' on page 53 undefined on inp
-ut line 1330.
+ut line 1344.
 
 [53] [54] [55] [56
 
@@ -656,7 +656,7 @@ s/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "The Quantum Game.pdf" (61 pages, 382615 bytes).
+Output written on "The Quantum Game.pdf" (61 pages, 383937 bytes).
 PDF statistics:
  258 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
