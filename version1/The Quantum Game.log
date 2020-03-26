@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  19 MAR 2020 11:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  25 MAR 2020 19:52
 entering extended mode
 **"./The Quantum Game.tex"
 ("The Quantum Game.tex"
@@ -597,12 +597,12 @@ File: ISW.png Graphic file (type png)
 <use ISW.png>
 Package pdftex.def Info: ISW.png  used on input line 1013.
 (pdftex.def)             Requested size: 462.53746pt x 185.01497pt.
- [40 <./ISW.png>] [41] [42] [43] [44
-
-]
+ [40 <./ISW.png>] [41] [42] [43] [44]
 Chapter 3.
-[45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 1209--1210
+[45
+
+] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1250
 
  []
 
@@ -613,7 +613,7 @@ Chapter 4.
 ] [52]
 
 LaTeX Warning: Reference `3D Cartesian Schrodinger' on page 53 undefined on inp
-ut line 1344.
+ut line 1384.
 
 [53] [54] [55] [56
 
@@ -632,10 +632,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13997 strings out of 492895
- 254564 string characters out of 3123268
- 313487 words of memory out of 3000000
- 17839 multiletter control sequences out of 15000+200000
+ 13999 strings out of 492895
+ 254589 string characters out of 3123268
+ 313511 words of memory out of 3000000
+ 17841 multiletter control sequences out of 15000+200000
  540733 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,19n,63p,953b,326s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -656,7 +656,7 @@ s/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "The Quantum Game.pdf" (61 pages, 383937 bytes).
+Output written on "The Quantum Game.pdf" (61 pages, 387102 bytes).
 PDF statistics:
  258 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

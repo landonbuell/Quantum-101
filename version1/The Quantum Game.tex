@@ -1096,25 +1096,65 @@ e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 
 % ================================
 
+\subsection*{Analyzing the Problem}
+\paragraph*{}The setup for the finite square problem is almost identical to the infinite square well problem, except that the walls of the well that contain our particle are now finite - as the name of the problem would suggest. To, ease the computations in this problem, we will move the well to be centered with our coordinate origin now. So, let's keep out box of width $L$, and side walls each having the same potential, some finite value, $V_0$, which can be positive or negative.
+\paragraph*{}The potential function is defined:
+\begin{equation}
+\label{FSW potential}
+V(x) = \left\{
+        \begin{array}{ll}
+            V_0 &, \quad x < -\frac{L}{2} \\
+            0 		&, \quad -\frac{L}{2} \leq x \leq +\frac{L}{2} \\
+            V_0 &, \quad x > +\frac{L}{2} \\
+        \end{array}
+    \right.
+\end{equation}
+Again, just as before, the peice-wise definition of the potential allows us to solve the TISE individually for the three separate regions. Despite not being able to make some immediate simplifications as we did with the infinite square well, the newly imposed symmetry will help us soon.
+
+% ================================
+
+\subsection*{Solving the System 'By Hand'}
+\paragraph*{}Beginning with the edges of the systems, the potential is a constant value, $V_0$, which can be positive or negative. For the regions 
+$-\infty < x < -L/2$, and $+L/2 > x > +\infty$, the TISE reads:
+\begin{equation}
+\label{FSW edge}
+-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} + V_0\psi = E\psi
+\end{equation}
+Which looks a little bit more challenging to solve that the previous problem, however, we can subtract the quantity $V_0\psi$ from both sides. We can then factor out the wave function $\psi$ from the potential and energy constants, thus our equation now reads:
+\begin{equation}
+-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} i = \Big(E - V_0\Big)\psi
+\end{equation}
+\paragraph*{}Now, we realize that this equation here is \textit{very} similar to the ODE that we built for the infinite square well in equation (\ref{ISW TISE}). Infact, our procedure to solve this equation is almost identical to the way we solved that ODE. Lets do some quick algebraioc manipulation again.
+\begin{equation}
+\frac{d^2\psi}{dx^2} = -\frac{2m}{\hbar}(E - V_0)\psi
+\end{equation}
+Now we are ready to solve our the equation again, except we need to take a closer look at the quantity contained within the parenthesis above. This quantity is telling us the difference between the total energy of the particle $E$ and the potential function energy $V_0$. Depending on how these values related to each other, it changes to possible solution to the wave equation.
+
+% ================================
+
+\subsection*{Solving the System Numerically}
+\textbf{Be sure to read the Mathematical Appendix for note on how to build the Hamiltonian operator for some arbitrary potential!}
+
+% ================================================================
+
 \section{Multiple Square Wells}
 
 
-% ================================
+% ================================================================
 
 \section{The Harmonic Oscillator}
 
 
-% ================================
+% ================================================================
 
 \section{The Free Particle}
 
-
-% ================================
+% ================================================================
 
 \section{The Delta Function}
 
 
-% ================================
+% ================================================================
 
 
 % ================================================================
@@ -1131,7 +1171,7 @@ e^{-i\big( \frac{n^2 \pi^2}{2mL^2} \big)t}
 \paragraph*{}Operators are a huge part of quantum physics. They allow us to both conceptually and mathematically gather so much information about a quantum state. For example, if we had some quatum system described the the ket 
 $\ket{\psi_\alpha}$, and then we wanted to know the total energy of this system, we just act on it with the Hamiltonian operator $\hat{H}$. Even if we don't know \textit{exactly} how this operator works, or it's composition in a linear algebra context, we know that the quantity:
 \begin{equation}
-E_\alpha = \hat{H}\ket{\psi_\alpha}
+E_\alpha = \expval{\hat{H}}{\psi_\alpha} = \expval{\hat{H}}
 \end{equation}
 is the total energy of the state $\ket{\psi_\alpha}$.
 \paragraph*{}Furthermore, without anything anything else, we can find the \textit{average} total energy of the system across a linear combination of quantum states, $\ket{\Psi}$, would be given by:
