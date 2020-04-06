@@ -4,9 +4,9 @@
 \contentsline {section}{\numberline {1.3}Breaking Down the Schrodinger Equation}{13}% 
 \contentsline {section}{\numberline {1.4}The Language of the Game}{17}% 
 \contentsline {section}{\numberline {1.5}The Characters in the Game}{24}% 
-\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{28}% 
-\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{31}% 
-\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{35}% 
+\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{29}% 
+\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{32}% 
+\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{36}% 
 \contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{39}% 
 \contentsline {section}{\numberline {2.1}The Infinite Square Well}{40}% 
 \contentsline {paragraph}{}{41}% 

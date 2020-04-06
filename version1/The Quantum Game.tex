@@ -591,6 +591,20 @@ Finally, by taking the square root of both sides, we can compute the stanard dev
 
 % ================================
 
+\subsection*{Dirac Notation}
+\paragraph*{}As I showed in the previous sections, the notation system developed by English physicist Paul Dirac, is a very powerful tool in not just understanding the math, but the intuition behind a lot of quantum physics. It is important to have the connection between the quantum mechanical objects and their linear algebra counter-parts, but its also important to understand how they differ. However the a big token of Dirac notation that I want to hit on in this subsection is the difference between
+\begin{equation}
+\ket{\psi_n}  \hspace{1cm} \text{and} \hspace{1cm}  \psi_n(x)
+\hspace{1cm} \text{and} \hspace{1cm} \ket{\psi_n(x)}
+\end{equation}
+This distinction is often over looked, or taught and then dismissed shortly afterwards. So in that spirit, the same will only be partly done here, however for the sake of clear conscience before we proceed, lets address this.
+\paragraph*{}The object $\psi_n(x)$ is simply a \textit{function} of the input variable $x$. If we were to treat Schrodingers as a purely mathematical object, with no implications of physics, then we could say that $\psi_n(x)$ is one possible spatial solution to the partial differential equation. Again, because of the linearity of the PDE, then a linear combination of these \textit{functions} is also a valid solution.
+\paragraph*{}The object $\ket{\psi_n}$ is a \textit{state}, typically on the $x$-basis unless specified. A state is a possible condition that a quantum system can be in. in particle $\ket{\psi_n}$ is the $n$-th possible value for that state. Often, a state is not represented by an explicit function, so we simply use Dirac notion. It is also worth noting that a linear combination of these states is also a valid way to express a solution to Schrodingers Equation.
+\paragraph*{}In reality, these two can be used almost interchangeably without too much harm done. Infact, they are essentially convey \textit{almost} the same idea. When you see the object $\psi_n(x)$, you should think to yourself, "$\psi_n(x)$ is a spatial solution to Schrodinger's Equation, which corresponds to the state $\ket{\psi_n}$". Similarly, when you see $\ket{\psi_n}$, you should think "$\ket{\psi_n}$ is a possible state for the quantum system to be in, which is given by the function $\psi_n(x)$".
+\paragraph*{}Finally, this leads us to the object $\ket{\psi_n(x)}$, which is simply the bastardization of the two previous examples. In fact, there is actually nothing wring with using this notation, as is does really drive the relationship home. Depending on the context, it is however, more conventional to use one as oppose to the other three. When talking about purely solving differential equation, or just equations in general, it is more consistent to use $\psi_n(x)$ over the Dirac notion. After all, we first learned about a ket to be analogous to a vector, and we don't generally think of derivatives of a vector. So, when dealing with things like a full mathematical equation, we use the function. Conversely, when dealing with operators and linear combinations, we tend to work more this Dirac notion.
+
+% ================================
+
 \subsection*{Spaces and Basis}
 \paragraph*{}One of the strangest concepts from quantum physics and linear algebra is the idea of \textit{spaces}. It's very abstract idea, because in most of the mathematics done in our everyday careers we can treat space as the dimension that we're working in, and almost never have to go beyond three spatial dimensions. However, with the introduction of ideas like \textit{kets} and \textit{infinite dimensional} spaces, the math seems to become a bit more complicated - except that \textit{it doesn't}.
 \paragraph*{}Part of the trouble comes from trying to geometrically justify everything, and trying to expand our brains to picture something beyond 3D. Unfortunately, this is rather difficult, which serves as an immediate turn-off to most people when first working with linear algebra. One of the pitfalls of our mathematical description of the quantum universe is the necessity of working in these higher dimensional spaces - in which we cannot simply draw a picture of or imagine in our minds. Instead, we have to rely on the math, which fortunately, does \textit{not} change. Meaning, that if we are comfortable working with $3 \times 3$ matrices, and 3 -vectors, all of the axioms and rules that apply to those objects also apply to our new quantum objects.
@@ -768,6 +782,16 @@ A\vec{v} = \lambda \vec{v}
 \braket{\psi_n}{\psi_m} = \delta_{n,m}
 \end{equation}
 Where $\delta_{n,m}$ is he Kronecker Delta function (\ref{kronecker}).
+\paragraph*{}The very last peice of the puzzle that we have to put together for this section is to take equation (\ref{Hamiltonian EVP}), and insert a specific eigen-energy state $\ket{\psi_n}$ in place of $\ket{\psi}$ and left multiply it by the bra 
+$\bra{\psi_n}$. In doing so, the new eigen-equation becomes an expectation value, equated to an inner product:
+\begin{equation}
+\expval{\hat{H}}{\psi} = \expval{E}{\psi}
+\end{equation}
+And since energy, $E$ is a scalar, we can factor it out of the inner product. So the right-hand side of the equation above becomes equal to $E\braket{\psi_n}{\psi_n}$. We have also learned about the orthonormality of eigen-states in equation (\ref{orthonorm}), which means that this right side just becomes $E$. The left hand side is then $\expval{\hat{H}}{\psi}$ the expectation value of the Hamiltonian operator in the state $\ket{\psi_n}$ or more compactly $\expval{\hat{H}}$. This leads us to a very useful piece of information:
+\begin{equation} 
+\expval{\hat{H}} = \expval{\hat{H}}{\psi} = E_n
+\end{equation}
+\paragraph*{}The expectation value, or average value of the Hamiltonian operator in some energy-eigenstate, $\ket{\psi_n}$, \textit{is the energy in that state!}. This further shows the very intimate relationship between the Hamiltonian, the energy-eigenstate and the energy eigen-value, which will drive forward much of our understanding of quantum physics in the chapters that follow.
 
 % ================================================================
 
