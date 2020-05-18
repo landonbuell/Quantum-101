@@ -54,7 +54,7 @@ The Quantum Game\\
 % ================================================================
 
 \section*{Introduction}
-\paragraph*{}Quantum Physics has spent near of the last hundred years being synonymous with the mysterious and inexplicable. This is perhaps rightfully so, as it's a topic almost never given attention outside of formal physics degree or career. This in part lies within it's general obscurity, bizarre nature, and also counter-intuitive set of rules. Other branches of Physics such as classical physics, or electricity and magnetism or special and general relativity are often regarded as far more well-dinfed branches of physics. There, we can predict a set of events given a circumstance, map it mathematically and then show that our theory is valid due to it's predictive reliability.
+\paragraph*{}Quantum Physics has spent near of the last hundred years being synonymous with the mysterious and inexplicable. This is perhaps rightfully so, as it's a topic almost never given attention outside of formal physics degree or career. This in part lies within it's general obscurity, bizarre nature, and also counter-intuitive set of rules. Other branches of Physics such as classical physics, or electricity and magnetism or special and general relativity are often regarded as far more well-defined branches of physics. There, we can predict a set of events given a circumstance, map it mathematically and then show that our theory is valid due to it's predictive reliability.
 \paragraph*{}Quantum physics on the other hand, is far less well define, in part because it is the "newest" of these branches of physics. It's original conception could almost be considered accidental. It came up as a way of explaining strange phenomena that could not be touched by the laws of Newton or Maxwell. Over the last hundred years. This theory that covers the smallest known scale of the universe, and is considerably dense material wise. Everything in this text is a hyper-condensed amalgamation of the life's work of greats like \textit{Erwin Schrodinger}, \textit{Paul Dirac}, \textit{Wolfgang Pauli}, \textit{Werner Heisenburg} and \textit{Max Born}. And no single book, paper or talk on the subject could every do the topic justice.
 \paragraph*{}\textit{The Quantum Game} has been written to serve as a very broad overview of elementary quantum mechanical theory. While that statement may seem like an oxymoron, the goal of this text is to show how despite it reputation, quantum physics is in fact a very reasonable and digestible subject, even for those outside of a formal physics degree or career. As with every text, every reader seeks to get something different, and it is my intention to satisfy most basic questions  by outline much of the general functionality of this subject. My goal as the writer of this text is to show how to \textit{do} quantum physics - from a mostly mathematical and computational prospective. By the end of this work, we will have built up a solid mathematical backbone, as well a new form a intuition to guide you through an possible future quantum - related endeavors.
 
@@ -69,8 +69,6 @@ The Quantum Game\\
 
 \begin{itemize}
 
-\begin{multicols}{2}
-
 \item A vector, $v$ is $\vec{v}$
 \item The $i$-th component of $\vec{v}$ is $\vec{v}_i$
 \item A ket, $\psi$ is $\ket{\psi}$
@@ -80,15 +78,10 @@ $\braket{\phi}{\psi}$
 \item The outer product of $\bra{\phi}$ and $\ket{\psi}$ is 
 $\ketbra{\psi}{\phi}$
 \item A matrix or operator $A$ is $\hat{A}$
-
-\columnbreak
-
 \item the complex conjugate of $\alpha$ is $\alpha^*$
 \item
 \item
 \item
-
-\end{multicols}
 
 \end{itemize}
 
@@ -116,9 +109,6 @@ Basic procedural programming. Most examples in this text will be done in \textit
 \end{enumerate}
 \paragraph*{}This work does not require a thorough, 'classroom' level of comprehension, but rather a conceptual understanding will do quite fine. In areas that require a more heavy knowledge, I will elaborate on accordingly. In addition, I have included a \textit{Mathematical Index} of math terms and concepts that may warrant some extra reading that may interfere with the pacing of this text. In most cases, any questions as far as math can be found within a few minutes of an internet search. In reality, most topics here will require not much more than a high school level of math for understanding. 
 
-\pagebreak
-
-
 % ================================================================
 
 \section*{Citations for this Text}
@@ -144,10 +134,10 @@ Basic procedural programming. Most examples in this text will be done in \textit
 \paragraph*{}In classical physics, the description of all motion as we know it, can be in some way attributed to Issac Newton's second law of motion, which tell us that the force acting on an object is equal to the product of the objects mass and its acceleration. More conveniently written: $F = ma$. Or rather:
 \begin{equation}
 \label{Newtons 2nd Law}
-F = m\frac{d^2x}{dt^2}
+F = m\frac{d^2r}{dt^2}
 \end{equation} 
-in a more mathematical expression. Where $x$, or rather $x(t)$ is a time dependent function that describes the motion of the object in a single spatial component.
-\paragraph*{}The forces acting on any arbitrary object in question can be equated to $m\frac{d^2x}{dt^2}$ and the resulting differential equation can be solved to find the function $x(t)$, that tracks the position of the object with time. Admittedly, this proves to be quite difficult in some cases and literally impossible in other cases. Luckily for us, in the 21st century, we have the ability to use computers and have the benefit of numerical problem solving which will come in handy later on.
+in a more mathematical expression. Where $r$, or rather $r(t)$ is a time dependent function that describes the position of the object in a single in some spatial coordinate system.
+\paragraph*{}The forces acting on any arbitrary object in question can be equated to $m\frac{d^2r}{dt^2}$ and the resulting differential equation can be solved to find the function $r(t)$, that tracks the position of the object with time. Admittedly, this proves to be quite difficult in some cases and literally impossible in other cases. Luckily for us, in the 21st century, we have the ability to use computers and have the benefit of numerical problem solving which will come in handy later on.
 \paragraph*{}In quantum physics, we don't have such a nice, clean equation as Sir Newton has laid out for us, but a much, much messier one that behaves in a similar way. It was created around 1925 by the Austrian Physicist, \textit{Erwin Schrodinger}. It looks something like:
 \begin{equation}
 \label{1D Schrodinger}
@@ -158,7 +148,7 @@ V\Psi = i\hbar\frac{\partial \Psi}{\partial t}
 
 % ================================
 
-\paragraph*{}Consider a point particle, of some mass, $m$, constrained to move along a one-dimensional, line, which we will conveniently choose to be the $x$-axis. If we know the mass, and the particles position as a function of time, $x(t)$ we can deduce several other properties of the system. By taking the derivative of $x(t)$ with respect to time, we can determine the particles velocity all time, $v(t)$. Here, we can compute the kinetic energy $\frac{1}{2}mv^2$ and momentum $mv$ at all points in time. Taking another time derivative gives us the acceleration of the particle at all time, $a(t)$. From there, we can find the force $ma$ and the even the potential energy function at all times. 
+\paragraph*{}Consider a point particle, of some mass, $m$, constrained to move along a one-dimensional, line, which we will conveniently choose to be the $x$-axis. If we know the mass, and the particles position as a function of time, $x(t)$ we can deduce several other properties of the system. By taking the derivative of $x(t)$ with respect to time, we can determine the particles velocity all time, $v(t)$. Here, we can compute the kinetic energy, $\frac{1}{2}mv^2$, and momentum, $mv$, at all points in time. Taking another time derivative gives us the acceleration of the particle at all time, $a(t)$. From there, we can find the net force, $ma$, and the even the potential energy function at all times if the system is closed.
 \paragraph*{}Just by simply knowing the mass and position function for an object grants a great deal of information to you. We can find position, velocity, acceleration, force, energy, momentum and so many of these important dynamical variables by doing some simple bits of calculus or algebra. In all cases, we can evaluate these little formulas at any point in space or time to find \textit{exactly} the value we want. Classical physics operates under this assumption, that we can accurately describe the world around us and it behaves according to these mathematical descriptions - and up until the early 20th century, this was thought to produce a near complete description of the universe.
 \paragraph*{}Quantum physics holds a different sent of requirements from us however. Things tend to not be so well defined. Rather than being able to calculate or measure the \textit{exact} value of the quantity that we want, we are forced to only be able to determine a \textit{probabilistic} value of what we want. In other words, things are not entering values and parameters to find for \textit{certain} what we want, but instead quantum physics becomes a game of \textit{probability}.
 \paragraph*{}This business of probability, called the \textbf{statistical interpretation} comes with it the idea of \textit{uncertainty} and \textit{ambiguity}. Our entire understanding of the macro universe relies on the idea that things are exactly measurable and perfectly determinant, but the universe on a quantum level cannot be described with anything more than statistics. And, as we'll see very shortly, it is this statistical information which shapes our understanding of the subject entirely - the fact that we can only talk about the \textit{possible} results that happen with a certain \textit{probability}. This lack of certainty is what is so strikingly dreadful about this field and has been source for countless restless nights over the decades. This poses the currently unanswerable question that arises: is this nature is a product of the universe or a product of our mathematical treatment? 
@@ -223,7 +213,7 @@ The particle odds of a particle being \textit{exactly} at are point $b$ are iden
 
 \begin{enumerate}
 \item[•]\textbf{Normalizeable}\\
-Wave function \textit{must} be normalizeable. When we actually solve the Schrodinger equation, it must be a function that can be normalized. Otherwise, our statistical interpretation breaks down, and we find ourselves in trouble. For example, the function $\Psi(x,t) = 0$ is a valid solution to the partial differential equation, but it cannot the normalized over all of space, thus it is \textit{not} a valid wave equation.
+Wave function \textit{must} be normalizable. When we actually solve the Schrodinger equation, it must be a function that can be normalized. Otherwise, our statistical interpretation breaks down, and we find ourselves in trouble. For example, the function $\Psi(x,t) = 0$ is a valid solution to the partial differential equation, but it cannot the normalized over all of space, thus it is \textit{not} a valid wave equation.
 \item[•]\textbf{Continuity}\\
 Wave functions must be continuous and continuously differentiable when subject to potentials that are also continuous are continuously differentiated. This means that if a potential function, $V(x)$ is perfectly smooth, so must the resulting wave function be. Only in cases where potentials are discontinuous (i.e. piece-wise defined) can the function and it's first derivative be discontinuous.
 \end{enumerate}
@@ -241,8 +231,8 @@ V(x)\Psi(x,t) = i\hbar\frac{\partial}{\partial t}\Big[ \Psi(x,t) \Big]
 \end{equation}
 Which is just equation (\ref{1D Schrodinger}) expanded out a little bit, has a lot of information to unpack, even for a seasoned user of mathematics. For this section, we're going to try to determine what this equation is actually trying to tell us, and what each piece of it means. First off, lets take it apart, one tedious variable at a time. 
 \paragraph*{}The value $\hbar$ is defined as $\frac{h}{2\pi}$ where $h$ is \textit{Planck's constant}. $\hbar$ itself happens to be a more useful quantity in quantum mechanics, it has a value of $1.054573\times 10^{-34}$ Joule-seconds. The parameter $m$ is the mass of the particle in question. When put together, the term $-\frac{\hbar^2}{2m}$ is simply a scalar value -i.e. it's just a number, a constant coefficient.
-\paragraph*{}The term $V(x)$ represents the \textit{potential function} of the quantum mechanical system. In almost all case, it will \textit{just} be a function of space, \textit{not} time- although this is not always the case. This describes the potential energy distribution over space along our one-dimensional system. When it comes to solving equation (\ref{1D Schrodinger expanded}), this is really the limiting factor in what determines the shape of the solution, as we'll see in chapter 2.
-\paragraph*{}The partial derivatives of $\Psi(x,t)$ are a little bit tougher to reason out, but they are very akin to the mechanics of the heat equation where a second spatial derivative is proportional to a first time derivative. In a little while we'll see how this relationship relates to kinetic energy and allows for some nice simplifications to be made.
+\paragraph*{}The term $V(x)$ represents the \textit{potential function} of the quantum mechanical system. In almost all cases for this work, it will \textit{just} be a function of space, \textit{not} time- although this is not always the case. This describes the potential energy distribution over space along our one-dimensional system. When it comes to solving equation (\ref{1D Schrodinger expanded}), this is really the limiting factor in what determines the shape of the solution, as we'll see in chapter 2.
+\paragraph*{}The partial derivatives of $\Psi(x,t)$ are a little bit tougher to reason out, but they are very akin to the mechanics of the heat equation and wave equation from classical physics, hence why $\Psi$ is named the wave equation. In the case of Schrodinger's equation, a second spatial derivative is proportional to a first time derivative. In a little while we'll see how this relationship relates to kinetic energy and allows for some nice simplifications to be made.
 \paragraph*{}Now that We've broken down each part of the equation, we can begin to formulate an analytical solution. This in practice need only be done once because, where we will end up is a convenient starting place for the rest of all calculations to be done. As stated before, the goal of solving this partial differential equation (or PDE for short) is to find $\Psi(x,t)$, a function of both space, $x$ and time, $t$. To do this, we will assume that $\Psi(x,t)$ is a composition, or the product of two 'smaller' functions, one of just space, and another of just time. This means that $\Psi$ can be broken down into a spatial function, which we'll call $\psi(x)$ and a temporal function, which we'll call $\phi(t)$. This then allows for the very import relation that will come back to haunt us over and over again:
 \begin{equation}
 \label{separable}
@@ -268,17 +258,17 @@ i\hbar\psi\frac{\partial \phi}{\partial t}
 i\hbar \frac{1}{\phi}\frac{\partial \phi}{\partial t}
 \end{equation}
 \paragraph*{}Now, we have all functions of \textit{space} on the left side, and all functions of \textit{time} on the right side. In order for both sides of this equation to be equal for \textit{all of 1D space} and \textit{all of time}, they must be identically constant. This fact is tough to grasp and it's true comprehension may have to be saved for another text, but in reality it is this mathematical rule that motivates us to choose the separable solution form in equation (\ref{separable}).
-\paragraph*{}If we examine just the right side, the time function's side, we can set it to an 'arbitrary' constant $E$ - for reasons we'll discover later. Now we can write:
+\paragraph*{}If we examine just the right side, the time function's side, we can set it to an 'arbitrary' constant $E$ - for reasons we'll discover in just a moment. Now we can write:
 \begin{equation}
 \label{energy ODE}
 E = i\hbar \frac{1}{\phi}\frac{d\phi}{dt}
 \end{equation}
-\paragraph*{}This is a time dependent ordinary differential equation (or ODE for short). It can be conveniently be solved by using it's own method of separation for ODE's. The solution, $\phi(t)$ that satisfies this equation is:
+\paragraph*{}Note that the partial derivatives are now full derivatives, which is again a product of this separation technique. This is a time dependent ordinary differential equation (or ODE for short). It can be conveniently be solved by using it's own method of separation for ODE's. The solution, $\phi(t)$ that satisfies this equation is:
 \begin{equation}
 \label{phi}
 \phi(t) =  e^{-i\frac{E}{\hbar}t}
 \end{equation}
-\paragraph*{}Note that the partial derivatives are now full derivatives, which is again a product of this separation technique. We can put this new constant, $E$, back into the left side of equation (\ref{separated TDSE 2}) and then multiply again by $\psi(x)$. The result is something new, but familiar:
+\paragraph*{} We can put this new constant, $E$, back into the left side of equation (\ref{separated TDSE 2}) and then multiply again by $\psi(x)$. The result is something new, but familiar:
 \begin{equation}
 \label{TISE}
 -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} + V(x)\psi(x) = E\psi(x)
