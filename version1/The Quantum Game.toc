@@ -4,29 +4,29 @@
 \contentsline {section}{\numberline {1.3}Breaking Down the Schrodinger Equation}{13}% 
 \contentsline {section}{\numberline {1.4}The Language of the Game}{17}% 
 \contentsline {section}{\numberline {1.5}The Characters in the Game}{24}% 
-\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{29}% 
-\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{32}% 
-\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{36}% 
-\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{39}% 
-\contentsline {section}{\numberline {2.1}The Infinite Square Well}{40}% 
-\contentsline {paragraph}{}{41}% 
-\contentsline {section}{\numberline {2.2}The Finite Square Well}{43}% 
-\contentsline {section}{\numberline {2.3}Multiple Square Wells}{44}% 
-\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{44}% 
-\contentsline {section}{\numberline {2.5}The Free Particle}{44}% 
-\contentsline {section}{\numberline {2.6}The Delta Function}{44}% 
-\contentsline {chapter}{\numberline {3}The Rules of the Game}{45}% 
-\contentsline {section}{\numberline {3.1}Observables and Hermitian Operators}{45}% 
-\contentsline {section}{\numberline {3.2}Commutivity}{46}% 
-\contentsline {section}{\numberline {3.3}More on the Statistical Interpretation}{47}% 
-\contentsline {section}{\numberline {3.4}The Uncertainty Principle}{49}% 
-\contentsline {section}{\numberline {3.5}More on Bases and Measurements}{50}% 
-\contentsline {chapter}{\numberline {4}The Next Level: \\ The Hydrogen Atom}{51}% 
-\contentsline {section}{\numberline {4.1}The Schrodinger Equation in 3 Dimensions}{51}% 
-\contentsline {paragraph}{}{51}% 
-\contentsline {section}{\numberline {4.2}The Hydrogen Atom Structure}{54}% 
-\contentsline {chapter}{\numberline {5}The Next Level: \\ Spin and Angular Momentum}{57}% 
-\contentsline {chapter}{\numberline {6}Mathematical Index}{59}% 
-\contentsline {section}{\numberline {6.1}Building the Hamiltonian Operator Numerically}{59}% 
-\contentsline {section}{\numberline {6.2}The Eigenvalue Problem}{61}% 
-\contentsline {section}{\numberline {6.3}Dirac Notation}{61}% 
+\contentsline {section}{\numberline {1.6}The Eigenvalue Problem}{30}% 
+\contentsline {section}{\numberline {1.7}Analyzing a Quantum System}{33}% 
+\contentsline {section}{\numberline {1.8}Takeaways from this Chapter}{37}% 
+\contentsline {chapter}{\numberline {2}Playing the Game: \\ Quantum Physics in 1 Dimension}{41}% 
+\contentsline {section}{\numberline {2.1}The Infinite Square Well}{42}% 
+\contentsline {paragraph}{}{43}% 
+\contentsline {section}{\numberline {2.2}The Finite Square Well}{45}% 
+\contentsline {section}{\numberline {2.3}Multiple Square Wells}{46}% 
+\contentsline {section}{\numberline {2.4}The Harmonic Oscillator}{46}% 
+\contentsline {section}{\numberline {2.5}The Free Particle}{46}% 
+\contentsline {section}{\numberline {2.6}The Delta Function}{46}% 
+\contentsline {chapter}{\numberline {3}The Rules of the Game}{47}% 
+\contentsline {section}{\numberline {3.1}Observables and Hermitian Operators}{47}% 
+\contentsline {section}{\numberline {3.2}Commutivity}{48}% 
+\contentsline {section}{\numberline {3.3}More on the Statistical Interpretation}{49}% 
+\contentsline {section}{\numberline {3.4}The Uncertainty Principle}{51}% 
+\contentsline {section}{\numberline {3.5}Superposition}{52}% 
+\contentsline {chapter}{\numberline {4}The Next Level: \\ The Hydrogen Atom}{53}% 
+\contentsline {section}{\numberline {4.1}The Schrodinger Equation in 3 Dimensions}{53}% 
+\contentsline {paragraph}{}{53}% 
+\contentsline {section}{\numberline {4.2}The Hydrogen Atom Structure}{56}% 
+\contentsline {chapter}{\numberline {5}The Next Level: \\ Spin and Angular Momentum}{59}% 
+\contentsline {chapter}{\numberline {6}Mathematical Index}{61}% 
+\contentsline {section}{\numberline {6.1}Building the Hamiltonian Operator Numerically}{61}% 
+\contentsline {section}{\numberline {6.2}The Eigenvalue Problem}{63}% 
+\contentsline {section}{\numberline {6.3}Dirac Notation}{63}% 
