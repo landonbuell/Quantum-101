@@ -173,12 +173,10 @@ V\Psi = i\hbar\frac{\partial \Psi}{\partial t}
 \paragraph*{}Probability is \textit{the name of the game} of quantum physics. The mechanics of a quantum system are not defined by a mass $m$ and a position function, $x(t)$, but rather are defined by a probability amplitude function, \textit{the wave function}, $\Psi(x,t)$ which is represented by the Greek letter Psi, and appears three times in the Schrodinger equation above.
 
 \paragraph*{}This function, $\Psi(x,t)$, or often just $\Psi$, contains with it all possible information about a quantum mechanical system. With the wave function $\Psi$ known, we can determine the relative probabilities of position, momenta and other system parameters. For example, the expression:
-
 \begin{equation}
 \label{prob_ab}
 \int_a^b \big | \Psi(x,t) \big|^2 dx
 \end{equation}
-
 gives the probability of finding some particle on the $x$-axis between the values of $a$ and $b$ at some fixed time $t$. This business of probability is called \textit{The Statistical Interpretation} of Quantum Mechanics and is arguable the largest underlying points in quantum theory - that our entire model is based on statistically described behavior.
 
 \paragraph*{}But how exactly do we \textit{get} $\Psi(x,t)$? In Classical physics, we get $x(t)$ often by solving a second-order ordinary differential equation from Newton's laws. In Quantum physics, we get $\Psi(x,t)$ by solving the second-order, partial differential equation - Schrodinger's equation. As with classical physics, this tends to be a bit messy and often not really reasonable to do by hand- at least not without understanding some other concepts first. So, before we go off trying to \textit{solve} equation (\ref{1D Schrodinger}) for the wave function, $\Psi$ we must understand a little bit more about it first - what does it mean?
@@ -838,7 +836,7 @@ For example, a Gaussian function, $f_1(x) = e^{-x^2}$, or the sinc function, $f_
 
 \subsection*{The Hamiltonian} 
 
-\paragraph*{}The Hamiltonian is a concept from classical physics, far predating quantum mechanics. It's exact derivation, rules and proerties are quite complicated, and yet another task for a different text. For now, just know that the Hamiltonian is an operation that returns the \textit{total energy} of a particle or system by summing the kinetic and potential energies. So, lets create an operator $\hat{T}$ that when acting on a particle in the state, $\ket{\psi}$ for example, it returns the total \textit{kinetic} energy of that particle in that state. Similarly, create an operator $\hat{V}$ that when acting on a particle in the state, $\ket{\psi}$ it returns the total \textit{potential} energy of that particle in that state. So summing the operators has the result of returning the \textit{total} energy:
+\paragraph*{}The Hamiltonian is a concept from classical physics, far predating quantum mechanics. It's exact derivation, rules and properties are quite complicated, and yet another task for a different text. For now, just know that the Hamiltonian is an operation that returns the \textit{total energy} of a particle or system by summing the kinetic and potential energies. So, lets create an operator $\hat{T}$ that when acting on a particle in the state, $\ket{\psi}$ for example, it returns the total \textit{kinetic} energy of that particle in that state. Similarly, create an operator $\hat{V}$ that when acting on a particle in the state, $\ket{\psi}$ it returns the total \textit{potential} energy of that particle in that state. So summing the operators has the result of returning the \textit{total} energy:
 
 \begin{equation}
 \label{Hamiltonian}
@@ -846,28 +844,24 @@ For example, a Gaussian function, $f_1(x) = e^{-x^2}$, or the sinc function, $f_
 \end{equation}
 
 \paragraph*{}Breaking down the potential energy operator, $\hat{V}$, it loosely can be seen that $\hat{V}\ket{\psi}$ very closely resembles the terms from the time independent Schrodinger equation, $V(x)\psi(x)$. Now other than convenient constancy of letter choices, this may be quite tough to see at first. But all long, that's what the function $V(x)$ has been telling us. It can be very loosely thought of as:
-
 \begin{equation}
 \label{potential operator}
 \hat{V}\ket{\psi} \approx V(x)\psi(x)
 \end{equation}
+When multiplied by the wave function, $\psi(x)$, that term in the TISE gives us the potential energy distribution. This term, $V(x)\psi(x)$, tells us how the potential energy function over space $V(x)$ \textit{interacts} with the particle's wave function $\psi(x)$.
 
-When multiplied by the wave function, $\psi(x)$, that term in the TISE gives us the potential energy distribution of the system. This term, $V(x)\psi(x)$, tell us know the potential energy of the system behaves in space! Note that equation (\ref{potential operator}) is not \textit{exactly} how the operator works, but is a reasonable conceptual starting point.
-
-\paragraph*{}Now examining the kinetic energy operator, $\hat{T}$, this may be hard to fathom as well. from classical physics, we know that the kinetic energy of a particle of mass $m$, moving at velocity $v$ is given by: $T = \frac{1}{2}mv^2$. But in quantum physics, velocity is not something that we commonly work with, its not really a valid measurement to make. Instead, we measure the \textit{momentum} of the particle. Classically, momentum is given by $p = mv$, and thus we can use this to re-express our kinetic energy function: $T = \frac{p^2}{2m}$. We can express this again as operators in our quantum language:
+\paragraph*{}Now examining the kinetic energy operator, $\hat{T}$, this may be hard to fathom as well. From classical physics, we know that the kinetic energy of a particle of mass $m$, moving at velocity $v$ is given by: $T = \frac{1}{2}mv^2$. But in quantum physics, velocity is not something that we commonly work with, its not really a valid measurement to make. Instead, we measure the \textit{momentum} of the particle. Classically, momentum is given by $p = mv$, and thus we can use this to re-express our kinetic energy function: $T = \frac{p^2}{2m}$. We can express this again as operators in our quantum language:
 
 \begin{equation}
 \hat{T}\ket{\psi} = \frac{1}{2m}\hat{p}^2 \ket{\psi} = \frac{1}{2m}\hat{p}\hat{p}\ket{\psi}
 \end{equation}
-
-\paragraph*{}And knowing how the momentum operator is defined from equation (\ref{momentum}), we can apply the operator twice as noated by 
+\paragraph*{}And knowing how the momentum operator is defined from equation (\ref{momentum}), we can apply the operator twice as noted by 
 $\hat{p}^2$, and see that the kinetic energy can be expressed as:
 
 \begin{equation}
 \hat{T}\ket{\psi} = \frac{1}{2m} 
 \Big( -i\hbar \frac{\partial}{\partial x}\Big) \Big( -i\hbar \frac{\partial}{\partial x} \Big)\ket{\psi}
 \end{equation}
-
 (Remember that the momentum operator is applied to the state $\ket{\psi}$ twice, \textit{not} multiplied by each other) Which can be simplified down into the familiar form:
 
 \begin{equation}
@@ -880,22 +874,18 @@ $\hat{p}^2$, and see that the kinetic energy can be expressed as:
 \begin{equation}
 -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\ket{\psi} + V(x)\ket{\psi} = i\hbar\frac{\partial}{\partial t}\ket{\psi}
 \end{equation}
-
 Now we can see that each term functions as an energy measurement:
-
 \begin{equation}
 \text{\textbf{Kinetic}\hspace{2cm}} \hat{T}\ket{\psi} = -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\ket{\psi}
 \end{equation}
-
 \begin{equation}
 \text{\textbf{Potential}\hspace{2cm}} \hat{V}\ket{\psi} = V(x)\ket{\psi}
 \end{equation}
-
 \begin{equation}
 \text{\textbf{Total}\hspace{2cm}}  E\ket{\psi} = i\hbar\frac{\partial}{\partial t}\ket{\psi}
 \end{equation} 
 
-\paragraph*{}Putting all of these pieces together, allows to \textit{rewrite} the Time Independent Schrodinger Equation, \ref{1D TISE}). We can take the \textit{whole} second - order, linear, partial differential equation and turn it into:
+\paragraph*{}Putting all of these pieces together, allows to \textit{rewrite} the Time Independent Schrodinger Equation, (\ref{1D TISE}), using the Hamiltonian from equation (\ref{Hamiltonian}). We can take the \textit{whole} second - order, linear, partial differential equation and turn it into:
 
 \begin{equation}
 \hat{T}\ket{\psi} + \hat{V}\ket{\psi} = E\ket{\psi}
@@ -908,7 +898,7 @@ or more compactly:
 \hat{H}\ket{\psi} = E\ket{\psi}
 \end{equation}
 
-\paragraph*{}The Hamiltonian operator, that returns the total energy is equal to the total energy \textit{Yes}!, except, this one equation has something else hidden in it. This equation tells is that an operator acting on a ket, is equal to a scalar times that same ket. In linear algebra, this is equivalent to a matrix acting on a vector begin equal to a scalar times that same vector. \textbf{Equation (\ref{Hamiltonian EVP}) is an \textit{Eigenvalue Problem}!} In linear algebra, this is most commonly written in the general form:
+\paragraph*{}The Hamiltonian operator, that returns the total energy is equal to the total energy? \textit{Yes}! It seems almost obvious now, except this one equation has something else hidden in it. This equation tells is that an operator acting on a ket, is equal to a scalar times that same ket. In linear algebra, this is equivalent to a matrix acting on a vector begin equal to a scalar times that same vector. \textbf{Equation (\ref{Hamiltonian EVP}) is an \textit{Eigenvalue Problem}!} In linear algebra, this is most commonly written in the general form:
 
 \begin{equation}
 A\vec{v} = \lambda \vec{v}
@@ -918,28 +908,28 @@ A\vec{v} = \lambda \vec{v}
 
 \paragraph*{}Once we build this $\hat{H}$ operator/matrix in some computer program, we can have it solve the eigenvalue problem for us! The resulting $N$ eigen\textit{vectors} are the quantum states $\psi_n(x)$ or $\ket{\psi_n}$ and the resulting $N$ eigen\textit{values} are the corresponding energies for each quantum state.
 
-\paragraph*{}And with this eigenvalue interpretation of the Time Independent Schrodinger Equation, also comes some other consequences. Each energy-eigenstate, $\ket{\psi_0}$, $\ket{\psi_1}$, ...  $\ket{\psi_N}$ is \textit{orthonormal} to all of the other energy-eigenstates. This means that is each eigen ket is appropriately normalized to 1, then each ket's inner product with any other ket is identically 0. We right this as:
+\paragraph*{}And with this eigenvalue interpretation of the Time Independent Schrodinger Equation, also comes some other consequences. Each energy-eigenstate, $\ket{\psi_0}$, $\ket{\psi_1}$, ...  $\ket{\psi_{N-1}}$ is \textit{orthonormal} to all of the other energy-eigenstates. This means that is each eigen ket is appropriately normalized to 1, then each ket's inner product with any other ket is identically 0. We right this as:
 
 \begin{equation}
 \label{orthonorm}
 \braket{\psi_n}{\psi_m} = \delta_{n,m}
 \end{equation}
-Where $\delta_{n,m}$ is he Kronecker Delta function (\ref{kronecker}).
+Where $\delta_{n,m}$ is the Kronecker Delta function as from equation (\ref{kronecker}).
 
-\paragraph*{}The very last peice of the puzzle that we have to put together for this section is to take equation (\ref{Hamiltonian EVP}), and insert a specific eigen-energy state $\ket{\psi_n}$ in place of $\ket{\psi}$ and left multiply it by the bra 
+\paragraph*{}The very last peice of the puzzle that we have to put together for this section is to take equation (\ref{Hamiltonian EVP}), and insert a specific eigen-energy state $\ket{\psi_n}$, with energy $E_n$, in place of $\ket{\psi}$ and left multiply it by the bra 
 $\bra{\psi_n}$. In doing so, the new eigen-equation becomes an expectation value, equated to an inner product:
 
 \begin{equation}
-\expval{\hat{H}}{\psi} = \expval{E}{\psi}
+\expval{\hat{H}}{\psi_n} = \expval{E}{\psi_n}
 \end{equation}
 
-And since energy, $E$ is a scalar, we can factor it out of the inner product. So the right-hand side of the equation above becomes equal to $E\braket{\psi_n}{\psi_n}$. We have also learned about the orthonormality of eigen-states in equation (\ref{orthonorm}), which means that this right side just becomes $E$. The left hand side is then $\expval{\hat{H}}{\psi}$ the expectation value of the Hamiltonian operator in the state $\ket{\psi_n}$ or more compactly $\expval{\hat{H}}$. This leads us to a very useful piece of information:
+And since energy, $E_n$ is a scalar, we can factor it out of the inner product. So the right-hand side of the equation above becomes equal to $E\braket{\psi_n}{\psi_n}$. We have also learned that the orthonormality of eigen-states from equation (\ref{orthonorm}), causes the right side just becomes $E_n$. The left hand side is then $\expval{\hat{H}}{\psi}$ the expectation value of the Hamiltonian operator in the state $\ket{\psi_n}$ or more compactly $\expval{\hat{H}}$. This leads us to a very useful piece of information:
 
 \begin{equation} 
-\expval{\hat{H}} = \expval{\hat{H}}{\psi} = E_n
+\expval{\hat{H}} = \expval{\hat{H}}{\psi_n} = E_n
 \end{equation}
 
-\paragraph*{}The expectation value, or average value of the Hamiltonian operator in some energy-eigenstate, $\ket{\psi_n}$, \textit{is the energy in that state!}. This further shows the very intimate relationship between the Hamiltonian, the energy-eigenstate and the energy eigen-value, which will drive forward much of our understanding of quantum physics in the chapters that follow.
+\paragraph*{}The expectation value, or average value of the Hamiltonian operator in some energy-eigenstate, $\ket{\psi_n}$, \textit{is the energy in that state!}, $E_n$. This further shows the very intimate relationship between the Hamiltonian, the energy-eigenstatse and the energy eigen-values, which will drive forward much of our understanding of quantum physics in the chapters that follow.
 
 % ================================================================
 
@@ -952,24 +942,21 @@ And since energy, $E$ is a scalar, we can factor it out of the inner product. So
 \subsection*{Putting a System Together}
 
 \paragraph*{}So, suppose we've solved, or set up a quantum mechanical system, and found that it is a \textit{two-state} system, it is composed of two energy-eigenstates: 
-$\ket{\psi_1}$ and $\ket{\psi_2}$, with respective energies $E_1$ and $E_2$.  Recall that there three kets are the eigenkets of the eigenvalue problems from equation (\ref{Hamiltonian EVP}) and their function counter parts, $\psi_1(x)$ and $\psi_2(x)$ are all \textit{also} solutions to the time independent Schrodinger equation, (\ref{TISE}). Because of the linearity of the problem, we can use equation (\ref{linear combo kets}) to fully describe the system. Recall that a linear combination of solution is also a solution:
+$\ket{\psi_1}$ and $\ket{\psi_2}$, with respective energies $E_1$ and $E_2$.  Recall that these two kets are the eigenkets of the eigenvalue problems from equation (\ref{Hamiltonian EVP}) and their function counter parts, $\psi_1(x)$ and $\psi_2(x)$ are all \textit{also} solutions to the time independent Schrodinger equation, (\ref{TISE}). Because of the linearity of the problem, we can use equation (\ref{linear combo kets}) to fully describe the system. Recall that a linear combination of solution is also a solution:
 \begin{equation}
 \ket{\Psi(x,t)} = \sum_n^{\infty} c_n \ket{\psi_n} \phi_n(t)
 \end{equation}
 
 \paragraph*{}Each energy - eigenstate becomes $n$-th ket in the sum. And each energy - eigenvalue becomes $E_n$ from equation (\ref{phi}), which in turn becomes the $n$-th time dependent function in the sum. Using our model, evaluated at time $t=0$ becomes:
-
 \begin{equation}
 \Psi(x,0) = c_1 \ket{\psi_1} + c_2 \ket{\psi_2} 
 \end{equation}
-
 To account for the time dependent factor, we simply \textit{tack-on} the $\phi_n(t)$ function from (\ref{phi}). This makes our state become:
-
 \begin{equation}
-\Psi(x,0) = c_1 \ket{\psi_1}e^{-iE_1t/\hbar} + c_2 \ket{\psi_2} e^{-iE_2t/\hbar}
+\Psi(x,t) = c_1 \ket{\psi_1}e^{-iE_1t/\hbar} + c_2 \ket{\psi_2} e^{-iE_2t/\hbar}
 \end{equation}
 
-\paragraph*{}At this point, we have constructed all that we can about our quantum state. However, now suppose that we make some measurements, adjust some dials, and run some calculations and find that $c_1 = 4i$ and $c_2 = 5$. Additionally, we must impose that this state itself be normalized to 1, by multiplying the while linear combination by some constant $A$. We can then finish our mathematical model  by saying that our wave function for this particular quantum mechanical system is given by:
+\paragraph*{}At this point, we have constructed all that we can about our quantum state. However, now suppose that we make some measurements, adjust some dials, and run some calculations and find that $c_1 = 4i$ and $c_2 = 5$. Additionally, we must impose that this state itself be normalized to 1, by multiplying the whole linear combination by some constant $A$. We can then finish our mathematical model  by saying that our wave function for this particular quantum mechanical system is given by:
 
 \begin{equation}
 \label{ex1 sys ket dirac}
@@ -1020,7 +1007,7 @@ which is again, equivalent to:
 
 And we must find some constant $|A|^2$ to multiply the integral in (\ref{prob}) by such that it is equal to 1. because just $A$ normalizes either the bra or the ket.
 
-\paragraph*{}Now the tricky bit comes here, when we actually have to multiply the two values together to form the inner product. However, doing out the math fully will be exhausting, especially since each side has three terms in it, and the resulting expansion will have \textit{four} terms left in it - Except that it wont. If were had a three or four state system, the resulting expansion would have nine or sixteen terms respectivitly. We need to recall two important concepts:
+\paragraph*{}Now the tricky bit comes here, when we actually have to multiply the two values together to form the inner product. However, doing out the math fully will be exhausting, especially since the resulting expansion will have \textit{four} rather messy terms left in it --- Except that it wont. If were had a three or four state system, the resulting expansion would have nine or sixteen terms respectively, but instead we can recall two important concepts:
 
 \begin{enumerate}
 
@@ -1032,7 +1019,7 @@ The orthonomality of the eigenstates harkons back to the vital idea from equatio
 $\braket{\psi_2}{\psi_2}$ all  evaluate to 1.  In the two other terms, the othronormality forces the inner product to evaluate to zero, and thus those same size terms all evaluate to zero.
 \end{enumerate}
 
-\paragraph*{}Putting these two concepts together \textit{drastically} simplifies our endeavor here. We've gone from this inner product, to its corresponding integral who's integrand has four separate terms in it. However, orthonormality dictates that six of those terms go to zero immediately. The remaining three terms cause their own exponential portions to evaluate to 1, and then furthermore, their inner products do the same. 
+\paragraph*{}Putting these two concepts together \textit{drastically} simplifies our endeavor here. We've gone from this inner product, to its corresponding integral who's integrand has four separate terms in it. However, orthonormality dictates that two of those terms go to zero immediately. The remaining three terms cause their own exponential portions to evaluate to 1, and then furthermore, their inner products do the same. 
 
 \paragraph*{}For the sake of argument, we do evaluate the inner product out completely:
 \begin{equation}
@@ -1040,9 +1027,7 @@ $\braket{\psi_2}{\psi_2}$ all  evaluate to 1.  In the two other terms, the othro
 \Big( - 4i \bra{\psi_1}e^{+iE_1t/\hbar} + 5 \bra{\psi_2} e^{+iE_2t/\hbar} \Big)
 \Big( 4i \ket{\psi_1}e^{-iE_1t/\hbar} + 5 \ket{\psi_2} e^{-iE_2t/\hbar} \Big)
 \end{equation}
-
 Distributing each term, allowing certain exponential to simply to $e^0$:
-
 \begin{equation}
 \begin{split}
 \braket{\Psi(x,t)}{\Psi(x,t)} = & \\
@@ -1050,21 +1035,20 @@ Distributing each term, allowing certain exponential to simply to $e^0$:
 \big(20i   \braket{\psi_2}{\psi_1} e^{-i(E_2 - E_1)t/\hbar} \big) +  \big( 25\braket{\psi_2}{\psi_2} e^0 \big)
 \end{split}
 \end{equation}
-
-Apply the principles of orthonormality.
-
-The result is actually just the coefficients of the three surviving terms.
-
+Apply the principles of orthonormality, $\braket{\psi_n}{\psi_m} = 0$ if $n \neq m$:
 \begin{equation}
-|A|^2 \int_{-\infty}^{+\infty} \Psi^*(x,t)\Psi(x,t) dx = |A|^2 \Big(|4i|^2 + |5|^2 \Big) \int_{-\infty}^{+\infty}dx
+\braket{\Psi(x,t)}{\Psi(x,t)} = \big( -16i^2 \braket{\psi_1}{\psi_1} \big) + \big( 25\braket{\psi_2}{\psi_2} \big)
+\end{equation}
+Since $\braket{\psi_n}{\psi_n} =1 $, the result is actually just the coefficients of the two surviving terms.
+\begin{equation}
+\braket{\Psi(x,t)}{\Psi(x,t)}  = \Big(|4i|^2 + |5|^2 \Big)
 \end{equation}
 
-And we must equate all of this to the value of $1$ because that is what we want the integral and inner product in (\ref{prob}) to evaluate to. So:
-
+\paragraph*{}Because we must have a normalized probability density, we must equate all of this to the value of $1$. i.e., the inner product of the state with itself must be $1$, so we multiply by some constant $|A|^2$.
 \begin{equation}
 |A|^2 \Big(|4i|^2 + |5|^2 \Big) = |A|^2 \Big(16 + 25 \Big) = 1
 \end{equation}
-and finally, it can be found that $A^2 = \frac{1}{41}$ and thus $A = A^* \frac{1}{\sqrt{41}}$.
+and finally, it can be found that $A^2 = \frac{1}{41}$ and thus $A = A^* = \frac{1}{\sqrt{41}}$.
 
 \paragraph*{}At this, our \textit{normalized} probability density for our wave function $\Psi(x,t)$ from equation (\ref{prob}) becomes:
 \begin{equation}
@@ -1101,19 +1085,22 @@ P(E_1) = |c_1|^2 = \Big(\frac{+4i}{\sqrt{41}}\Big) \Big(\frac{-4i}{\sqrt{41}}\Bi
 P(E_2) = |c_2|^2 = \Big(\frac{5}{\sqrt{41}}\Big) \Big(\frac{5}{\sqrt{41}}\Big) = \frac{25}{41}
 \end{split}
 \end{equation}
-
-Thus, state $\ket{\psi_1}$ will appear $16/41$ times and state $\ket{\psi_2}$ will appear the remaining $25/41$ times. Notice also, how as a product of the normalization, the sum of the probability coefficients is $1$. Thus, you are always guaranteed to measure \textit{some} state at all times. Suppose there are $k$ states in our quantum system, then we have:
+Thus, state $\ket{\psi_1}$ will appear $16/41$ times and state $\ket{\psi_2}$ will appear the remaining $25/41$ times when the energy is measured. Notice also how as a product of the normalization, the sum of the probability coefficients is $1$. Thus, you are always guaranteed to measure \textit{some} state at all times. Suppose there are $k$ possible states in our quantum system, then we must have:
 
 \begin{equation}
 \sum_n^k |c_n|^2 = 1
 \end{equation}
 
-And similarly, we can always compute the expectation value for energy for the Hamiltonian operator:
-
+\paragraph*{}And similarly, the expectation value of the Hamiltonian operator in a quantum system is the sum of all possible energies, \textit{weighted} by their respective probability of occurring.
 \begin{equation}
 \label{expect Hamiltionian}
 \expval{\hat{H}} = \sum_n^k |c_n|^2 E_n
 \end{equation}
+Thus for the system above, 
+\begin{equation}
+\expval{\hat{H}} = |c_1|^2E_1 + |c_2|^2E_2 = \frac{16}{41}E_1 + \frac{25}{41}E_2
+\end{equation}
+A more \textit{complete} or more simplifed expectation value cannot be determined unless values for $E_1$ and $E_2$ are explicitly given.
 
 % ================================================================
 
