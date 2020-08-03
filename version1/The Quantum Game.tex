@@ -6,20 +6,16 @@
 % ================================
 
 \documentclass[12pt,letterpaper]{book}
-\usepackage[left=2.5cm,right=2.5cm,top=2.5cm]{geometry}
 \usepackage{graphicx}
-\usepackage{float}
 \usepackage{multicol}
-\usepackage{fancyhdr}
-
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm]{geometry}
+\usepackage{array}
 \usepackage{enumitem}
 \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
-
-\usepackage{array}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{physics}
-
+\usepackage{fancyhdr}
 
 % ================================
 
@@ -1200,7 +1196,7 @@ By convention, we normalize this function to the value $1$, such that all evalua
 
 % ================================
 
-\paragraph*{}This chapter of this text will be devoted to applying what we've learned about the basic and the mathematical behavior of quantum physics to specific cases of potential function that vary only with space, and not time - in one spatial dimension. Over the course of this chapter, the specific scenarios examined are very similar to ones explored in other related quantum texts. This similarity is due to the general applicability, and important lessons that arise from each possible potential function. It is important to take all of this with a grain of salt, as few potential functions are so cleanly defined and are contained in a single dimension. However these obviously over-idealized circumstances serve as afantastic starting point to later be heavily expanded upon before becoming of any real-world use or application.
+\paragraph*{}This chapter of this text will be devoted to applying what we've learned about the basic and the mathematical behavior of quantum physics to specific potential cases in one spatial dimension. Over the course of this chapter, the specific potential cases examined are very similar to cases explored in other quantum texts. This similarity is due to the interesting cases, and important lessons that arise from each possible potential function. It is important to take all of this with a grain of salt, however as these are obviously over-idealized circumstances, that need to be heavily expanded upon before becoming of any real-world use or application.
 
 \paragraph*{}For this chapter, the 1-Dimensional Time Independent Schrodinger Equation (1D TISE) will be the starting place for each particular case, as we will assume to that all of these potentials exist on a single, infinitely long line, and remain constant with time. The 1D TISE is again:
 
@@ -1216,7 +1212,7 @@ Which can aslo be written in it's operator eigenvalue form:
 \hat{H}\ket{\psi} = E\ket{\psi}
 \end{equation}
 
-\paragraph*{}In Each section, as part of the nature of this text, I will discuss the methods used in numerically solving the Schrodinger equation as well as the formal 'pen-and-paper' computations. As the complexity of modern science and engineering increases, it seems that the need for computers to solve certain problems becomes more and more apparent. Because of this, I will present the analytical solution to the system, as it would be solved by hand, and than compare that result to something produced numerically. This way, you have a mathematical foundation to sit upon and a more reasonable way to go about solving any arbitrary quantum system. This of course is not to discredit the hard work of pre-numerical-computation physicists and mathematicians, but rather allows us to solve for systems that are increasing complex, and even systems that \textit{cannot} simply be solved in terms of any arbitrary functions.
+\paragraph*{}In Each potential case, as part of the nature of this text, I will discuss the methods used in numerically solving the Schrodinger equation. As modern the complexity of modern science and engineering increases, it becomes more obvious that the ability to solve such a complicated partial differential equation is an effort in faultily.Because of this, I will present the analytical solution to the equation, as it would be solve by hand, and than compare that result to something produced numerically. This way, you have a mathematical foundation to sit upon and a more reasonable way to go about solving any arbitrary quantum system. This of course is not to discredit the hard work of pre-computation physicists and mathematicians, but rather allows us to solve for systems that are increasing complex, and even systems that \textit{cannot} simply be solved in terms of any arbitrary functions.
 
 % ================================================================
 
@@ -1226,9 +1222,9 @@ Which can aslo be written in it's operator eigenvalue form:
 
 \subsection*{Analyzing the System}
 
-\paragraph*{}Arguably the simplest case for a potential function (and among the most unreasonable), the \textit{infinite square well} is a sort of \textit{rite-of-passage} for students learning about this subject. It uses a very simple potential function case and allows for some nice simplifications to be made, and it can be used as a great start to see how some of the math and physics of the subject really start to fit together.
+\paragraph*{}Arguably the simplest case for a potential function (and among the most unreasonable), the \textit{infinite square well} is a sort of \textit{rite-of-passage} for students learning about the subject. It uses a very simple potential function case and allows for some nice simplifications to be made, and it can be used as a great start to see how some of the math and physics of the subject really start to fit together.
 
-\paragraph*{}We start with a potential function, $V(x)$, that is peicewise defined:
+\paragraph*{}We start with a potential function, $V(x)$, peicewise defined:
 \begin{equation}
 \label{ISW potential}
 V(x) = \left\{
@@ -1239,21 +1235,14 @@ V(x) = \left\{
         \end{array}
     \right.
 \end{equation}
-We often denote the region $x < 0$ as \textit{region I}, $0 \leq x \leq L$ as \textit{region II} and $x > L$ as \textit{region III}.
 
-\begin{figure}[H]
+\paragraph*{}Before we even do math, we can take some time to analyze the physical nature of the system. The first thing that comes to mind is the presence of the $+\infty$ values outside the range $0$ to some arbitrary position $L$. We have essentially used the potential function values to create a well, of some width, $L$, with walls that infinitely high - hence the name of "the infinite square well". From classical physics, you may interpret this as being stuck between two infinitely tall mountains or something of the sort. Either way, the infinite potential value forces the particle to be confined in this regions of length $L$, because no matter how much energy or force is applied to that particle, it \textit{can never escape} the infinite square well.
+
 \begin{center}
-%\includegraphics[scale=0.32]{ISW}
+\includegraphics[scale=0.32]{ISW}
 \end{center}
-\end{figure}
 
-\paragraph*{}Before we even do math, take some time to analyze the physical nature of the system. The first thing that comes to mind is the presence of the $+\infty$ values outside the range $0$ to some arbitrary position $L$. We have essentially used the potential function values to create a well, of some width, $L$, with walls that infinitely high - hence the name of "\textit{the infinite square well}". From classical physics, you may interpret this as being stuck between two infinitely tall mountains or something of the sort. Either way, the infinite potential value forces the particle to be confined in this regions of length $L$, because no matter how much energy or force is applied to that particle, it \textit{can never escape} the infinite square well.
-
-\paragraph*{}Right off of the bat, this allows for some great simplifications. First off, Our particle cannot exist in the region $x < 0$ or $x > L$ because of the infinite amount of energy required to get there. Therefore, this quantum mechanical particle can \textit{only} exist in the region $0 \leq x \leq L$. With this, can can focus all of our attention to this region of space. For the regions $x < 0$ and $x > L$ we can confidently assert:
-\begin{equation}
-\Psi(x < 0) = \Psi(x > L) = 0
-\end{equation}
-All of the rules outline in the previous chapters still apply, but now we only have this small region of space, $0 \geq x \geq L$ to worry about.
+\paragraph*{}Right off of that bat, this allows for some great simplifications. First off, no matter what, Our particle cannot exist in the region $x < 0$ or $x > L$ because of the infinite amount of energy required to get there. Therefore, this quantum mechanical particle can \textit{only} exist in the region $0 \leq x \leq L$. With this, can can focus all of our attention to this region of space. All of the rules outline in the previous chapters still apply, but now we only have this small region of space to worry about.
 
 % ================================
 
@@ -1266,7 +1255,7 @@ All of the rules outline in the previous chapters still apply, but now we only h
 -\frac{\hbar^2}{2m}\frac{d^2 \psi}{dx^2} = E\psi
 \end{equation}
 
-Notice how the $V(x)\psi(x)$ term from equation (\ref{1D TISE}) is gone because $V(x) = 0$ in this region. Now, we actually have much simpler equation to solve. We can use some algebraic manipulation to rearrange equation (\ref{ISW TISE}) into something very familiar from classical physics.
+Notice how the $V(x)\psi(x)$ term from equation (\ref{1D TISE}) is gone because $V(x) = 0$ in these bounds. Now, we actually have much simpler equation to solve. We can use some algebraic manipulation to rearrange equation (\ref{ISW TISE}) into something very familiar from classical physics.
 
 \begin{equation}
 \label{HO ODE}
