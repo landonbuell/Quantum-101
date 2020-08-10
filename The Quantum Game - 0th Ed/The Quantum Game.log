@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  30 JUN 2020 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  9 AUG 2020 23:12
 entering extended mode
 **"./The Quantum Game.tex"
 ("The Quantum Game.tex"
@@ -609,13 +609,7 @@ $\OT1/cmr/m/n/12 -dimensional.
 
 ]
 Chapter 2.
-[41]
-<ISW.png, id=146, 1445.4pt x 578.16pt>
-File: ISW.png Graphic file (type png)
-<use ISW.png>
-Package pdftex.def Info: ISW.png  used on input line 1242.
-(pdftex.def)             Requested size: 462.53746pt x 185.01497pt.
- [42 <./ISW.png>] [43] [44] [45] [46]
+[41] [42] [43] [44] [45] [46]
 Chapter 3.
 [47
 
@@ -650,11 +644,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14288 strings out of 492895
- 257981 string characters out of 3123268
+ 14280 strings out of 492895
+ 257997 string characters out of 3123268
  315043 words of memory out of 3000000
- 18113 multiletter control sequences out of 15000+200000
- 543203 words of font info for 65 fonts, out of 3000000 for 9000
+ 18108 multiletter control sequences out of 15000+200000
+ 543034 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,19n,63p,953b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
@@ -673,12 +667,11 @@ ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/User
 s/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Landon/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "The Quantum Game.pdf" (63 pages, 401878 bytes).
+e1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Landon/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on "The Quantum Game.pdf" (63 pages, 364458 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
+ 265 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

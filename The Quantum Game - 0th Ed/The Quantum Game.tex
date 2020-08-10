@@ -1239,7 +1239,7 @@ V(x) = \left\{
 \paragraph*{}Before we even do math, we can take some time to analyze the physical nature of the system. The first thing that comes to mind is the presence of the $+\infty$ values outside the range $0$ to some arbitrary position $L$. We have essentially used the potential function values to create a well, of some width, $L$, with walls that infinitely high - hence the name of "the infinite square well". From classical physics, you may interpret this as being stuck between two infinitely tall mountains or something of the sort. Either way, the infinite potential value forces the particle to be confined in this regions of length $L$, because no matter how much energy or force is applied to that particle, it \textit{can never escape} the infinite square well.
 
 \begin{center}
-\includegraphics[scale=0.32]{ISW}
+%\includegraphics[scale=0.32]{ISW}
 \end{center}
 
 \paragraph*{}Right off of that bat, this allows for some great simplifications. First off, no matter what, Our particle cannot exist in the region $x < 0$ or $x > L$ because of the infinite amount of energy required to get there. Therefore, this quantum mechanical particle can \textit{only} exist in the region $0 \leq x \leq L$. With this, can can focus all of our attention to this region of space. All of the rules outline in the previous chapters still apply, but now we only have this small region of space to worry about.
@@ -1717,7 +1717,7 @@ V(r) = -\frac{1}{4\pi\epsilon_0}\frac{e^2}{\vec{r}}
 % ================================================================
 
 \chapter{The Next Level: \\ Spin and Angular Momentum}
-\paragraph*{}The discussion of angular momentum 
+\paragraph*{}The discussion of angular momentum and spin if often left to the first few weeks of a second semester Quantum Physics course, but nonetheless is useful to have a head-start with.
 
 % ================================================================
 % ================================================================
@@ -1727,49 +1727,75 @@ V(r) = -\frac{1}{4\pi\epsilon_0}\frac{e^2}{\vec{r}}
 % ================================================================
 
 
-\section{Building the Hamiltonian Operator Numerically}
-\paragraph*{}At the end of the first chapter, we discussed how the Time-Independent Schrodinger Equation can also be interpreted an an Energy - Eigenvalue problem. Rather than building a complicated algorithm to solve a partial differential equation, we can use an algorithm to solve an eigenvalue problem of a matrix instead. Although this conflicts with our new intuition about operators being more of continuous object as oppose to discrete matrices, the logistics of numerical problem solving still remains at hand - all objects must be discrete. In this section, we're going to discuss how to numerically build the Hamiltonian matrix.
-\paragraph*{}I will use a mixture of psuedo-coding and written logic to express the steps to completing this task. Because of it current relevance in the scientific community, and readability, I will be using Python 3 and it's module \textit{numpy} for all explicit lines of code. Note than I will include a great deal of step-by-step comments so that you can repeat this procedure outside of Python 3.
+\section{Building the Hamiltonian Operator Numerically in One Dimension}
 
-% ================================
-
-\subsection*{The Hamiltonian Revisited}
-
-\paragraph*{}First, recall our energy eigen-equation:
+\paragraph*{}At the end of the first chapter, we discussed how the Time-Independent Schrodinger Equation can also be interpreted an an Energy - Eigenvalue problem. Rather than building a complicated algorithm to solve a partial differential equation that evolves with time and space, we can build a much simpler algorithm that assumes a potential function that is constant with time that solves the eigenvalue equivalent of the Schrodinger Equation. Recall the Cartesian 1-Dimensional Time Independent Schrodinger Equation is given by:
 \begin{equation}
-\label{energy-evp}
+-\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2} + V(x)\psi = E\psi
+\end{equation}
+And it's equivalent Energy-Eigenvalue form:
+\begin{equation}
 \hat{H}\ket{\psi} = E\ket{\psi}
 \end{equation}
-And recall that the Hamiltonian operator acting on the state $\ket{\psi}$ can be written as the sum of the kinetic and potential energy operators acting on the state $\ket{\psi}$:
+Where $\hat{H}\ket{\psi}$ is given by the summation of the kinetic and potential energy operators:
 \begin{equation}
 \hat{H}\ket{\psi} = \hat{T}\ket{\psi} + \hat{V}\ket{\psi}
 \end{equation}
-\paragraph*{}Using the same logic as building the Hamiltonian, we can build both the kinetic and potential energy operators independently, add them together, and then compute their eigenvalue problem.
-\paragraph*{}Lets begin the process by defining some variables and setting some parameters. The exact value of $\hbar$ and the exact mass of electrons are both \textit{very} small numbers. In lower level programming languages and even in Python, entering these values exactly may cause rounding or estimation all sorts of other errors to arise, so we do something quite common in physics - we naturalize our units to the particular problem. We're going to set the value of both $\hbar$ and $m$ to be identically $1$.
-\paragraph*{}While this may seem like cheating, we have to remember that these numbers may have values of $1$, but dimensionally, still have units of energy times time, and mass respectively. Since units are technically arbitrary, and the computer doesn't care about them anyway, this is a very value thing to do. In the end, this will save us a great deal of floating-point estimation errors and computational time. (For example $\hbar^2$ has a values somewhere around $1.11 \times 10^{-68}$ Joule-seconds in SI units) When we go back, we can always multiply our outputs by some constant to scale them back up into metric or imperial units as well.
-\paragraph*{}In addition to setting units, and importing the numpy module, we need to determine the size of our matrix, which will be square. Both the kinetic energy potential energy parameters will also use this dimension, $N$, so it's important to define it early for consistency. We also need to create the one dimesions array to represent out space, as well as set bounds for that space.  So the first few lines of our program look like:
-\begin{verbatim}
->>> import numpy as np
->>> hbar = 1                    # set h/2pi to be 1
->>> m = 1                       # set mass of electron to 1
->>> N = 2048                    # number of points in our space
->>> bnd = 10                    # set bounds on space
->>> x = np.arange(-bnd,+bnd,N)  # create the x-axis space
-\end{verbatim}
-Note that I have chosen $N$ to be 2048 because computers tend to like to work with integer exponents of $2$. What $N$ does is determine how many points we will divide outspace up into. This choice is somewhat arbitrary, in practice you can set it how you please. A larger number means a larger matrix- We will get $N$ eigenkets and $N$ eigenvalues. However, the computational time and complexity increases with the square of $N$.
+
+\paragraph*{}Numerical solutions force us to resort to discrete versions of everything in the equations above. Operators will become square matrices  and functions will become arrays of floating-point numbers. As a consequence, we will also not be able to develop symbolic or \textit{analytically} solutions. So, instead of having an energy-eigenstate defined as function in terms of the parameters of our system, we will have 1D array of numbers that will approximate the wave function. Similarly, instead of an energy-eigenvalue defined in terms of the parameters of our system, we will have a single floating-point number that approximates the energy of that state.
+
+\paragraph*{}Notice also how the execution of a numerical solution involves \textit{approximations} of values. This comes down to two main factors: the discrete nature of matrices and arrays, and the numerical accuracy of floating-point numbers. When operators are discretized into matrices, some information is lost, much like how a if an integral is converted into a Reimann Sum. Floating-point numbers are a computers' standard method of storing numerical values that aren't integers. They function as a sort of scientific notation in a base-2 number system instead of the human base-10 system. Given the limited number of bits, floating point numbers often are faced with rounding or small numerical deviations from expected values.
+
+\paragraph*{}In order to mitigate some of these errors, we can choose to use an alternative unit system, sometimes called \textit{naturalized units}. Rather than use the SI value for Plank's consntant over $2\pi$, as $\hbar \approx 1.0545...\times 10^{-34}$ kilogram-meters-squared per second, we can choose to set $\hbar$ to have units of \textit{itself}, i.e. $\hbar = 1$. Similarly, we can assert that the mass of the particle in question $m$, is also in units of \textit{itself}, thus $m = 1$.  These adjustments will reduce initial errors that result from numerical mathematics, and can always be conerted back into SI units at the end of a long string of computations to reduce compounding error.
+
+\paragraph*{}Otherwise, we transform a section of continuous space (Ideally centered about $0$, but not required), $x \in [-L , +L]$ into a approximate space of $N$ unique discrete points $x \in \{-L , -L+1, -L+2 , ... , +L-2 , +L-1, +L\}$. Again, potential function $V(x)$ and wave functions $\Psi(x)$ will all be transformed into $1 \times N$ arrays $V[x]$ or $\Psi[x]$, with $x \in \{-L , -L+1, -L+2 , ... , +L-2 , +L-1, +L\}$. The choice of the number of points is also important in the results of the solution as well. With a small value for $N$, the result will be an approximation of little physical value, and with an large value of $N$, the system may become to large to reasonable handle.
 
 % ================================
 
-\subsection*{Kinetic Energy Operator}
+\subsection{The Kinetic Energy Operator}
 
-\paragraph*{}The quantum kinetic energy operator (not acting on any state) is defined as:
+\paragraph*{}Recall the quantum kinetic energy operator is given by:
 \begin{equation}
-\label{T}
-\hat{T} = \frac{1}{2m}\hat{p}^2 = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}
+\label{KE}
+\hat{T}\ket{\psi} = -\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2}
 \end{equation}
-\paragraph*{}So, in order to build $\hat{T}$. We need to express (\ref{T}) as a \textit{matrix}. The constant out front, $-\frac{\hbar^2}{2m}$, is simple to handle, and since it's a matrix, we technically can treat it as that, multiplied by a matrix of all ones if left alone. So what we instead need it a matrix that can take some array, and return it's \textit{second} derivative. We'll call this matrix $\hat{D_2}$ or $D2$ is code-speak. To do this:
+The goal of this section is to express this operator, $\hat{T}$ as an $N \times N$ matrix. Firstly, we need to be able to express the second-derivative operator as a matrix. 
+
+\paragraph*{}If we examine, the first derivative operator definition we can see that is literally measuring the slope of a function $f(x)$ over an infinitesimal spatial step, $h$, in the limit that $h \rightarrow 0$.
+\begin{equation}
+\frac{d}{dx}\Big[ f(x) \Big] = \lim_{h \rightarrow 0} \frac{f(x + h) - f(x)}{h}
+\end{equation}
+As previously stated, a computer will not allow us to use a formally defined function $f(x)$, but rather an array of discrete values. To numerically simulate a first derivative, we must use the \textit{Finite-Element Difference Method}. We assume each index of the array, $f[x]$ is separated by some value $dx$ such that $f[x+1] - f[x] = dx$. 
+
+\paragraph*{}With this in mind, we can rewrite the definition of a derivative for a $1 \times N$ array $f$ of discrete values. The $i$-th element of the derivative array will be:
+\begin{equation}
+f'[i] = \frac{f[i+1] - f[i]}{dx}
+\end{equation}
+Note that the array $f'$ will contain $N-1$ elements. Using some clever arrangement of numbers in an $N \times N$ matrix, we can express a matrix-vector equation of the first-derivative operator. The $1 \times N$ array $f$ has been transposed into an $N \times 1$ array.
+\begin{equation}
+\label{1st-Deriv-Mat-Vec}
+\begin{bmatrix}
+f'_0 \\ f'_1 \\ f'_2 \\ \vdots \\ f'_{N-2} \\ f'_{N-1}
+\end{bmatrix} = \frac{1}{dx}
+\begin{bmatrix}
+-1 & 1 & 0 & \hdots & 0 & 0 \\
+0 & -1 & 1 & \hdots & 0 & 0 \\
+0 & 0 & -1 & \hdots & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+0 & 0 & 0 & \hdots & -1 & 1 \\
+0 & 0 & 0 & \hdots & 0 & -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_{N-2} \\ f_{N-1}
+\end{bmatrix}
+\end{equation}
+In the case of the matrix, the $f'$ array, has $N$ elements, but the last point will be inconsistent due to having no difference taken.
 
 % ================================
+
+% ================================
+
+
 
 % ================================================================
 

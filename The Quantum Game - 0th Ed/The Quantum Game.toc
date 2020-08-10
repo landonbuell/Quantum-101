@@ -27,6 +27,7 @@
 \contentsline {section}{\numberline {4.2}The Hydrogen Atom Structure}{56}% 
 \contentsline {chapter}{\numberline {5}The Next Level: \\ Spin and Angular Momentum}{59}% 
 \contentsline {chapter}{\numberline {6}Mathematical Index}{61}% 
-\contentsline {section}{\numberline {6.1}Building the Hamiltonian Operator Numerically}{61}% 
+\contentsline {section}{\numberline {6.1}Building the Hamiltonian Operator Numerically in One Dimension}{61}% 
+\contentsline {subsection}{\numberline {6.1.1}The Kinetic Energy Operator}{62}% 
 \contentsline {section}{\numberline {6.2}The Eigenvalue Problem}{63}% 
 \contentsline {section}{\numberline {6.3}Dirac Notation}{63}% 
