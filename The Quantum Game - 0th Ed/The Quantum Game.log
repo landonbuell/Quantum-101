@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  16 AUG 2020 10:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.26)  19 AUG 2020 02:17
 entering extended mode
 **"./The Quantum Game.tex"
 ("The Quantum Game.tex"
@@ -614,7 +614,7 @@ Chapter 3.
 [47
 
 ] [48] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 1516--1517
+Underfull \hbox (badness 10000) in paragraph at lines 1528--1529
 
  []
 
@@ -625,17 +625,17 @@ Chapter 4.
 ] [54]
 
 LaTeX Warning: Reference `3D Cartesian Schrodinger' on page 55 undefined on inp
-ut line 1662.
+ut line 1676.
 
 [55] [56] [57] [58
 
 ]
 Chapter 5.
-[59] [60
+[59] [60] [61] [62
 
 ]
 Chapter 6.
-[61] [62] [63] ("The Quantum Game.aux")
+[63] [64] [65] ("The Quantum Game.aux")
 
 LaTeX Warning: There were undefined references.
 
@@ -644,10 +644,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14280 strings out of 492895
- 257997 string characters out of 3123268
- 315043 words of memory out of 3000000
- 18108 multiletter control sequences out of 15000+200000
+ 14286 strings out of 492895
+ 258094 string characters out of 3123268
+ 315100 words of memory out of 3000000
+ 18114 multiletter control sequences out of 15000+200000
  543034 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,19n,63p,953b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -669,9 +669,9 @@ s/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
 onts/cm/cmti12.pfb><C:/Users/Landon/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Landon/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "The Quantum Game.pdf" (63 pages, 364755 bytes).
+Output written on "The Quantum Game.pdf" (65 pages, 377565 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
+ 271 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

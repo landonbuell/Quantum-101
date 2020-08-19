@@ -25,9 +25,11 @@
 \contentsline {section}{\numberline {4.1}The Schrodinger Equation in 3 Dimensions}{53}% 
 \contentsline {paragraph}{}{53}% 
 \contentsline {section}{\numberline {4.2}The Hydrogen Atom Structure}{56}% 
+\contentsline {section}{\numberline {4.3}Quantum Numbers}{57}% 
 \contentsline {chapter}{\numberline {5}The Next Level: \\ Spin and Angular Momentum}{59}% 
-\contentsline {chapter}{\numberline {6}Mathematical Index}{61}% 
-\contentsline {section}{\numberline {6.1}Building the Hamiltonian Operator Numerically in One Dimension}{61}% 
-\contentsline {subsection}{\numberline {6.1.1}The Kinetic Energy Operator}{62}% 
-\contentsline {section}{\numberline {6.2}The Eigenvalue Problem}{63}% 
-\contentsline {section}{\numberline {6.3}Dirac Notation}{63}% 
+\contentsline {section}{\numberline {5.1}Orbital Angular Momentum}{60}% 
+\contentsline {chapter}{\numberline {6}Mathematical Index}{63}% 
+\contentsline {section}{\numberline {6.1}Building the Hamiltonian Operator Numerically in One Dimension}{63}% 
+\contentsline {subsection}{\numberline {6.1.1}The Kinetic Energy Operator}{64}% 
+\contentsline {section}{\numberline {6.2}The Eigenvalue Problem}{65}% 
+\contentsline {section}{\numberline {6.3}Dirac Notation}{65}% 

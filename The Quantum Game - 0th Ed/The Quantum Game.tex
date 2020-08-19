@@ -1596,7 +1596,7 @@ And the statistical variance of that operator is given by:
 % ================================================================
 
 \chapter{The Next Level: \\ The Hydrogen Atom}
-\paragraph*{}It may seem strange to have an entire chapter dedicated to the hydrogen atom. After all, it's the simplest atom of all, simply one proton in the nucleus, with a single electron bound to it.  The Bohr model of the atom indicates that the electron "orbits" this nucleus constantly in discrete "shells", however a chemistry class would introduce to you the concept of the \textit{Aufbau Principle} where electrons are actual bound within orbital "clouds" instead.
+\paragraph*{}It may seem strange to have an entire chapter dedicated to the hydrogen atom. After all, it's the simplest atom with one proton in the nucleus, and a single electron bound to it. The Bohr model of the atom indicates that the electron "orbits" this nucleus constantly in discrete "shells", however a chemistry class would introduce to you the concept of the \textit{Aufbau Principle} where electrons are actually bound within orbital "clouds" instead.
 \paragraph*{}When Schrodinger originally published some of his work on the beginnings of quantum theory, it is the theory's ability to accurately describe the Hydrogen atom that affirmed it's validity. Because of the theory that Schrodinger and so many other developed matched the experimental behavior of Hydrogen, we accepted the place of quantum mechanics in our model of physics today. Naturally then, it's a great place to take all of the concepts that we've explored so far, along with our 1-Dimensional problems, and push ourselves to begin to solve a slightly more realistic problem. 
 
 % ================================================================
@@ -1613,6 +1613,7 @@ We've also learned that this equation is the quantum mechanical equivalent to th
 \subsection*{Cartesian Basis}
 
 \paragraph*{}Since we are operating in the $x$ dimension, we can say that the momentum measurement is solely the $x$-axis component of some greater \textit{vector operator}. So, the operator $\hat{p}$ is actually the vector operator $\hat{\vec{p}}$, and the $x$-axis component is given by $\hat{p}_x$. In the case of the kinetic energy, this operator acts twice, to give us $\hat{p}_x^2$. This then forces us to recognize that there are also a $\hat{p}_y^2$ and a $\hat{p}_z^2$ component to the Kinetic Energy Operator.
+
 \paragraph*{}So the momentum operator, is now a vector defined operator:
 \begin{equation}
 \hat{\vec{p}} = \big[ \hat{p}_x , \hat{p}_y , \hat{p}_z \big]
@@ -1671,29 +1672,35 @@ Or with the Laplacian:
 -\frac{\hbar^2}{2m}\nabla^2\Psi + V\Psi = 
 -i\hbar\frac{\partial \Psi}{\partial t}
 \end{equation}
+
 \paragraph*{}Equation (\ref{3D Cartesian Schrodinger}) is the most common way to represent the Schrodinger Equation in Higher Dimensions. This is because it appropriately generalized to cover any number of dimensions, in any coordinate systems. In each case, the Laplacian must be evaluated for that particular dimension and coordinate basis. In the case of our 3D Cartesian system, The wave function $\Psi$ is a function of 3D space and time, $\Psi(x,y,z,t)$. Depending on the context of the situation,the potential may also be a function of all three dimensions, or even time as well. 
+
 \paragraph*{}Now we have a solid foundation for expressing Schrodinger's equation in any dimensions and in any coordinate system. It also follows, that in many cases, our method of \textit{separation of variables} can be used under constant potential (with time) systems. Instead of a case like in equation (\ref{separable}), we may choose to separate out all three dimensions and time into \textit{four} separate equations.
 \begin{equation}
-\Psi(x,y,x,t) = \psi_x(x) \psi_(y) \psi_z(z) \phi(t)
+\Psi(x,y,x,t) = \psi_x(x) \psi_y(y) \psi_z(z) \phi(t)
 \end{equation}
+
 \paragraph*{}Note that this can only be done for potential functions $V$ that are independent of time, and \textit{also} separable into the same basis components. The result will be the same time independent Schrodinger Equation as one dimension, just now with the Lapacian Operator taking the place of the sole second partial derivative:
 \begin{equation}
 \label{3D TSIE}
 -\frac{\hbar^2}{2m}\nabla^2\Psi + V\Psi = E\Psi
 \end{equation}
 And the value for $\phi_n(t)$ still holds from chapter one, equation (\ref{energy ODE}).
-\paragraph*{}It's also important to note that \textit{every single} one of the rules and properties that we have established for the wave function, $\Psi$ in a single dimension, also applies here. For example, We must still be able to normalize a solution for this to be a valid wave function. In the case of 3D, the orthogonality of two energy eigen-states allows the relation:
+
+\paragraph*{}It's also important to note that \textit{every single} one of the rules and properties that we have established for the wave function, $\Psi$ in a single dimension, also applies here. For example, We must still be able to normalize a solution for this to be a valid wave function. However, instead of the single dimensional integral normalized to $1$, the full 3D volume integral must be normalized to $1$. The orthogonality of two energy eigen-states also holds:
 \begin{equation}
 \braket{\Psi_n(x,y,z,t)}{\Psi_m(x,y,z,t)} = \delta_{n,m}
 \end{equation}
 For appropriately normalized states. In this case, normalization occurs over all of space (or at least defined regions) such that:
 \begin{equation}
-|A|^*\int \Psi^*(x,y,z,t)\Psi_x,y,z,t)dxdydz = 1
+|A|^2\int \Psi^*(x,y,z,t)\Psi(x,y,z,t)dxdydz = 1
 \end{equation}
 
 \subsection*{Spherical Basis}
+
 \paragraph*{}As it turns out in Quantum Physics, Cartesian coordinate system is not always the best tool for the job. In many practical cases, such as dealing with the electromagnetic interactions between subatomic particles, a spherical coordinate system may be far more appropriate. So now we've spent all this time expanding the Schrodinger equation into a 3D Cartesian system just to move out of it? Well yes, except not all that much changes.
-\paragraph*{}Our potential function, $V$, is now a function of $r$,$\theta$, and $\phi$ instead of $x$, $y$ and $z$ axes. Similarly, we just need to adjust our Laplacian operator accordingly as well. In 3D spherical coordinates, it's defined:
+
+\paragraph*{}In the Hydrogen atom, the potential function, $V$, is now a function of $r$,$\theta$, and $\phi$ instead of $x$, $y$ and $z$ axes. Similarly, we just need to adjust our Laplacian operator accordingly as well. In 3D spherical coordinates, it's defined:
 \begin{equation}
 \label{3D Polar Laplacian}
 \nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} 
@@ -1703,7 +1710,7 @@ For appropriately normalized states. In this case, normalization occurs over all
 \frac{r^2}{\sin^2\theta} 
 \bigg( \frac{\partial^2}{\partial\phi^2} \bigg)
 \end{equation}
-\paragraph*{}With this in mind, we still write the Schrodinger equation and it's time independent counterpart exactly the same! (Except, of course we know that $V = V(r,\theta, \phi)$ not $V(x,y,z)$) Furthermore, our separation of variables also can be done in the same way. Generally, potentials are mostly radial, and not angular, so we can simply our separation as assert our new separable solutions can take the form:
+\paragraph*{}With this in mind, we still write the Schrodinger equation and it's time independent counterpart exactly the same! (Except, of course we know that $V = V(r,\theta, \phi) \neq V(x,y,z)$) Furthermore, our separation of variables also can be done in the same way. Generally, potentials are mostly radial, and not angular, so we can simply our separation as assert our new separable solutions can take the form:
 \begin{equation}
 \Psi(r,\theta,\phi,t) = R(r) Y(\theta,\phi) T(t)
 \end{equation}
@@ -1713,23 +1720,174 @@ Notice we use $T(t)$ instead of $\phi(t)$ in order to distinguish the coordinate
 
 \section{The Hydrogen Atom Structure}
 \paragraph*{}From basic chemistry, we know that a hydrogen atom is the simplest possible atomic structure. As mentioned before, it is composed of a single electron, bound to a proton. Both have equal magnitude, and opposite polarity charges: $q_e = -q_p$. We can then take our knowledge from electrostatics to begin to build the potential function for the electron. For simplicity of this problem, we'll consider the case where the proton is fixed to a coordinate origin, that is well-defined (as in, we are all certain exactly where the proton is)
+
 \paragraph*{}From \textit{Coulomb's Law}, we can integrate the force between the two particles over distance to find the governing potential function. 
 We can also use the variable $e$ to denote the elementary charge magnitude ($1.973 \times 10^{-19} \text{[Coulombs]}$), thus the product of the electron and proton charges reduces to $-e^2$. We can then write $V(r)$ as:
 \begin{equation}
 V(r) = -\frac{1}{4\pi\epsilon_0}\frac{e^2}{\vec{r}}
 \end{equation}
+Notice how the potential is spherically symmetric (not a function of the $\theta$ or $\phi$ coordinate) and constant with respect to time.
+
 \paragraph*{}Since we know how the Schrodinger equation functions in a spherical basis, we can simply insert our potential into the equation:
 \begin{equation}
 -\frac{\hbar^2}{2m}\nabla^2\Psi + 
 \Big(-\frac{1}{4\pi\epsilon_0}\frac{e^2}{r}\Big)\Psi = E\Psi
 \end{equation}
-\paragraph*{}
+And we hold in the back of our minds that the Laplacian operator above is define in eqn. (\ref{3D Polar Laplacian}).
+
+\paragraph*{}We once again must solve the differential equation for the appropriate wave function. As standard, we revert to our separable, time independent solution space:
+\begin{equation}
+\psi(r,\theta,\phi ) = R(r)Y(\theta,\phi )
+\end{equation}
+Thus we can place this into the spherical TISE (\ref{3D TSIE}):
+\begin{equation}
+-\frac{\hbar^2}{2m} \Bigg[ \frac{Y}{r^2} \frac{\partial}{\partial r} \Big(r^2\frac{dR}{dr}\Big) + 
+\frac{R}{r^2 \sin\theta} \frac{\partial}{\partial \theta} \Big( \sin\theta \frac{\partial Y}{\partial \theta} \Big) +
+\frac{R}{r^2 \sin^2\theta} \frac{\partial^2 Y}{\partial \phi^2} \Bigg] +
+VRY = ERY
+\end{equation}
+We can divide this mess by the wave function $RY$, multiply by $-2mr^2/\hbar^2$ and rearrange the system:
+\begin{equation}
+\Bigg[ \frac{1}{R}\frac{d}{dr} \Big(r^2 \frac{dR}{dr}\Big) - \frac{2mr^2}{\hbar^2}\big[ V(r) - E \big] \Bigg] +
+\frac{1}{Y} \Bigg[ \frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\Big(\sin\theta\frac{\partial Y}{\partial \theta}\Big) +
+\frac{1}{\sin^2 \theta} \frac{\partial^2 Y}{\partial \phi^2} \Bigg] = 0
+\end{equation}
+
+\paragraph*{}In writing the differential equation as such, the elements in the left bracket are only dependent of the radial component $r$, and the elements in the right bracket are only functions of the angular components, $\theta$ and $\phi$. Just like in chapter 1, where we separated space, and time, here we separate radial space from angular space. And just as such, since they are equated to each other, each side must again be identically constant. However, instead of conveniently choosing a scalar, $E$, which nicely works out to be the energy of the system, we'll choose to use the quantity $l(l+1)$!
+\begin{equation}
+\Bigg[ \frac{1}{R}\frac{d}{dr} \Big(r^2 \frac{dR}{dr}\Big) - \frac{2mr^2}{\hbar^2}\big[ V(r) - E \big] \Bigg] = l(l+1)
+\end{equation}
+\begin{equation}
+\frac{1}{Y} \Bigg[ \frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\Big(\sin\theta\frac{\partial Y}{\partial \theta}\Big) 
+\frac{1}{\sin^2 \theta} \frac{\partial^2 Y}{\partial \phi^2} \Bigg] = -l(l+1)
+\end{equation}
+What is $l$ exactly? Mathematically, it is just a way of expressing the constant value of both sides. Physically, it is \textit{quantum number}, which is an excellent topic for another section!
+
+
+
+% ================================================================
+
+
+\section{Quantum Numbers}
+
+\paragraph*{}By now we've seen the rise of a few very distinct quantities called quantum numbers,
+
+
+
+
+
 
 % ================================================================
 % ================================================================
 
 \chapter{The Next Level: \\ Spin and Angular Momentum}
-\paragraph*{}The discussion of angular momentum and spin if often left to the first few weeks of a second semester Quantum Physics course, but nonetheless is useful to have a head-start with.
+
+\paragraph*{}The discussion of angular momentum and spin if often left to the first few weeks of a second semester Quantum Physics course, but nonetheless is useful to have a head-start with. As we've come to see in chapter 4, physically realizable quantum mechanical systems tend to exist in three spatial dimensions, and to to fully develop our understanding of 3D quantum systems, we'll need to understand angular momentum. 
+
+\paragraph*{}Just like in classical physics, angular momenta and relate quantities play a great role in systems with spherically defined potentials. In the case where the potential is explicitly radially defined, $V = V(r)$, such as the hydrogen atom, orbital angular momentum becomes a physically conserved quantity. In this chapter, we'll break down the details of orbital angular momentum, spin angular momentum and how they relate the to physical system.
+
+\paragraph*{}Before we formally begin, I want to introduce an inexplicably useful mathematical tool called the \textit{Levi-Civita Tensor}. Don't let the fancy Italian name or word "tensor" scare you,, because it works very simply. In three dimensions, the Levi-Civita tensor is a $3 \times 3 \times 3$ perfectly \textit{anti-symmetric} 3D tensor notated by $\varepsilon_{ijk}$. The symbol $\varepsilon$ is the tensor itself, and $i,j,k$ are indicies along each axis.
+
+\paragraph*{}Typically the indicies $i,j,k$ are used to correspond to orthogonal spatial components $x,y,z$. The actual numerical value of the tensor alternates between $+1$ and $-1$ each time $i,j,k$ are permuted, and it becomes $0$ if either $i,j,k$ is repeated more than once. As an example, suppose $i,j,k$ correspond to $x,y,z$, then:
+
+\begin{equation}
+\begin{split}
+\varepsilon_{ijk},\varepsilon_{kij},\varepsilon_{jki} &= +1 \\
+\varepsilon_{ikj},\varepsilon_{kji},\varepsilon_{jik} &= -1 \\
+\text{otherwise} &= 0
+\end{split}
+\end{equation}
+
+\paragraph*{}For a pratical example, we know that $[r,p] = i\hbar$, and the components
+
+
+
+% ================================================================
+
+\section{Orbital Angular Momentum}
+
+\paragraph*{}In classical physics, orbital angular momentum,$\vec{L}$ is a vector quantity given by the cross product of position $\vec{r}$ and momentum $\vec{p}$. In quantum physics, the exact same is true, and we treat angular momentum as \textit{vector} operator:
+\begin{equation}
+\label{orbit angular momentum}
+\hat{\vec{L}} = \hat{\vec{r}} \times \hat{\vec{p}} \rightarrow -i\hbar \vec{r} \times \nabla
+\end{equation}
+And thus we can resolve each Cartesian component from the cross-product, and use the quantum mechanical represention of momentum:
+\begin{equation}
+\label{Lx Ly Lz}
+\begin{split}
+\hat{L}_x &= \hat{r}_y\hat{p_z} - \hat{r}_z\hat{p}_y \rightarrow 
+-i\hbar \big(\hat{r}_y\frac{\partial}{\partial z} - \hat{r}_z\frac{\partial}{\partial y} \big) \\
+\hat{L}_y &= \hat{r}_z\hat{p_x} - \hat{r}_x\hat{p}_z \rightarrow
+-i\hbar \big(\hat{r}_z\frac{\partial}{\partial x} - \hat{r}_x\frac{\partial}{\partial z} \big) \\
+\hat{L}_z &= \hat{r}_x\hat{p_y} - \hat{r}_y\hat{p}_x  \rightarrow
+-i\hbar \big(\hat{r}_x\frac{\partial}{\partial y} - \hat{r}_y\frac{\partial}{\partial x} \big) \\
+\end{split}
+\end{equation}
+And Just like the momentum vector operator as a whole cna relate to it's components, we can similarly write:
+\begin{equation}
+\hat{\vec{L}}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2
+\end{equation}
+Since angular is an observable, the vector operator and each of it's components are Hermitian.
+
+\paragraph*{}Using the definition of orbital angular momentum, and the relation $[r_x,p_x] = i\hbar$, we can work out the operator's commutivity relations. Note that all variables are operators, but the 'hat' has been omitted for reasdability
+
+\begin{equation}
+\begin{split}
+[L_x,L_y] &= [r_y p_z - r_z p_y], r_z p_x - r_x p_z] \\
+			&= 	[r_y p_z,r_z p_x] - [r_y p_z, r_x p_z] - [r_z p_y,r_z p_x] + [r_z p_y,r_x p_z] \\
+			&= 	r_y[p_z,r_z]p_x - r_x[r_z,p_z]p_y = i\hbar (r_x p_y - r_y p_x) \\
+[L_x,L_y] &= i\hbar L_z	
+\end{split}
+\end{equation}
+Thus we can also show that for the other components:
+\begin{equation}
+[L_x,L_y] = i\hbar L_z	\text{\hspace{2cm}}
+[L_y,L_z] = i\hbar L_x	\text{\hspace{2cm}}
+[L_z,L_x] = i\hbar L_y	
+\end{equation}
+Or much more compactly with our fancy Levi-Civita Tensor:
+\begin{equation}
+\label{L comm}
+[L_i,L_j] = i\hbar(\varepsilon_{ijk})L_k
+\end{equation}
+Since the operators do not commute, it is impossible to measure more than one component or orbital angular momentum without any uncertainty. Thus, when placed into the uncertainty principle, we can show that:
+\begin{equation}
+\sigma^2_{L_i} \sigma^2_{L_j} \geq \Big(\frac{1}{2i}\expval{i\hbar(\varepsilon_{ijk})L_k}\Big)^2 = \frac{\hbar^2}{4}\expval{L_k}^2
+\end{equation}
+
+\paragraph*{}Additionally, an an exercise to the reader, it may be worthwhile to show the following relationships as well:
+\begin{equation}
+[r_i,L_j] = i\hbar(\varepsilon_{ijk})L_k
+\end{equation}
+\begin{equation}
+[p_i,L_j] = i\hbar(\varepsilon_{ijk})p_k
+\end{equation}
+\begin{equation}
+[L^2,L_x] = 0 \text{\hspace{2cm}} 
+[L^2,L_y] = 0 \text{\hspace{2cm}} 
+[L^2,L_z] = 0
+\end{equation}
+
+\paragraph*{}There also exists and angular momentum ladder operator, much like the one back from the 1D harmonic oscillator:
+\begin{equation}
+\label{L ladder}
+\hat{L}_{\pm} \equiv \hat{L}_x \pm i\hat{L}_y
+\end{equation}
+
+
+
+
+Once all of these relationships have been established, you are actually reasonably far into the topic of orbital angular momentum. Much of the rules from this section can be extended into spin as well as generalized angular momentum.
+
+
+
+
+
+
+
+
+
+
 
 % ================================================================
 % ================================================================
