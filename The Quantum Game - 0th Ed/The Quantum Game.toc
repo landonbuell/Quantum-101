@@ -21,6 +21,7 @@
 \contentsline {section}{\numberline {3.3}More on the Statistical Interpretation}{49}% 
 \contentsline {section}{\numberline {3.4}The Uncertainty Principle}{51}% 
 \contentsline {section}{\numberline {3.5}Superposition}{52}% 
+\contentsline {section}{\numberline {3.6}The Ehrenfest Theorem}{52}% 
 \contentsline {chapter}{\numberline {4}The Next Level: \\ The Hydrogen Atom}{53}% 
 \contentsline {section}{\numberline {4.1}The Schrodinger Equation in 3 Dimensions}{53}% 
 \contentsline {paragraph}{}{53}% 
