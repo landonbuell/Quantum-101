@@ -1563,27 +1563,29 @@ E_5 = \eta\hbar\omega \hspace*{1cm}
 \section{The Uncertainty Principle}
 \paragraph*{}The concept of uncertainty has become the poster child for quantum physics. No doubt that before you knew a single bit of quantum mechanics, you had probably heard someone tell you about this radical concept of \textit{uncertainty}. Mostly likely this came in the form of being able to know either the position or the momentum of a quantum system - but \textit{never} both. This idea stands out because its so counter intuitive that maybe it's forgivable that so many people see this as one of defining characteristics of the field.
 
-\paragraph*{}In reality,it is \textit{certain} that \textit{uncertainty} really is a large part of quantum physics, any one the reasons that Schrodinger's theory was met with such distaste back in the 20th century. Even Albert Einstein who developed our models of special and general relativity thought the idea to be preposterous. The topic of uncertainty however, goes much farther than just not being able to know position and momentum together, but it really does shape our understanding of quantum physics - at least at this level.
+\paragraph*{}In reality, it is \textit{certain} that \textit{uncertainty} really is a large part of quantum physics, and one the reasons that Schrodinger's theory was met with such distaste back in the 20th century. Even Albert Einstein who developed our models of special and general relativity thought the idea to be preposterous. According to all known laws and concepts from Newton and Galileo, future behavior of a physical system is define exactly, given the appropriate set of initial conditions. Why should quantum be any different?
+
+\paragraph*{}The topic of uncertainty however, goes much farther than just not being able to know position and momentum together, but it really does shape our understanding of quantum physics - at least at this level.
 
 \paragraph*{}Just like we discussed in chapter 1, all of our intuition of the macroscopic world is confirmed by our ability to take accurate and definite measurements. If we want to know position at any time, we can take a series of sample at regular time intervals to build some function to describe it as some $x(t)$. We can then compute our velocity , $v(t)$, and multiply it by our mass , $m$, and there we have it! Classical physics allows us to take a series of \textit{exact} measurement that can give us our \textit{absolute} position and out \textit{absolute} momentum at any time. Thus we know them without any uncertainty, provided we have accurate measurements, our position and momentum values.
 
-\paragraph*{}Part of the enigma of the situation is the fact that this not to a problem that any level of technology, or a skilled engineer or physicist can solve. Uncertainty is something baked into the laws of the natural universe. It's sort of like the speed of light, no matter how big ,or powerful, or efficient the engine on your space ship is, it can \textit{never} travel faster than the speed of light- the universe simply forbids it. Similarly in quantum physics, we will see that there are a set of measurements can are just \textit{not compatible}! NO matter how careful we are, or how accurate a machine we build to measure these quantities, the universe prevents us from knowing some of these quantities concurrently. 
+\paragraph*{}Part of the enigma of the situation is the fact that this not to a problem that any level of technology, or a skilled engineer or physicist can solve. Uncertainty is something baked into the laws of the natural universe. It's sort of like the speed of light, no matter how big ,or powerful, or efficient the engine on your spaceship is, it can \textit{never} travel as fast, or faster than the speed of light- the universe simply forbids it. Similarly in quantum physics, we will see that there are a set of measurements can are just \textit{not compatible}! No matter how careful we are, or how accurate a machine we build to measure these quantities, the universe prevents us from knowing some of these quantities concurrently. The very act of measuring one quantity changes the quantity of another.
 
-\paragraph*{}The exact reasoning for this is pretty hard to justify intuitively, so just like earlier on, we are going to push through the mathematics of the situation and then use that to augment our understanding. Recall that for any operator, 
+\paragraph*{}The exact reasoning for this is pretty hard to justify intuitively, so just like earlier on, we are going to push through the mathematics of the situation and then use that to augment our understanding. In chapter 1, we briefly discussed that the experimental act of measuring one quantity, is analogous to the mathematical act of acting on a vector (a state) with a matrix (an operator). For example, if we were in a laboratory measuring the momentum $p$, of the the particle who's wave function is given by $\Psi(x)$, this is just like applying the momentum operator to the state as: $\hat{p}\ket{\Psi}$.
+
+
+\paragraph*{}Recall that for any operator, 
 $\hat{Q}$, the expectation value, or average value with respect to some state 
 $\ket{\psi}$ is given by:
-
 \begin{equation}
 \expval{\hat{Q}} = \bra{\psi}\hat{Q}\ket{\psi}
 \end{equation}
-
 And the statistical variance of that operator is given by:
-
 \begin{equation}
 \sigma^{2}_{\hat{Q}} =  \expval{\hat{Q}^2} - \expval{\hat{Q}}^2
 \end{equation}
 
-\paragraph*{}The variance, according to many introductory statistics references measures the \textit{spread} of the data set. The greater the variance, the more the data is \textit{smeared} across your measurement basis. In classical physics, we have the luxury of a measurement variance approaching zero, as described on Chapter 1. In quantum physics, we do not have such well-defined systems and the variance, or spread of possible measurements, is almost always non-zero.
+\paragraph*{}The variance, according to many introductory statistics references measures the \textit{spread} of the data set. The greater the variance, the more the data is \textit{smeared} across your measurement basis. In classical physics, we have the luxury of a measurement variance approaching zero, provided our instruments are infinitely accurate. If the variance of measured data is zero, then the exact value of the measurement is known at all time, without \textit{if}, \textit{and}'s or \textit{buts}. In quantum physics, we do not have such well-defined systems and the variance, or spread of possible measurements, is almost always non-zero.
 
 
 % ================================================================
