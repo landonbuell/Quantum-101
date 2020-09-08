@@ -29,6 +29,9 @@
 \contentsline {section}{\numberline {4.3}Quantum Numbers}{57}% 
 \contentsline {chapter}{\numberline {5}The Next Level: \\ Spin and Angular Momentum}{59}% 
 \contentsline {section}{\numberline {5.1}Orbital Angular Momentum}{60}% 
+\contentsline {section}{\numberline {5.2}Spin Angular Momentum}{61}% 
+\contentsline {section}{\numberline {5.3}Total Angular Momentum}{62}% 
+\contentsline {section}{\numberline {5.4}Matrix Representations of Angular Momentum}{62}% 
 \contentsline {chapter}{\numberline {6}Mathematical Index}{63}% 
 \contentsline {section}{\numberline {6.1}Building the Hamiltonian Operator Numerically in One Dimension}{63}% 
 \contentsline {subsection}{\numberline {6.1.1}The Kinetic Energy Operator}{64}% 

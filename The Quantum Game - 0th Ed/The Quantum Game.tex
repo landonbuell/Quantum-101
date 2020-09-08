@@ -1524,13 +1524,17 @@ Many of these rules can be extended to include nested commutation relations and 
 \section{More on the Statistical Interpretation}
 
 \paragraph*{}The \textit{statistical interpretation} of quantum physics is really the model that governs our understanding of the subject. It's arguably both a mathematical and philosophical logic that we use to describe this branch of physics. As we discussed early on, one of the most challenging parts of quantum is to accept the idea that unlike classical physics, almost nothing can be known with complete certainty. Always with every measurement outcome comes a deal of uncertainty and we handle this with elementary statistics.
+
 \paragraph*{}We we first looked at the Schrodinger equation, we also noticed how it is a \textit{linear} partial differential equation, which has the property that a linear combination of solutions is also a valid solution. This means that when we find a single solution, $\ket{\Psi_1}$, then scaling that by some constant is also a solution $c_1\ket{|\Psi_1}$. Furthermore, we found that in some cases for time independent potentials, like the infinite square well, the solution may take the form of infinite series , where each term is scaled by some coefficient $c_n$. 
-\paragraph*{}As it follows, then it turns out that that when multiplying that number by it's own complex conjugate: $|c_n|^*|c_n|$, it's winds up being the relative chance of the particular state $\ket{\Psi_n}$ of occurring. So, just like at the end of chapter 1, we can explore another example of how the statistical interpretation works: \\
+
+\paragraph*{}As it follows, then it turns out that that when multiplying that number by it's own complex conjugate: $|c_n|^*|c_n|$, it's winds up being the relative chance of the particular state $\ket{\Psi_n}$ of occurring. So, just like at the end of chapter 1, we can explore another example of how the statistical interpretation works: 
+
 \paragraph*{}Suppose we have a quantum mechanical system composed of infinitely many energy-eigen states. We can express this as:
 \begin{equation}
 \Psi(x,t) = \sum_{n=1}^{+\infty} c_n \ket{\Psi_n}
 \end{equation}
 Recall that each state $\ket{\Psi_n}$ is composed of a spatial component $\psi_n(x)$ and a time component $\phi_n(t)$ as per our separable solutions in chapter 1, equation (\ref{separable}). Each state also has a unique energy- eigenvalue as well $E_n$.
+
 \paragraph*{}We then hand our mathematical model and system setup a well- qualified experimentalist. She then takes our setup, and applies what she knows about both the mathematical and practical end of quantum physics (beyond the scope of this work) to our system. She returns to us soon after with some great news! After much testing she has found the results:
 \begin{equation}
 c_1 = -2 \hspace*{1cm}
@@ -1548,12 +1552,15 @@ E_3 = \gamma\hbar\omega \hspace*{1cm}
 E_4 = \zeta\hbar\omega \hspace*{1cm} 
 E_5 = \eta\hbar\omega \hspace*{1cm}
 \end{equation}
-\paragraph*{}Given her incredible reputation, you take these results be to 100\% accurate with no error at all! So, let's build the linear combination of quantum states that describes our system:
+
+\paragraph*{}Given her incredible skill and reputation, you take these results be to 100\% accurate with no experimental error at all! So, let's build the linear combination of quantum states that describes our system:
 \begin{equation}
 \Psi(x,t) = -2\ket{\Psi_1} + 3i\ket{\Psi_2} + (1-6i)\ket{\Psi_3} +
 16\ket{\Psi_4} + (3 + 4i)\ket{\Psi_5}
 \end{equation}
+
 \paragraph*{}We now are faced with the great simplification that this is a \textit{five - state syetem}. Now, there are only five possible quantum states that this particle can take. For whatever reason the experimental results have shown that is is \textit{impossible} to have an energy - eigen state above $n = 5$, which is mathematically represented by the fact that all states above $n = 5$ have a coefficient of zero. 
+
 \paragraph*{}You are then asked by another physicist to analyze and determine as much about the system as you can! right away, we can determine the \textit{relative} probability of each state to occur. As previously discussed, this is given by the particular coefficient, multiplied by it's own complex conjugate.
 
 
@@ -1561,6 +1568,7 @@ E_5 = \eta\hbar\omega \hspace*{1cm}
 % ================================================================
 
 \section{The Uncertainty Principle}
+
 \paragraph*{}The concept of uncertainty has become the poster child for quantum physics. No doubt that before you knew a single bit of quantum mechanics, you had probably heard someone tell you about this radical concept of \textit{uncertainty}. Mostly likely this came in the form of being able to know either the position or the momentum of a quantum system - but \textit{never} both. This idea stands out because its so counter intuitive that maybe it's forgivable that so many people see this as one of defining characteristics of the field.
 
 \paragraph*{}In reality, it is \textit{certain} that \textit{uncertainty} really is a large part of quantum physics, and one the reasons that Schrodinger's theory was met with such distaste back in the 20th century. Even Albert Einstein who developed our models of special and general relativity thought the idea to be preposterous. According to all known laws and concepts from Newton and Galileo, future behavior of a physical system is define exactly, given the appropriate set of initial conditions. Why should quantum be any different?
@@ -1572,7 +1580,6 @@ E_5 = \eta\hbar\omega \hspace*{1cm}
 \paragraph*{}Part of the enigma of the situation is the fact that this not to a problem that any level of technology, or a skilled engineer or physicist can solve. Uncertainty is something baked into the laws of the natural universe. It's sort of like the speed of light, no matter how big ,or powerful, or efficient the engine on your spaceship is, it can \textit{never} travel as fast, or faster than the speed of light- the universe simply forbids it. Similarly in quantum physics, we will see that there are a set of measurements can are just \textit{not compatible}! No matter how careful we are, or how accurate a machine we build to measure these quantities, the universe prevents us from knowing some of these quantities concurrently. The very act of measuring one quantity changes the quantity of another.
 
 \paragraph*{}The exact reasoning for this is pretty hard to justify intuitively, so just like earlier on, we are going to push through the mathematics of the situation and then use that to augment our understanding. In chapter 1, we briefly discussed that the experimental act of measuring one quantity, is analogous to the mathematical act of acting on a vector (a state) with a matrix (an operator). For example, if we were in a laboratory measuring the momentum $p$, of the the particle who's wave function is given by $\Psi(x)$, this is just like applying the momentum operator to the state as: $\hat{p}\ket{\Psi}$.
-
 
 \paragraph*{}Recall that for any operator, 
 $\hat{Q}$, the expectation value, or average value with respect to some state 
@@ -1591,6 +1598,10 @@ And the statistical variance of that operator is given by:
 % ================================================================
 
 \section{Superposition}
+
+\paragraph*{}It's impossible, and would similarly be a great disservice to you, to not speak a little bit about super position officially. Believe it or not, superposition has be hiding the in the shadows every step the way of our journey. Right in chapter (1), I pointed out that Schrodinger's equation is a \textit{Linear} partial differential equation, and as such, a linear combination of solutions is \textit{also} a proper solution.
+
+\paragraph*{}This linear combination of solutions plays into the idea of superposition. 
 
 % ================================================================
 
@@ -1829,11 +1840,14 @@ And thus we can resolve each Cartesian component from the cross-product, and use
 -i\hbar \big(\hat{r}_x\frac{\partial}{\partial y} - \hat{r}_y\frac{\partial}{\partial x} \big) \\
 \end{split}
 \end{equation}
-And Just like the momentum vector operator as a whole cna relate to it's components, we can similarly write:
+And Just like the momentum vector operator as a whole can relate to it's components, we can similarly write:
 \begin{equation}
 \hat{\vec{L}}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2
 \end{equation}
 Since angular is an observable, the vector operator and each of it's components are Hermitian.
+\begin{equation}
+\hat{\vec{L}} = \hat{\vec{L}}^{\dagger}
+\end{equation}
 
 \paragraph*{}Using the definition of orbital angular momentum, and the relation $[r_x,p_x] = i\hbar$, we can work out the operator's commutivity relations. Note that all variables are operators, but the 'hat' has been omitted for reasdability
 
@@ -1880,16 +1894,34 @@ Since the operators do not commute, it is impossible to measure more than one co
 \hat{L}_{\pm} \equiv \hat{L}_x \pm i\hat{L}_y
 \end{equation}
 
-
-
-
 Once all of these relationships have been established, you are actually reasonably far into the topic of orbital angular momentum. Much of the rules from this section can be extended into spin as well as generalized angular momentum.
 
+% ================================================================
+
+\section{Spin Angular Momentum}
+
+\paragraph*{}Spin angular momentum is among the stranger concepts in quantum physics - which says a lot. The mathematics and rules for measuring quantum spin, and the associated operator $\hat{\vec{S}}$, are almost identical to that to that of the $\hat{\vec{L}}$ operator. The trouble arises in the physical interpretation of spin - after all: physics is more than just mathematics, it is the laws of the universe, and thus demands are more tangible explanation than purely math.
+
+\paragraph*{}The discovery of spin begun around 1922 with the Stern-Gerlach Experiment which sought to measure the ground state angular momentum of a Silver atom. Given the distribution of electrons in their respective orbitals, a siler atom in it's ground state should posses \textit{no total angular moment}. In measuring the angular momentum for spin, they produce results that conflicted with \textit{both} the laws of classical physics \textit{and} Schrodinger's quantum physics.
+
+\paragraph*{}In 1925, Goudsmit and Ulenbeck proposed that in addition to carrying orbital angular moment about the nucleus, an electron also posses a sort of \textit{intrinsic} angular momentum - as if the electron itself was \textit{spinning}! This solution on to it's own brings about a new set of problems, that have not even been fully resolved in 2020. For example, electrons are typically described as being infinitesimally small point-like particles. This means we often regard then to have charge and mass, but \textit{no volume}! How could something without any volume possibly spin? Furthermore, if we assume that an electron does have a non-zero radius, such as the \textit{classical electron radius}, somewhere around $10^{-15}$ m, then the amount of spin angular momentum within that electron brings a point of the surface of it concerningly close to the speed of light!
+
+\paragraph*{}The simplest way to internalize spin angular momentum at this time is to understand that spin  \textit{physically is a measurement of angular momentum}. It carries the identical units, and behaves exactly the same as the orbital angular momentum operator from the previous section. It's just that quantum particles seem to carry with them \textit{more} angular momentum than just the orbital part of the measurement would suggest.
 
 
+% ================================================================
 
+\section{Total Angular Momentum}
 
+\paragraph*{}Total angular momentum is exactly as it sounds - the sum of two or more different angular momentum quantities. In this case, total angular momentum, also called \textit{generalized} angular momentum is the sum of the orbital and spin operators:
+\begin{equation}
+\label{generalAngMomtm}
+\hat{\vec{J}} = \hat{\vec{L}} + \hat{\vec{S}}
+\end{equation}
 
+% ================================================================
+
+\section{Matrix Representations of Angular Momentum}
 
 
 
